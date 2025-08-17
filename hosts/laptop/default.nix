@@ -1,0 +1,96 @@
+{ ... }:
+{
+  imports = [
+    ../../modules/core
+    ../../modules/drivers
+    ./partitioning.nix
+  ];
+
+  facter.reportPath = ./facter.json;
+
+  drivers = {
+    amd.enable = true;
+    amdGpu = {
+      enable = true;
+      hdr = true;
+    };
+  };
+
+  rainyos = {
+    secureBoot.enable = true;
+
+    gui.enable = true;
+    gui.monitors = [
+      {
+        connector = "eDP-1";
+        width = 1920;
+        height = 1080;
+        refresh = 60.0;
+      }
+    ];
+
+    audio.enable = true;
+
+    bluetooth.enable = true;
+
+    hdr.enable = true;
+
+    tz = {
+      static = "Europe/Amsterdam";
+      automatic = true;
+    };
+
+    locales = {
+      default = "en_US.UTF-8";
+      supported = [
+        "en_US.UTF-8/UTF-8"
+        "de_DE.UTF-8/UTF-8"
+        "pl_PL.UTF-8/UTF-8"
+        "ja_JP.UTF-8/UTF-8"
+      ];
+      extraSettings = {
+        ctype = "en_US.UTF-8";
+        address = "de_DE.UTF-8";
+        identification = "de_DE.UTF-8";
+        measurement = "de_DE.UTF-8";
+        messages = "en_US.UTF-8";
+        monetary = "de_DE.UTF-8";
+        name = "de_DE.UTF-8";
+        numeric = "en_US.UTF-8";
+        paper = "de_DE.UTF-8";
+        telephone = "de_DE.UTF-8";
+        time = "de_DE.UTF-8";
+        collate = "de_DE.UTF-8";
+      };
+    };
+
+    keymap = {
+      console = "us";
+      supported = [
+        "us"
+        "de"
+        "pl"
+      ];
+    };
+
+    git = {
+      username = "Rein";
+      email = "rein@rein.icu";
+      signingKey = "66A8170622279BD9586ACEDD5B29A8813F4765C4";
+    };
+
+    mpd.enable = true;
+
+    gaming = {
+      gamescope.enable = true;
+
+      steam = {
+        enable = true;
+        session = true;
+        rocksmithPatch = true;
+      };
+    };
+
+    virtualisation.podman.enable = true;
+  };
+}
