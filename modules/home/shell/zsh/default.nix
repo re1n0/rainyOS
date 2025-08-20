@@ -37,7 +37,8 @@ in
     wireguard-tools
 
     nix-hash-git
-    nixpkgs-review
+    nix-output-monitor
+    nix-update
 
     grex
     qrtool

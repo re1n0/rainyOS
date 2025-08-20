@@ -8,6 +8,7 @@ in
   home.packages = with pkgs; [
     deadnix
     nil
+    nixfmt-tree
     nixfmt-rfc-style
     statix
 

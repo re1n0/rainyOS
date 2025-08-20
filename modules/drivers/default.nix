@@ -12,7 +12,6 @@ with lib;
 
   options.drivers.nvidia = {
     enable = mkEnableOption "Enable NVIDIA drivers";
-    enable32bit = mkEnableOption "Enable 32bit NVIDIA driver package";
     open = mkOption {
       type = types.bool;
       default = true;

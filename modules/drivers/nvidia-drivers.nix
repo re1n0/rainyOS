@@ -6,7 +6,7 @@ lib.mkIf cfg.enable {
   hardware = {
     graphics = {
       enable = true;
-      enable32Bit = cfg.enable32bit;
+      enable32Bit = true;
     };
 
     nvidia = {

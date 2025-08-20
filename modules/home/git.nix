@@ -5,14 +5,20 @@ in
 {
   programs.git = {
     enable = true;
+
     userName = "${cfg.username}";
     userEmail = "${cfg.email}";
+
     package = pkgs.gitFull;
+
+    delta.enable = true;
+
     signing = {
       format = "openpgp";
       key = "${cfg.signingKey}";
       signByDefault = cfg.signingKey != "";
     };
+
     extraConfig.credential = {
       helper = "gopass";
       color = {
@@ -28,11 +34,6 @@ in
 
   programs.gh = {
     enable = true;
-    hosts = {
-      "github.com" = {
-        user = "re1n0";
-      };
-    };
     gitCredentialHelper.enable = true;
   };
 
