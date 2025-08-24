@@ -50,8 +50,8 @@
 
   # nix
   ncg = "nh clean all && sudo /run/current-system/bin/switch-to-configuration boot";
-  nrs = "nh os switch";
-  nrb = "nh os boot";
+  nrs = "nh os switch -a";
+  nrb = "nh os boot -a";
 
   # power
   reboot = "systemctl reboot";
