@@ -13,6 +13,20 @@ in
     statix
 
     tombi
+
+    yaml-language-server
+
+    markdown-oxide
+
+    superhtml
+    jinja-lsp
+
+    lldb
+    rust-analyzer
+
+    bash-language-server
+
+    lua-language-server
   ];
 
   programs.helix = {

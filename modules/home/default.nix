@@ -14,6 +14,7 @@
     ./kitty.nix
     ./mpd
     ./mpv.nix
+    ./nh.nix
     ./pass.nix
     ./shell
     ./steam.nix

@@ -6,6 +6,13 @@
         "html"
         { glob = "*.html.hbs"; }
       ];
+      auto-format = true;
+    }
+
+    {
+      name = "rust";
+      roots = [ "Cargo.toml" ];
+      auto-format = true;
     }
 
     {
@@ -17,6 +24,7 @@
     {
       name = "jinja";
       language-servers = [ "jinja-lsp" ];
+      auto-format = true;
     }
 
     {
@@ -102,6 +110,11 @@
         }
         "biome"
       ];
+      auto-format = true;
+    }
+
+    {
+      name = "toml";
       auto-format = true;
     }
   ];

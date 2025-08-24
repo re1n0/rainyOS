@@ -5,7 +5,7 @@
   ...
 }:
 let
-  inherit (config.myHome) username;
+  inherit (config.home) username;
   userChrome = import ./userChrome.nix pkgs;
 in
 {
@@ -112,14 +112,14 @@ in
         force = true;
         engines = {
           "MyNixOS" = {
-            urls = [ { template = "https://mynixos.com/search?q={searchTerms}"; } ];
-            icon = "https://mynixos.com/favicon-dark.svg";
-            definedAliases = [ "@mn" ];
+            urls = [ { template = "https://search.nüschtos.de/?query={searchTerms}"; } ];
+            icon = "https://search.nüschtos.de/favicon.ico";
+            definedAliases = [ "@nu" ];
           };
           "Noogle" = {
             urls = [ { template = "https://noogle.dev/q?term={searchTerms}"; } ];
             icon = "https://noogle.dev/favicon.png";
-            definedAliases = [ "@noogle" ];
+            definedAliases = [ "@noo" ];
           };
         };
       };

@@ -39,6 +39,7 @@ in
     nix-hash-git
     nix-output-monitor
     nix-update
+    nixpkgs-review
 
     grex
     qrtool

@@ -32,7 +32,6 @@ let
     imports = [
       ./../home
       ./../home/${username}
-      ./userdata.nix
     ];
 
     home = {
@@ -40,8 +39,6 @@ let
       homeDirectory = "/home/${username}";
       stateVersion = "25.11";
     };
-
-    myHome.username = "${username}";
 
     programs.home-manager.enable = true;
   };

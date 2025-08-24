@@ -49,9 +49,9 @@
   pass = "gopass";
 
   # nix
-  ncg = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-  nrs = "sudo nixos-rebuild switch --flake";
-  nrb = "sudo nixos-rebuild boot --flake";
+  ncg = "nh clean all && sudo /run/current-system/bin/switch-to-configuration boot";
+  nrs = "nh os switch";
+  nrb = "nh os boot";
 
   # power
   reboot = "systemctl reboot";
