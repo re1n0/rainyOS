@@ -2,19 +2,11 @@
 {
   imports = [
     ../../modules/core
-    ../../modules/drivers
+    ./hardware.nix
     ./partitioning.nix
   ];
 
   facter.reportPath = ./facter.json;
-
-  drivers = {
-    amd.enable = true;
-    amdGpu = {
-      enable = true;
-      hdr = true;
-    };
-  };
 
   rainyos = {
     secureBoot.enable = true;

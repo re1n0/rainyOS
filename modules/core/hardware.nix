@@ -10,5 +10,5 @@ in
     bluetooth.powerOnBoot = cfg.bluetooth.enable;
   };
 
-  local.hardwareClock.enable = true;
+  time.hardwareClockInLocalTime = true;
 }

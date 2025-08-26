@@ -290,8 +290,8 @@ with lib;
 
       rainyos.gaming.steam.session = mkDefault cfg.gaming.gamescope.enable;
 
-      drivers.nvidia.containerToolkit = mkDefault (
-        config.drivers.nvidia.enable && cfg.virtualisation.podman.enable
+      hardware.nvidia-container-toolkit.enable = mkDefault (
+        config.hardware.nvidia.enabled && cfg.virtualisation.podman.enable
       );
     };
 }

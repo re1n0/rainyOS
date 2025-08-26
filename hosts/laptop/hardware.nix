@@ -1,17 +1,10 @@
+{ pkgs, ... }:
 {
-  lib,
-  config,
-  ...
-}:
-let
-  cfg = config.drivers.amdGpu;
-in
-lib.mkIf cfg.enable {
   hardware.amdgpu = {
     amdvlk = {
       enable = true;
-      supportExperimental.enable = true;
       support32Bit.enable = true;
+      supportExperimental.enable = true;
     };
 
     overdrive = {
@@ -19,10 +12,12 @@ lib.mkIf cfg.enable {
       ppfeaturemask = "0xffffffff";
     };
 
-    opencl.enable = true;
-
     initrd.enable = true;
   };
 
-  chaotic.hdr.enable = cfg.hdr;
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
+
+  chaotic.hdr.enable = true;
 }
