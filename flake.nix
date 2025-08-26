@@ -63,6 +63,7 @@
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
     };
 
     firefox-addons = {
@@ -86,6 +87,7 @@
           };
           modules = [
             ./hosts/${host}
+
             inputs.chaotic.nixosModules.default
             inputs.disko.nixosModules.disko
             inputs.nixos-facter-modules.nixosModules.facter

@@ -9,7 +9,7 @@
     ./fastfetch
     ./gimp.nix
     ./git.nix
-    ./gitui.nix
+    # ./gitui.nix
     ./imv.nix
     ./kitty.nix
     ./mpd
