@@ -1,4 +1,9 @@
-{ host, options, ... }:
+{
+  lib,
+  host,
+  options,
+  ...
+}:
 {
   networking = {
     hostName = "${host}";
@@ -9,4 +14,7 @@
 
     wireguard.enable = true;
   };
+
+  systemd.network.wait-online.enable = lib.mkForce false;
+  networking.useNetworkd = lib.mkForce false;
 }
