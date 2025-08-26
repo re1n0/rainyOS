@@ -7,4 +7,5 @@ final: prev: {
   themes = makePkg final ./themes;
   tukai = makePkg final ./tukai;
   screenshot = makePkg final ./screenshot;
+  close-steam-session = makePkg final ./close-steam-session;
 }

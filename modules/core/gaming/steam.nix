@@ -20,7 +20,8 @@ lib.mkIf cfg.steam.enable {
 
     package = pkgs.steam.override {
       extraLibraries = pkgs': with pkgs'; (lib.optional cfg.steam.rocksmithPatch pipewire.jack);
-      extraPkgs = pkgs': with pkgs'; (lib.optional cfg.steam.rocksmithPatch wineasio);
+      extraPkgs =
+        pkgs': with pkgs'; [ close-steam-session ] ++ (lib.optional cfg.steam.rocksmithPatch wineasio);
     };
 
     extest.enable = true;

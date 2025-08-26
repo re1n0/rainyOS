@@ -11,6 +11,7 @@ let
     "-W ${builtins.toString primaryMonitor.width}"
     "-H ${builtins.toString primaryMonitor.height}"
     "-r ${builtins.toString primaryMonitor.refresh}"
+    "--adaptive-sync"
   ]
   ++ (lib.optional cfg.rt.enable "--rt")
   ++ (lib.optionals cfg.hdr.enable [
