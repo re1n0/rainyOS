@@ -24,17 +24,18 @@ lib.mkIf cfg.steam.enable {
         pkgs': with pkgs'; [ close-steam-session ] ++ (lib.optional cfg.steam.rocksmithPatch wineasio);
     };
 
-    extest.enable = true;
+    # extest.enable = true;
     protontricks.enable = true;
   };
 
-  programs.steam.gamescopeSession = lib.mkIf cfg.steam.session {
+  programs.steam.gamescopeSession = lib.mkIf (cfg.steam.session && cfg.gamescope.enable) {
     enable = true;
     args = common.gamescopeArgs;
     steamArgs = [
-      "-tenfoot"
       "-console"
       "-pipewire-dmabuf"
+      "-steamos3"
+      "-gamepadui"
     ];
   };
 
@@ -50,5 +51,7 @@ lib.mkIf cfg.steam.enable {
     };
   };
 
-  environment.systemPackages = lib.optional cfg.steam.rocksmithPatch pkgs.patch-rocksmith;
+  environment.systemPackages =
+    with pkgs;
+    [ vulkan-helper ] ++ lib.optional cfg.steam.rocksmithPatch patch-rocksmith;
 }

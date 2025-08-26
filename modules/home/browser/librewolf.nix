@@ -111,7 +111,7 @@ in
       search = {
         force = true;
         engines = {
-          "MyNixOS" = {
+          "NüschtOS Search" = {
             urls = [ { template = "https://search.nüschtos.de/?query={searchTerms}"; } ];
             icon = "https://search.nüschtos.de/favicon.ico";
             definedAliases = [ "@nu" ];

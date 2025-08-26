@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -11,5 +12,6 @@ lib.mkIf config.rainyos.gaming.gamescope.enable {
     enable = true;
     capSysNice = true;
     args = common.gamescopeArgs;
+    package = pkgs.gamescope_git;
   };
 }

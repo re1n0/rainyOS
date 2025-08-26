@@ -15,6 +15,6 @@ writeShellApplication {
     '';
 
   meta = {
-    description = "Prefetch and compute SHA256 of a git repository";
+    description = "Close Steam running in gamescope session via Switch to Desktop button";
   };
 }
