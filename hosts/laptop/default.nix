@@ -18,14 +18,14 @@
         width = 1920;
         height = 1080;
         refresh = 60.0;
+        wide_color = true;
+        hdr = true;
       }
     ];
 
     audio.enable = true;
 
     bluetooth.enable = true;
-
-    hdr.enable = true;
 
     tz = {
       static = "Europe/Amsterdam";

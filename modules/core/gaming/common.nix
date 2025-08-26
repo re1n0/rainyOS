@@ -14,7 +14,7 @@ let
     "--adaptive-sync"
   ]
   ++ (lib.optional cfg.rt.enable "--rt")
-  ++ (lib.optionals cfg.hdr.enable [
+  ++ (lib.optionals primaryMonitor.hdr [
     "--hdr-enable"
     "--hdr-itm-enable"
   ]);

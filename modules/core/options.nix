@@ -55,6 +55,10 @@ with lib;
             example = 1.5;
             description = "Monitor scale";
           };
+
+          wide_color = mkEnableOption "Monitor supports wide (10bit) color";
+
+          hdr = mkEnableOption "Monitor supports HDR";
         };
       });
       default = [ ];
@@ -87,8 +91,6 @@ with lib;
     bluetooth.enable = mkEnableOption "Enable Bluetooth";
 
     rt.enable = mkEnableOption "Enable Ray Tracing support";
-
-    hdr.enable = mkEnableOption "Enable HDR support";
 
     ssh = {
       enable = mkEnableOption "Enable SSH server";

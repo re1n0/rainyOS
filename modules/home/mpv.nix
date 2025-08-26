@@ -21,6 +21,9 @@ lib.optionalAttrs os.gui.enable {
 
     config = {
       profile = "high-quality";
+      hwdec = "auto";
+
+      vo = "dmabuf-wayland";
 
       fullscreen = true;
 
@@ -43,6 +46,9 @@ lib.optionalAttrs os.gui.enable {
       # Subtitles
       demuxer-mkv-subtitle-preroll = true;
       sub-auto = "all";
+
+      # HDR
+      target-colorspace-hint = true;
 
       # YouTube
       script-opts = [

@@ -34,13 +34,15 @@ settings:
     use_cpu_buffer = true;
   };
 
-  monitor = [
-    ", preferred, auto, auto"
-  ]
-  ++ map (
-    m:
-    "${m.connector}, ${builtins.toString m.width}x${builtins.toString m.height}@${builtins.toString m.refresh}, ${m.position}, ${builtins.toString m.scale}"
-  ) settings.gui.monitors;
+  monitorv2 = map (m: {
+    output = m.connector;
+    mode = "${builtins.toString m.width}x${builtins.toString m.height}@${builtins.toString m.refresh}";
+    inherit (m) position;
+    inherit (m) scale;
+    supports_wide_color = m.wide_color;
+    supports_hdr = m.hdr;
+    bitdepth = if m.wide_color then 10 else 8;
+  }) settings.gui.monitors;
 
   general = {
     border_size = 3;
@@ -64,6 +66,15 @@ settings:
   misc = {
     disable_hyprland_logo = 1;
     disable_splash_rendering = 1;
+  };
+
+  render = {
+    direct_scanout = 2;
+    cm_fs_passthrough = 1;
+  };
+
+  experimental = {
+    xx_color_management_v4 = true;
   };
 
   decoration = {
@@ -123,6 +134,11 @@ settings:
       resolution = -1;
       fallback = "clientside";
     };
+  };
+
+  ecosystem = {
+    no_update_news = true;
+    no_donation_nag = true;
   };
 }
 // binds
