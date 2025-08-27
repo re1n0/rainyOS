@@ -8,7 +8,6 @@
 let
   inherit (config.home) username;
   userChrome = import ./userChrome.nix pkgs;
-  primaryMonitor = builtins.elemAt os.gui.monitors os.gui.primaryMonitor;
 in
 {
   programs.librewolf = {
@@ -62,7 +61,7 @@ in
       "extensions.webcompat.perform_ua_overrides" = true;
       "extensions.autoDisableScopes" = 0;
 
-      "gfx.wayland.hdr" = primaryMonitor.hdr;
+      "gfx.wayland.hdr" = builtins.any (m: m.hdr) os.gui.monitors;
 
       "gfx.webrender.all" = true;
 

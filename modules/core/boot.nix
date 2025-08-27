@@ -14,8 +14,6 @@ in
 
   boot = {
     kernelPackages = lib.mkDefault pkgs.linuxPackages_cachyos;
-    kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
 
     plymouth.enable = cfg.gui.enable;
     consoleLogLevel = 3;
