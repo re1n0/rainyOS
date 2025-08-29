@@ -28,9 +28,9 @@ lib.mkIf cfg.steam.enable {
     protontricks.enable = true;
   };
 
-  programs.steam.gamescopeSession = lib.mkIf (cfg.steam.session && cfg.gamescope.enable) {
+  programs.steam.gamescopeSession = lib.mkIf cfg.steam.session {
     enable = true;
-    args = common.gamescopeArgs;
+    args = common.makeGamescopeArgs [ ];
     steamArgs = [
       "-console"
       "-pipewire-dmabuf"

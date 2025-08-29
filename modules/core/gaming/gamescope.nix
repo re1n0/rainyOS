@@ -11,7 +11,7 @@ lib.mkIf config.rainyos.gaming.gamescope.enable {
   programs.gamescope = {
     enable = true;
     capSysNice = true;
-    args = common.gamescopeArgs;
+    args = common.makeGamescopeArgs [ ];
     package = pkgs.gamescope_git;
   };
 }

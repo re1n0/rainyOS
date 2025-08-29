@@ -83,11 +83,6 @@
         session = true;
         rocksmithPatch = true;
       };
-
-      opengamepadui = {
-        enable = true;
-        session = true;
-      };
     };
 
     virtualisation.podman.enable = true;
