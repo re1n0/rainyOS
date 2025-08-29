@@ -13,6 +13,8 @@ in
   services.automatic-timezoned.enable = cfg.tz.automatic;
   time.timeZone = lib.mkIf (!cfg.tz.automatic) cfg.tz.static;
 
+  services.powerstation.enable = cfg.powerManagement.enable;
+
   i18n.defaultLocale = cfg.locales.default;
   i18n.supportedLocales = cfg.locales.supported;
   i18n.extraLocaleSettings = {

@@ -27,6 +27,8 @@
 
     bluetooth.enable = true;
 
+    powerManagement.enable = true;
+
     tz = {
       static = "Europe/Amsterdam";
       automatic = true;
@@ -80,6 +82,11 @@
         enable = true;
         session = true;
         rocksmithPatch = true;
+      };
+
+      opengamepadui = {
+        enable = true;
+        session = true;
       };
     };
 

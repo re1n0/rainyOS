@@ -77,6 +77,8 @@ with lib;
 
     ananicy.enable = mkEnableOption "Enable ananicy daemon";
 
+    powerManagement.enable = mkEnableOption "Enable power management";
+
     security = {
       clamav = {
         enable = mkOption {
@@ -256,6 +258,15 @@ with lib;
       rocksmithPatch = mkEnableOption "Adds optional script for patching Rocksmith 2014";
     };
 
+    gaming.opengamepadui = {
+      enable = mkEnableOption "Enable OpenGamepadUI";
+      session = mkOption {
+        type = bool;
+        example = true;
+        description = "Enable OpenGamepadUI's Gamescope session";
+      };
+    };
+
     virtualisation.podman.enable = mkEnableOption "Enable Podman";
   };
 
@@ -291,6 +302,7 @@ with lib;
       };
 
       rainyos.gaming.steam.session = mkDefault cfg.gaming.gamescope.enable;
+      rainyos.gaming.opengamepadui.session = mkDefault cfg.gaming.gamescope.enable;
 
       hardware.nvidia-container-toolkit.enable = mkDefault (
         config.hardware.nvidia.enabled && cfg.virtualisation.podman.enable
