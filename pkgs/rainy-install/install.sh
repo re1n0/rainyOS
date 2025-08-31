@@ -28,6 +28,7 @@ require_cmd nix
 require_cmd jq
 require_cmd git
 require_cmd disko
+require_cmd nixos-facter
 
 confirm() {
   local prompt="${1:-Are you sure?}"
@@ -66,7 +67,11 @@ select device in $device_list "quit"; do
 done
 
 step "Partitioning disk with disko"
-if disko --flake "${FLAKE}#${device}" --mode disko; then
+readonly DISK_FILE="/tmp/disk.nix"
+curl "https://raw.githubusercontent.com/${CONFIG_REPO}/master/hosts/${device}/partitioning.nix" -o "${DISK_FILE}"
+
+
+if disko --mode destroy,format,mount "${DISK_FILE}"; then
   ok "Disk partitioning completed"
 else
   err "disko failed"
@@ -85,9 +90,29 @@ if git clone "https://github.com/${CONFIG_REPO}.git" "${CONFIG_DIR}"; then
     warn "Failed to set origin to SSH URL; keep HTTPS origin"
   fi
 else
-  err "Git clone failed"
+  err "git clone failed"
   exit 1
 fi
+
+step "Generating information about '${device}'"
+readonly HOST_DIR="${CONFIG_DIR}/hosts/${device}"
+readonly FACTER_FILE="${HOST_DIR}/facter.json"
+
+if nixos-facter -o "${FACTER_FILE}"; then
+  ok "Wrote information about '${device}' to ${FACTER_FILE}"
+else
+  err "nixos-facter failed"
+  exit 1
+fi
+
+cd "${HOST_DIR}"
+if git add .; then
+  ok "Added facter.json to staged files"
+else
+  err "git add failed"
+  exit 1
+fi
+cd
 
 step "Installing NixOS"
 

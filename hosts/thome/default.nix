@@ -5,6 +5,8 @@
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
   ];
 
+  isoImage.squashfsCompression = "lz4";
+
   environment.systemPackages = with pkgs; [
     git
     rainy-install

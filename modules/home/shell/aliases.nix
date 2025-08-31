@@ -49,7 +49,7 @@
   pass = "gopass";
 
   # nix
-  ncg = "nh clean all && sudo /run/current-system/bin/switch-to-configuration boot";
+  ncg = "nh clean all -a && sudo /run/current-system/bin/switch-to-configuration boot";
   nrs = "nh os switch -a";
   nrb = "nh os boot -a";
 

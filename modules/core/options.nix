@@ -4,8 +4,8 @@ with lib;
   options.rainyos = with types; {
     configuration = mkOption {
       type = enum [
-        "minimal"
-        "full"
+        "server"
+        "desktop"
         "iso"
       ];
       description = "Sets defaults for other options based on selected value";
@@ -317,11 +317,11 @@ with lib;
       cfg = config.rainyos;
       defaultLocale = cfg.locales.default;
       mpdEnabled = cfg.mpd.enable;
-      isFull = if cfg.configuration == "full" then true else false;
+      isDesktop = cfg.configuration == "desktop";
     in
     {
       # GUI
-      rainyos.gui.enable = mkDefault isFull;
+      rainyos.gui.enable = mkDefault isDesktop;
       rainyos.gui.hyprland.enable = mkDefault cfg.gui.enable;
 
       # System
@@ -341,12 +341,12 @@ with lib;
       };
 
       # Security
-      rainyos.security.clamav.enable = mkDefault isFull;
+      rainyos.security.clamav.enable = mkDefault isDesktop;
 
       # Devices
-      rainyos.audio.enable = mkDefault isFull;
+      rainyos.audio.enable = mkDefault isDesktop;
 
-      rainyos.bluetooth.enable = mkDefault isFull;
+      rainyos.bluetooth.enable = mkDefault isDesktop;
 
       rainyos.keymap.supported = mkDefault [ cfg.keymap.console ];
 
@@ -365,12 +365,12 @@ with lib;
       rainyos.gaming.opengamepadui.session = mkDefault cfg.gaming.gamescope.enable;
 
       # Virtualisation
-      rainyos.virtualisation.podman.enable = mkDefault isFull;
+      rainyos.virtualisation.podman.enable = mkDefault isDesktop;
 
       # Wine
-      rainyos.wine.enable = mkDefault isFull;
+      rainyos.wine.enable = mkDefault isDesktop;
 
       # GPG
-      rainyos.gpg.enable = mkDefault isFull;
+      rainyos.gpg.enable = mkDefault isDesktop;
     };
 }

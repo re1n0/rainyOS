@@ -59,7 +59,7 @@ in
     };
 
     users =
-      if os.configuration == "full" then
+      if os.configuration == "desktop" then
         {
           work = homeSettings "work";
           priv = homeSettings "priv";
@@ -68,13 +68,13 @@ in
         (
           if os.configuration == "iso" then
             {
-              coat =
+              nixos =
                 let
-                  username = "coat";
+                  username = "nixos";
                 in
                 {
                   imports = [
-                    ./../home/${username}
+                    ./../home/iso
                   ];
 
                   home = {
@@ -94,7 +94,7 @@ in
   };
 
   users.users =
-    if os.configuration == "full" then
+    if os.configuration == "desktop" then
       {
         work = userSettings;
         priv = userSettings;
@@ -103,9 +103,8 @@ in
       (
         if os.configuration == "iso" then
           {
-            coat = {
+            nixos = {
               isNormalUser = true;
-              description = os.git.username;
               shell = pkgs.zsh;
               ignoreShellProgramCheck = true;
               openssh.authorizedKeys.keys = os.ssh.authorizedKeys;

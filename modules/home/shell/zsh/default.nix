@@ -1,50 +1,11 @@
-{ pkgs, ... }:
+_:
 let
-  shellAliases = import ./aliases.nix;
+  shellAliases = import ../aliases.nix;
   zplug = import ./zplug.nix;
 in
 {
-  home.packages = with pkgs; [
-    curl
-    dig
-    wget
-
-    fd
-
-    tailspin
-    eza
-    du-dust
-
-    ffmpeg
-
-    killall
-
-    lshw
-    pciutils
-    usbutils
-
-    rsclock
-    astroterm
-    tukai
-
-    tokei
-
-    asak
-
-    yt-dlp
-    ytmdl
-
-    wireguard-tools
-
-    nix-hash-git
-    nix-output-monitor
-    nix-update
-    nixpkgs-review
-
-    grex
-    qrtool
-
-    presenterm
+  imports = [
+    ../cli.nix
   ];
 
   programs.zsh = {

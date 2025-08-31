@@ -16,10 +16,10 @@
     gui.enable = true;
     gui.monitors = [
       {
-        connector = "eDP-1";
-        width = 1920;
-        height = 1080;
-        refresh = 60.0;
+        connector = "HDMI-A-1";
+        width = 2560;
+        height = 1440;
+        refresh = 144.0;
         wide_color = true;
         hdr = true;
       }
@@ -27,14 +27,9 @@
 
     audio.enable = true;
 
-    bluetooth.enable = true;
+    bluetooth.enable = false;
 
-    powerManagement.enable = true;
-
-    tz = {
-      static = "Europe/Amsterdam";
-      automatic = true;
-    };
+    tz.static = "Europe/Amsterdam";
 
     locales = {
       default = "en_US.UTF-8";

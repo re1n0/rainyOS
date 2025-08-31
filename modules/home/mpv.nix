@@ -23,7 +23,10 @@ lib.optionalAttrs os.gui.enable {
       profile = "high-quality";
       hwdec = "auto";
 
-      vo = "dmabuf-wayland";
+      vo = "gpu-next";
+
+      gpu-api = "vulkan";
+      gpu-context = "waylandvk";
 
       fullscreen = true;
 

@@ -34,6 +34,8 @@ lib.mkIf (config.rainyos.configuration != "iso") {
       enable = true;
       pkiBundle = "/var/lib/sbctl";
     };
+
+    supportedFilesystems = [ "ntfs" ];
   };
 
   boot.loader =

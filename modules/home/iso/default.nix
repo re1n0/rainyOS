@@ -3,6 +3,6 @@
   imports = [
     ../editor
     ../fastfetch
-    ../shell
+    ./shell.nix
   ];
 }
