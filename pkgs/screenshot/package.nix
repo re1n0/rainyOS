@@ -1,4 +1,5 @@
 {
+  lib,
   writeShellApplication,
   grim,
   wl-clipboard,
@@ -51,6 +52,9 @@ writeShellApplication {
 
   meta = {
     description = "Make a screenshot of the full screen or a selected part";
+    maintainers = with lib.maintainers; [
+      rein
+    ];
     mainProgram = "screenshot";
   };
 }

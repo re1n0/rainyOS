@@ -1,4 +1,5 @@
 {
+  lib,
   writeShellApplication,
   steam-unwrapped,
 }:
@@ -16,5 +17,8 @@ writeShellApplication {
 
   meta = {
     description = "Close Steam running in gamescope session via Switch to Desktop button";
+    maintainers = with lib.maintainers; [
+      rein
+    ];
   };
 }

@@ -38,6 +38,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
     homepage = "https://github.com/hlsxx/tukai";
     changelog = "https://github.com/hlsxx/tukai/releases/tag/v${finalAttrs.version}";
     license = lib.licenses.mit;
+    maintainers = with lib.maintainers; [
+      rein
+    ];
     mainProgram = "tukai";
   };
 })

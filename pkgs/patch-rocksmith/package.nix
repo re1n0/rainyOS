@@ -38,6 +38,9 @@ writeShellApplication {
     description = "Script to patch Rocksmith 2014";
     homepage = "https://github.com/theNizo/linux_rocksmith";
     license = lib.licenses.gpl3Plus;
+    maintainers = with lib.maintainers; [
+      rein
+    ];
     mainProgram = "patch-rocksmith";
   };
 }

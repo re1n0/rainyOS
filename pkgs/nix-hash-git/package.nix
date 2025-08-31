@@ -1,4 +1,5 @@
 {
+  lib,
   writeShellApplication,
   nix-prefetch-git,
   jq,
@@ -54,6 +55,9 @@ writeShellApplication {
 
   meta = {
     description = "Prefetch and compute SHA256 of a git repository";
+    maintainers = with lib.maintainers; [
+      rein
+    ];
     mainProgram = "nix-hash-git";
   };
 }

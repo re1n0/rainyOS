@@ -1,4 +1,5 @@
 {
+  lib,
   stdenv,
 }:
 stdenv.mkDerivation rec {
@@ -13,5 +14,8 @@ stdenv.mkDerivation rec {
 
   meta = {
     description = "Themes in base24 format";
+    maintainers = with lib.maintainers; [
+      rein
+    ];
   };
 }

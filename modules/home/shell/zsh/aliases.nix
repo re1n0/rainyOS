@@ -42,7 +42,7 @@
 
   # fetch
   ff = "fastfetch";
-  starf = "astroterm -cmu -r 2.0 -i";
+  starf = "astroterm -cmu -r 2.0";
   gitf = "tokei";
 
   # password store
