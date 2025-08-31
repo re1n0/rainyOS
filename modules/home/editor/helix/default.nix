@@ -1,4 +1,10 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  os,
+  lib,
+  ...
+}:
 let
   languages = import ./languages.nix;
   settings = import ./settings.nix;

@@ -73,11 +73,13 @@
   };
 
   outputs =
-    { nixpkgs, ... }@inputs:
+    { self, nixpkgs, ... }@inputs:
     let
       makeConfiguration =
         host: system:
         nixpkgs.lib.nixosSystem {
+          inherit system;
+
           specialArgs = {
             inherit
               inputs
@@ -100,8 +102,11 @@
         };
     in
     {
+      packages.x86_64-linux.default = self.nixosConfigurations.thome.config.system.build.isoImage;
       nixosConfigurations = {
-        laptop = makeConfiguration "laptop" "x86_64-linux";
+        sedna = makeConfiguration "sedna" "x86_64-linux";
+        iris = makeConfiguration "iris" "x86_64-linux";
+        thome = makeConfiguration "thome" "x86_64-linux";
       };
     };
 }

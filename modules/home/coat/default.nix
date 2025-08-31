@@ -1,0 +1,8 @@
+{ ... }:
+{
+  imports = [
+    ../editor
+    ../fastfetch
+    ../shell
+  ];
+}

@@ -7,7 +7,7 @@
 }:
 let
   os = config.rainyos;
-  userGroups = [
+  extraGroups = [
     "adbusers"
     "audio"
     "docker"
@@ -22,10 +22,10 @@ let
   userSettings = {
     isNormalUser = true;
     description = os.git.username;
-    extraGroups = userGroups;
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
     openssh.authorizedKeys.keys = os.ssh.authorizedKeys;
+    inherit extraGroups;
   };
 
   homeSettings = username: {
@@ -35,9 +35,9 @@ let
     ];
 
     home = {
-      username = "${username}";
       homeDirectory = "/home/${username}";
       stateVersion = "25.11";
+      inherit username;
     };
 
     programs.home-manager.enable = true;
@@ -58,16 +58,71 @@ in
         ;
     };
 
-    users = {
-      work = homeSettings "work";
-      priv = homeSettings "priv";
-    };
+    users =
+      if os.configuration == "full" then
+        {
+          work = homeSettings "work";
+          priv = homeSettings "priv";
+        }
+      else
+        (
+          if os.configuration == "iso" then
+            {
+              coat =
+                let
+                  username = "coat";
+                in
+                {
+                  imports = [
+                    ./../home/${username}
+                  ];
+
+                  home = {
+                    homeDirectory = "/home/${username}";
+                    stateVersion = "25.11";
+                    inherit username;
+                  };
+
+                  programs.home-manager.enable = true;
+                };
+            }
+          else
+            {
+
+            }
+        );
   };
 
-  users.users = {
-    work = userSettings;
-    priv = userSettings;
-  };
+  users.users =
+    if os.configuration == "full" then
+      {
+        work = userSettings;
+        priv = userSettings;
+      }
+    else
+      (
+        if os.configuration == "iso" then
+          {
+            coat = {
+              isNormalUser = true;
+              description = os.git.username;
+              shell = pkgs.zsh;
+              ignoreShellProgramCheck = true;
+              openssh.authorizedKeys.keys = os.ssh.authorizedKeys;
+              extraGroups = [
+                "adbusers"
+                "input"
+                "networkmanager"
+                "rtkit"
+                "wheel"
+              ];
+            };
+          }
+        else
+          {
+
+          }
+      );
 
   nix.settings.allowed-users = [
     "priv"

@@ -9,6 +9,8 @@
   facter.reportPath = ./facter.json;
 
   rainyos = {
+    configuration = "full";
+
     secureBoot.enable = true;
 
     gui.enable = true;

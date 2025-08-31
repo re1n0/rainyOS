@@ -5,7 +5,7 @@
 }:
 {
   stylix = {
-    inherit (config.rainyos.gui) enable;
+    enable = true;
     polarity = "dark";
     base16Scheme = "${pkgs.themes}/catppuccin-mocha.yaml";
   };

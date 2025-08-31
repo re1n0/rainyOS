@@ -8,4 +8,5 @@ final: prev: {
   tukai = makePkg final ./tukai;
   screenshot = makePkg final ./screenshot;
   close-steam-session = makePkg final ./close-steam-session;
+  rainy-install = makePkg final ./rainy-install;
 }

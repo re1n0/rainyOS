@@ -2,10 +2,22 @@
 with lib;
 {
   options.rainyos = with types; {
-    secureBoot.enable = mkEnableOption "Enable secure boot via lanzaboote";
+    configuration = mkOption {
+      type = enum [
+        "minimal"
+        "full"
+        "iso"
+      ];
+      description = "Sets defaults for other options based on selected value";
+    };
 
+    # GUI
     gui = {
-      enable = mkEnableOption "Enable graphical interface";
+      enable = mkOption {
+        type = bool;
+        example = false;
+        description = "Enable graphical interface";
+      };
 
       primaryMonitor = mkOption {
         type = int;
@@ -73,24 +85,31 @@ with lib;
       };
     };
 
-    audio.enable = mkEnableOption "Enable audio server";
-
-    ananicy.enable = mkEnableOption "Enable ananicy daemon";
-
-    powerManagement.enable = mkEnableOption "Enable power management";
-
+    # Security
     security = {
       clamav = {
         enable = mkOption {
           type = bool;
-          default = true;
           example = false;
           description = "Enable ClamAV";
         };
       };
     };
 
-    bluetooth.enable = mkEnableOption "Enable Bluetooth";
+    secureBoot.enable = mkEnableOption "Enable secure boot via lanzaboote";
+
+    # Devices
+    audio.enable = mkOption {
+      type = bool;
+      example = false;
+      description = "Enable audio server";
+    };
+
+    bluetooth.enable = mkOption {
+      type = bool;
+      example = false;
+      description = "Enable Bluetooth";
+    };
 
     rt.enable = mkEnableOption "Enable Ray Tracing support";
 
@@ -105,6 +124,11 @@ with lib;
         description = "List of authorized keys for SSH";
       };
     };
+
+    # System
+    ananicy.enable = mkEnableOption "Enable ananicy daemon";
+
+    powerManagement.enable = mkEnableOption "Enable power management";
 
     locales = {
       default = mkOption {
@@ -214,6 +238,7 @@ with lib;
       automatic = mkEnableOption "Enable a daemon that'll update timezone based on your localization by utilising geoclue2";
     };
 
+    # Git
     git = {
       username = mkOption {
         type = str;
@@ -232,6 +257,7 @@ with lib;
       };
     };
 
+    # Music
     mpd = {
       enable = mkEnableOption "Enable MPD service";
       rmpc = mkOption {
@@ -246,6 +272,7 @@ with lib;
       };
     };
 
+    # Games
     gaming.gamescope.enable = mkEnableOption "Enable Gamescope";
 
     gaming.steam = {
@@ -267,7 +294,22 @@ with lib;
       };
     };
 
+    # Virtualisation
     virtualisation.podman.enable = mkEnableOption "Enable Podman";
+
+    # Wine
+    wine.enable = mkOption {
+      type = bool;
+      example = true;
+      description = "Enable Wine";
+    };
+
+    # GPG
+    gpg.enable = mkOption {
+      type = bool;
+      example = true;
+      description = "Enable GPG and pinentry";
+    };
   };
 
   config =
@@ -275,10 +317,14 @@ with lib;
       cfg = config.rainyos;
       defaultLocale = cfg.locales.default;
       mpdEnabled = cfg.mpd.enable;
+      isFull = if cfg.configuration == "full" then true else false;
     in
     {
+      # GUI
+      rainyos.gui.enable = mkDefault isFull;
       rainyos.gui.hyprland.enable = mkDefault cfg.gui.enable;
 
+      # System
       rainyos.locales.extraSettings = {
         ctype = mkDefault defaultLocale;
         address = mkDefault defaultLocale;
@@ -294,18 +340,37 @@ with lib;
         collate = mkDefault defaultLocale;
       };
 
+      # Security
+      rainyos.security.clamav.enable = mkDefault isFull;
+
+      # Devices
+      rainyos.audio.enable = mkDefault isFull;
+
+      rainyos.bluetooth.enable = mkDefault isFull;
+
       rainyos.keymap.supported = mkDefault [ cfg.keymap.console ];
 
+      hardware.nvidia-container-toolkit.enable = mkDefault (
+        config.hardware.nvidia.enabled && cfg.virtualisation.podman.enable
+      );
+
+      # Music
       rainyos.mpd = {
         rmpc = mkDefault mpdEnabled;
         mpris = mkDefault mpdEnabled;
       };
 
+      # Gaming
       rainyos.gaming.steam.session = mkDefault cfg.gaming.gamescope.enable;
       rainyos.gaming.opengamepadui.session = mkDefault cfg.gaming.gamescope.enable;
 
-      hardware.nvidia-container-toolkit.enable = mkDefault (
-        config.hardware.nvidia.enabled && cfg.virtualisation.podman.enable
-      );
+      # Virtualisation
+      rainyos.virtualisation.podman.enable = mkDefault isFull;
+
+      # Wine
+      rainyos.wine.enable = mkDefault isFull;
+
+      # GPG
+      rainyos.gpg.enable = mkDefault isFull;
     };
 }
