@@ -28,4 +28,20 @@
       name = "Noto Color Emoji";
     };
   };
+
+  stylix.icons = {
+    enable = true;
+
+    package = pkgs.kdePackages.breeze-icons;
+
+    dark = "breeze-dark";
+    light = "breeze";
+  };
+
+  stylix.cursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
+
+    size = 32;
+  };
 }

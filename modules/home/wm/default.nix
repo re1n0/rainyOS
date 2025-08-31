@@ -2,7 +2,6 @@
 lib.optionalAttrs os.gui.enable {
   imports = [
     ./hyprland
-    ./pointer.nix
     ./swww.nix
   ];
 }

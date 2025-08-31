@@ -31,4 +31,6 @@ lib.optionalAttrs os.gui.hyprland.enable {
 
     inherit settings;
   };
+
+  home.pointerCursor.hyprcursor.enable = true;
 }
