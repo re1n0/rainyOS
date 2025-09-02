@@ -36,6 +36,7 @@
 
     wireguard-tools
 
+    nix-tree
     nix-hash-git
     nix-output-monitor
     nix-update

@@ -364,9 +364,6 @@ with lib;
       rainyos.gaming.steam.session = mkDefault cfg.gaming.gamescope.enable;
       rainyos.gaming.opengamepadui.session = mkDefault cfg.gaming.gamescope.enable;
 
-      # Virtualisation
-      rainyos.virtualisation.podman.enable = mkDefault isDesktop;
-
       # Wine
       rainyos.wine.enable = mkDefault isDesktop;
 
