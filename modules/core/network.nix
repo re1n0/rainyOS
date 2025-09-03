@@ -1,8 +1,7 @@
-{
-  lib,
-  host,
-  options,
-  ...
+{ lib
+, host
+, options
+, ...
 }:
 {
   networking = {

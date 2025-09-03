@@ -1,8 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
+{ config
+, lib
+, pkgs
+, ...
 }:
 lib.mkIf config.rainyos.gpg.enable {
   programs.gnupg.agent = {

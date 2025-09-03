@@ -1,9 +1,8 @@
-{
-  pkgs,
-  inputs,
-  config,
-  os,
-  ...
+{ pkgs
+, inputs
+, config
+, os
+, ...
 }:
 let
   inherit (config.home) username;

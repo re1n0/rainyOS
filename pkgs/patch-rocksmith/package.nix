@@ -1,15 +1,15 @@
-{
-  lib,
-  writeShellApplication,
-  bash,
-  coreutils,
-  findutils,
-  gawk,
-  gnutar,
-  unzip,
-  wget,
-  steam-run,
-  fetchFromGitHub,
+{ lib
+, writeShellApplication
+, bash
+, coreutils
+, findutils
+, gawk
+, gnutar
+, unzip
+, wget
+, steam-run
+, fetchFromGitHub
+,
 }:
 writeShellApplication {
   name = "patch-rocksmith";
@@ -26,12 +26,13 @@ writeShellApplication {
   ];
 
   text =
-    fetchFromGitHub {
-      owner = "theNizo";
-      repo = "linux_rocksmith";
-      rev = "6914aa88aa836a7b0abfeeb36ffec4167eb7aa95";
-      hash = "sha256-XJ5hYe7Gob5VsnUYW3Gq/OgHykBYnfjsqJajFKbrcgs=";
-    }
+    fetchFromGitHub
+      {
+        owner = "theNizo";
+        repo = "linux_rocksmith";
+        rev = "6914aa88aa836a7b0abfeeb36ffec4167eb7aa95";
+        hash = "sha256-XJ5hYe7Gob5VsnUYW3Gq/OgHykBYnfjsqJajFKbrcgs=";
+      }
     + "/scripts/patch-nixos.sh";
 
   meta = {

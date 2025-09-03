@@ -1,9 +1,8 @@
-{
-  pkgs,
-  inputs,
-  host,
-  config,
-  ...
+{ pkgs
+, inputs
+, host
+, config
+, ...
 }:
 let
   os = config.rainyos;
@@ -87,9 +86,7 @@ in
                 };
             }
           else
-            {
-
-            }
+            { }
         );
   };
 
@@ -118,9 +115,7 @@ in
             };
           }
         else
-          {
-
-          }
+          { }
       );
 
   nix.settings.allowed-users = [

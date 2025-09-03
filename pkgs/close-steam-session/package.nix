@@ -1,7 +1,7 @@
-{
-  lib,
-  writeShellApplication,
-  steam-unwrapped,
+{ lib
+, writeShellApplication
+, steam-unwrapped
+,
 }:
 writeShellApplication {
   name = "steamos-session-select";

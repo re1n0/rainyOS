@@ -1,8 +1,7 @@
-{
-  pkgs,
-  lib,
-  os,
-  ...
+{ pkgs
+, lib
+, os
+, ...
 }:
 let
   mimeApps = import ./mimeapps.nix;

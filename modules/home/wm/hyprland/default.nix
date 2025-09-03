@@ -1,8 +1,7 @@
-{
-  lib,
-  os,
-  pkgs,
-  ...
+{ lib
+, os
+, pkgs
+, ...
 }:
 let
   settings = import ./settings.nix os;

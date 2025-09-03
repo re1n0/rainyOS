@@ -1,8 +1,8 @@
-{
-  lib,
-  writeShellApplication,
-  nix-prefetch-git,
-  jq,
+{ lib
+, writeShellApplication
+, nix-prefetch-git
+, jq
+,
 }:
 writeShellApplication {
   name = "nix-hash-git";

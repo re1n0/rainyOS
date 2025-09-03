@@ -34,15 +34,17 @@ settings:
     use_cpu_buffer = true;
   };
 
-  monitorv2 = map (m: {
-    output = m.connector;
-    mode = "${builtins.toString m.width}x${builtins.toString m.height}@${builtins.toString m.refresh}";
-    inherit (m) position;
-    inherit (m) scale;
-    supports_wide_color = m.wide_color;
-    supports_hdr = m.hdr;
-    bitdepth = if m.wide_color then 10 else 8;
-  }) settings.gui.monitors;
+  monitorv2 = map
+    (m: {
+      output = m.connector;
+      mode = "${builtins.toString m.width}x${builtins.toString m.height}@${builtins.toString m.refresh}";
+      inherit (m) position;
+      inherit (m) scale;
+      supports_wide_color = m.wide_color;
+      supports_hdr = m.hdr;
+      bitdepth = if m.wide_color then 10 else 8;
+    })
+    settings.gui.monitors;
 
   general = {
     border_size = 3;
@@ -141,4 +143,4 @@ settings:
     no_donation_nag = true;
   };
 }
-// binds
+  // binds
