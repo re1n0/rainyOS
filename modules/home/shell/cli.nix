@@ -40,6 +40,7 @@
     nix-hash-git
     nix-output-monitor
     nix-update
+    nixpkgs-fmt
     nixpkgs-review
 
     grex
