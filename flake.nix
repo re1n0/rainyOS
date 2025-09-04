@@ -96,7 +96,6 @@
             inputs.home-manager.nixosModules.home-manager
             inputs.lanzaboote.nixosModules.lanzaboote
             inputs.nix-gaming.nixosModules.pipewireLowLatency
-            inputs.nix-gaming.nixosModules.wine
             inputs.stylix.nixosModules.stylix
           ];
         };

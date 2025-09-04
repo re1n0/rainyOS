@@ -19,6 +19,5 @@
     ./stylix.nix
     ./system.nix
     ./user.nix
-    ./wine.nix
   ];
 }
