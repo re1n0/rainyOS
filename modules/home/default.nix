@@ -2,6 +2,7 @@
 {
   imports = [
     ./apps.nix
+    ./bluetooth.nix
     ./bottom
     ./browser
     ./easyeffects.nix
