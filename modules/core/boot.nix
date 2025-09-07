@@ -6,7 +6,7 @@
 let
   cfg = config.rainyos;
 in
-lib.mkIf (config.rainyos.configuration != "iso") {
+lib.mkIf (config.rainyos.configuration == "desktop") {
   environment.systemPackages = with pkgs; [
     sbctl
   ];

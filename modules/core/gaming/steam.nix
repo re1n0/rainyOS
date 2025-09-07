@@ -54,7 +54,7 @@ lib.mkIf cfg.steam.enable {
     with pkgs;
     [
       vulkan-helper
-      nexusmods-app-unfree
+      nexusmods-app
     ]
     ++ lib.optional cfg.steam.rocksmithPatch patch-rocksmith;
 }
