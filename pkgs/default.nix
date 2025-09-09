@@ -8,4 +8,6 @@ final: prev: {
   screenshot = makePkg final ./screenshot;
   close-steam-session = makePkg final ./close-steam-session;
   rainy-install = makePkg final ./rainy-install;
+  # yin = makePkg final ./yin;
+  sysinfo = makePkg final ./sysinfo;
 }

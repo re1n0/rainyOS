@@ -46,6 +46,10 @@
     grex
     qrtool
 
+    asciinema_3
+    asciinema-agg
     presenterm
+
+    sysinfo
   ];
 }
