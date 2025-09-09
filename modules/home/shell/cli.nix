@@ -38,6 +38,7 @@
 
     nix-tree
     nix-hash-git
+    nix-hash-url
     nix-output-monitor
     nix-update
     nixpkgs-fmt

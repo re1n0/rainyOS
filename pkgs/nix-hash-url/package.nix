@@ -1,27 +1,25 @@
 { lib
 , writeShellApplication
 , nix-prefetch-git
-, jq
 ,
 }:
 writeShellApplication {
-  name = "nix-hash-git";
+  name = "nix-hash-url";
 
   runtimeInputs = [
     nix-prefetch-git
-    jq
   ];
 
   text = # bash
     ''
       POSITIONAL_ARGS=()
-      REVISION=""
+      UNPACK=""
 
       while [[ $# -gt 0 ]]; do
         case $1 in
-          --rev)
-            REVISION="$2"
-            shift 2
+          --unpack)
+            UNPACK="--unpack"
+            shift
             ;;
           -*)
             echo "Unknown option: $1"
@@ -39,23 +37,21 @@ writeShellApplication {
         exit 1
       fi
 
-      PREFETCH="nix-prefetch-git --url ''${POSITIONAL_ARGS[0]} --quiet"
+      PREFETCH="nix-prefetch-url $UNPACK --quiet ''${POSITIONAL_ARGS[0]}"
 
-      if [ -n "$REVISION" ]; then
-        PREFETCH+=" --rev $REVISION"
-      fi
+      OUTPUT=$(eval "$PREFETCH")
 
-      HASH=$(eval "$PREFETCH | jq -r '.sha256'")
+      HASH=$(echo "$OUTPUT" | tail -n 1)
 
       nix hash to-sri sha256:"$HASH"
       exit 0
     '';
 
   meta = {
-    description = "Prefetch and compute SHA256 of a git repository";
+    description = "Prefetch and compute SHA256 of a file fetched from an URL";
     maintainers = with lib.maintainers; [
       rein
     ];
-    mainProgram = "nix-hash-git";
+    mainProgram = "nix-hash-url";
   };
 }

@@ -3,6 +3,7 @@ let
 in
 final: prev: {
   nix-hash-git = makePkg final ./nix-hash-git;
+  nix-hash-url = makePkg final ./nix-hash-url;
   patch-rocksmith = makePkg final ./patch-rocksmith;
   themes = makePkg final ./themes;
   screenshot = makePkg final ./screenshot;
