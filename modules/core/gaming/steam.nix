@@ -18,7 +18,13 @@ lib.mkIf cfg.steam.enable {
     ];
 
     package = pkgs.steam.override {
-      extraLibraries = pkgs': with pkgs'; (lib.optional cfg.steam.rocksmithPatch pipewire.jack);
+      extraLibraries =
+        pkgs':
+          with pkgs';
+          (lib.optionals cfg.steam.rocksmithPatch [
+            pipewire.jack
+            rs-autoconnect
+          ]);
       extraPkgs =
         pkgs': with pkgs'; [ close-steam-session ] ++ (lib.optional cfg.steam.rocksmithPatch wineasio);
     };

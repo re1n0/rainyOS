@@ -1,14 +1,14 @@
 { lib
-, zig_0_13
+, zig_0_14
 , stdenv
 , fetchFromGitHub
 , pkg-config
 , pixman
-, versionCheckHook
-, writableTmpDirAsHomeHook
-, nix-update-script
 , lz4
 , ffmpeg
+, stb
+, wayland-protocols
+, wayland-scanner
 , callPackage
 ,
 }:
@@ -23,30 +23,26 @@ stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-G91kaQuJ7t3isKmpLGtyWYaMsNC2XJAEDCRHXVcgXwI=";
   };
 
+  deps = callPackage ./deps.nix {
+    name = "${finalAttrs.pname}-cache-${finalAttrs.version}";
+    zig = zig_0_14;
+  };
+
   nativeBuildInputs = [
     pkg-config
-    zig_0_13.hook
-    writableTmpDirAsHomeHook
+    wayland-protocols
+    wayland-scanner
+    zig_0_14.hook
   ];
 
   buildInputs = [
     pixman
     lz4
     ffmpeg
+    stb
   ];
 
-  nativeInstallCheckInputs = [
-    versionCheckHook
-  ];
-
-  doInstallCheck = true;
-
-  passthru.updateScript = nix-update-script { };
-
-  deps = callPackage ./deps.nix {
-    name = "${finalAttrs.pname}-cache-${finalAttrs.version}";
-    zig = zig_0_13;
-  };
+  dontConfigure = true;
 
   zigBuildFlags = [
     "--system"

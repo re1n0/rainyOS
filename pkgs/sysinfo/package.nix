@@ -4,8 +4,7 @@
 , pkg-config
 , # versionCheckHook,
   # nix-update-script,
-  gcc
-, ncurses
+  ncurses
 ,
 }:
 stdenv.mkDerivation (finalAttrs: {
@@ -21,7 +20,6 @@ stdenv.mkDerivation (finalAttrs: {
 
   nativeBuildInputs = [
     pkg-config
-    gcc
   ];
 
   buildInputs = [
