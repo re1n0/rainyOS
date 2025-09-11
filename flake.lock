@@ -393,6 +393,22 @@
         "type": "github"
       }
     },
+    "linux-rocksmith": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1750602317,
+        "narHash": "sha256-XJ5hYe7Gob5VsnUYW3Gq/OgHykBYnfjsqJajFKbrcgs=",
+        "owner": "theNizo",
+        "repo": "linux_rocksmith",
+        "rev": "6914aa88aa836a7b0abfeeb36ffec4167eb7aa95",
+        "type": "github"
+      },
+      "original": {
+        "owner": "theNizo",
+        "repo": "linux_rocksmith",
+        "type": "github"
+      }
+    },
     "nix-gaming": {
       "inputs": {
         "flake-parts": [
@@ -503,6 +519,34 @@
       "original": {
         "owner": "nix-community",
         "repo": "nixos-facter-modules",
+        "type": "github"
+      }
+    },
+    "nixos-rocksmith": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "linux-rocksmith": "linux-rocksmith",
+        "nix-gaming": [
+          "nix-gaming"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rs-linux-autoconnect": "rs-linux-autoconnect"
+      },
+      "locked": {
+        "lastModified": 1757623557,
+        "narHash": "sha256-onwbV3lzAsVqoIu9A3KQyj4/YpFQLhAmpwiXRgF2zJ0=",
+        "owner": "re1n0",
+        "repo": "nixos-rocksmith",
+        "rev": "9d99e787a742d587ef4eecebe5a961d78319bab4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "re1n0",
+        "repo": "nixos-rocksmith",
         "type": "github"
       }
     },
@@ -657,9 +701,26 @@
         "nixago": "nixago",
         "nixago-exts": "nixago-exts",
         "nixos-facter-modules": "nixos-facter-modules",
+        "nixos-rocksmith": "nixos-rocksmith",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-wayland": "nixpkgs-wayland",
         "stylix": "stylix"
+      }
+    },
+    "rs-linux-autoconnect": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1753454170,
+        "narHash": "sha256-Uk4J2ZGHZFI6RX7pmGbdgxUWWdOegsNtJLc/aeBnj54=",
+        "owner": "KczBen",
+        "repo": "rs-linux-autoconnect",
+        "rev": "09a3f0fd0492573dd48468ab413626edd0cba757",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KczBen",
+        "repo": "rs-linux-autoconnect",
+        "type": "github"
       }
     },
     "rust-overlay": {

@@ -70,6 +70,13 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-rocksmith = {
+      url = "github:re1n0/nixos-rocksmith";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.nix-gaming.follows = "nix-gaming";
+    };
   };
 
   outputs =
@@ -95,7 +102,7 @@
             inputs.nixos-facter-modules.nixosModules.facter
             inputs.home-manager.nixosModules.home-manager
             inputs.lanzaboote.nixosModules.lanzaboote
-            inputs.nix-gaming.nixosModules.pipewireLowLatency
+            inputs.nixos-rocksmith.nixosModules.default
             inputs.stylix.nixosModules.stylix
           ];
         };

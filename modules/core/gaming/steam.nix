@@ -17,20 +17,15 @@ lib.mkIf cfg.steam.enable {
       proton-ge-custom
     ];
 
-    package = pkgs.steam.override {
-      extraLibraries =
-        pkgs':
-          with pkgs';
-          (lib.optionals cfg.steam.rocksmithPatch [
-            pipewire.jack
-            rs-autoconnect
-          ]);
+    package = (if cfg.steam.rocksmithPatch then pkgs.steamRocksmith else pkgs.steam).override {
       extraPkgs =
         pkgs': with pkgs'; [ close-steam-session ] ++ (lib.optional cfg.steam.rocksmithPatch wineasio);
     };
 
     # extest.enable = true;
     protontricks.enable = true;
+
+    rocksmithPatch.enable = true;
   };
 
   programs.steam.gamescopeSession = lib.mkIf cfg.steam.session {
@@ -56,11 +51,8 @@ lib.mkIf cfg.steam.enable {
     };
   };
 
-  environment.systemPackages =
-    with pkgs;
-    [
-      vulkan-helper
-      nexusmods-app
-    ]
-    ++ lib.optional cfg.steam.rocksmithPatch patch-rocksmith;
+  environment.systemPackages = with pkgs; [
+    vulkan-helper
+    nexusmods-app
+  ];
 }
