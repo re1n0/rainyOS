@@ -83,7 +83,6 @@
       steam = {
         enable = true;
         session = true;
-        rocksmithPatch = true;
       };
     };
 

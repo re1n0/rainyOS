@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 let
   cfg = config.rainyos.gaming;
@@ -25,7 +26,7 @@ lib.mkIf cfg.steam.enable {
     # extest.enable = true;
     protontricks.enable = true;
 
-    rocksmithPatch.enable = true;
+    rocksmithPatch.enable = cfg.steam.rocksmithPatch;
   };
 
   programs.steam.gamescopeSession = lib.mkIf cfg.steam.session {
