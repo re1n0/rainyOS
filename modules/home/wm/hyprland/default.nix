@@ -1,7 +1,8 @@
-{ lib
-, os
-, pkgs
-, ...
+{
+  lib,
+  os,
+  pkgs,
+  ...
 }:
 let
   settings = import ./settings.nix os;
@@ -25,7 +26,7 @@ lib.optionalAttrs os.gui.hyprland.enable {
     };
 
     plugins = with pkgs.hyprlandPlugins; [
-      hypr-dynamic-cursors
+      # hypr-dynamic-cursors
     ];
 
     inherit settings;
