@@ -1,5 +1,4 @@
-{ pkgs
-, inputs
+{ inputs
 , ...
 }:
 {
@@ -11,7 +10,6 @@
   };
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-  nix.package = pkgs.lix;
   nix.settings = {
     experimental-features = [
       "nix-command"

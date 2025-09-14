@@ -23,10 +23,7 @@ settings:
     sensitivity = 0;
   };
 
-  gestures = {
-    workspace_swipe = 1;
-    workspace_swipe_min_speed_to_force = 5;
-  };
+  gestures.workspace_swipe_min_speed_to_force = 15;
 
   cursor = {
     sync_gsettings_theme = true;
