@@ -38,6 +38,7 @@ in
         return-youtube-dislikes
         shiori
         sponsorblock
+        steam-database
         stylus
         to-deepl
         tridactyl
