@@ -31,6 +31,8 @@ in
         consent-o-matic
         fastforwardteam
         ff2mpv
+        foxyproxy-standard
+        github-file-icons
         gopass-bridge
         libredirect
         localcdn

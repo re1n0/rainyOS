@@ -52,5 +52,7 @@
     presenterm
 
     sysinfo
+
+    timg
   ];
 }

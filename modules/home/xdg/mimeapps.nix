@@ -7,7 +7,7 @@
       pdfViewer = "org.pwmt.zathura-pdf-mupdf.desktop";
       officeSuite = "startcenter.desktop";
       fileManager = "yazi.desktop";
-      term = "kitty.desktop";
+      term = "com.mitchellh.ghostty.desktop";
     in
     {
       "application/epub+zip" = pdfViewer;

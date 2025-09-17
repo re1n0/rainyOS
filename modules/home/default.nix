@@ -12,7 +12,7 @@
     ./git.nix
     ./gitui.nix
     ./imv.nix
-    ./kitty.nix
+    ./ghostty.nix
     ./mpd
     ./mpv.nix
     ./nh.nix

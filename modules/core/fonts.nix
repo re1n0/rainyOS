@@ -24,7 +24,7 @@ lib.mkIf config.rainyos.gui.enable {
       monospace = [ "Mononoki Nerd Font" ];
       emoji = [
         "Noto Color Emoji"
-        "Noto Monochrome Emoji"
+        "Noto Emoji"
       ];
     };
   };

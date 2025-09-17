@@ -2,8 +2,8 @@
   # misc
   q = "exit";
   c = "clear";
-  icat = "kitty icat";
-  s = "kitten ssh";
+  icat = "timg -p k";
+  s = "ssh";
 
   # ls
   exa = "eza --icons --git";
