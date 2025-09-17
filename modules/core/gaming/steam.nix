@@ -17,9 +17,23 @@ lib.mkIf cfg.steam.enable {
       proton-ge-custom
     ];
 
-    package = (if cfg.steam.rocksmithPatch then pkgs.steamRocksmith else pkgs.steam).override {
+    package = pkgs.steam.override {
+      extraLibraries =
+        pkgs':
+          with pkgs';
+          [ ]
+          ++ (lib.optionals cfg.steam.rocksmithPatch [
+            pipewire.jack
+            rs-autoconnect
+          ]);
       extraPkgs =
-        pkgs': with pkgs'; [ close-steam-session ] ++ (lib.optional cfg.steam.rocksmithPatch wineasio);
+        pkgs':
+          with pkgs';
+          [ close-steam-session ]
+          ++ (lib.optionals cfg.steam.rocksmithPatch [
+            patch-rocksmith
+            wineasio
+          ]);
     };
 
     # extest.enable = true;

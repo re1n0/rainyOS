@@ -10,4 +10,5 @@ final: prev: {
   rainy-install = makePkg final ./rainy-install;
   yin = makePkg final ./yin;
   sysinfo = makePkg final ./sysinfo;
+  steam = makePkg final ./steam;
 }

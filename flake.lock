@@ -537,11 +537,11 @@
         "rs-linux-autoconnect": "rs-linux-autoconnect"
       },
       "locked": {
-        "lastModified": 1757705551,
-        "narHash": "sha256-3yLWNEz0svJnFVxYtbqjm1SXEO9PyDAITu59+5ADJu0=",
+        "lastModified": 1758133507,
+        "narHash": "sha256-EZcdpET6I7uQPgvoYQT9Ldhqdzs5I/3sXZaVN/l9O2s=",
         "owner": "re1n0",
         "repo": "nixos-rocksmith",
-        "rev": "13f16d83343dd81ac1ef43af5a69b99868507a90",
+        "rev": "d53e6d254acc5bb4300003021b62d2a88630d18b",
         "type": "github"
       },
       "original": {
