@@ -59,6 +59,7 @@ let
               glibc_multi.bin
               xz
               zenity
+              close-steam-session
 
               # calls xdg-open occasionally
               handlr-regex
@@ -113,6 +114,8 @@ let
               # not documented, used for network status things in Big Picture
               # FIXME: figure out how to only build libnm?
               libcap # not documented, required by srt-bwrap
+
+              freetype
             ]
             ++ extraLibraries pkgs;
 

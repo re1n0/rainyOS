@@ -1,7 +1,8 @@
-{ config
-, pkgs
-, lib
-, ...
+{
+  config,
+  pkgs,
+  lib,
+  ...
 }:
 let
   cfg = config.rainyos.gaming;
@@ -20,20 +21,18 @@ lib.mkIf cfg.steam.enable {
     package = pkgs.steam.override {
       extraLibraries =
         pkgs':
-          with pkgs';
-          [ ]
-          ++ (lib.optionals cfg.steam.rocksmithPatch [
-            pipewire.jack
-            rs-autoconnect
-          ]);
+        with pkgs';
+        (lib.optionals cfg.steam.rocksmithPatch [
+          pipewire.jack
+          rs-autoconnect
+        ]);
       extraPkgs =
         pkgs':
-          with pkgs';
-          [ close-steam-session ]
-          ++ (lib.optionals cfg.steam.rocksmithPatch [
-            patch-rocksmith
-            wineasio
-          ]);
+        with pkgs';
+        (lib.optionals cfg.steam.rocksmithPatch [
+          patch-rocksmith
+          wineasio
+        ]);
     };
 
     # extest.enable = true;
@@ -68,5 +67,6 @@ lib.mkIf cfg.steam.enable {
   environment.systemPackages = with pkgs; [
     vulkan-helper
     nexusmods-app
+    freetype
   ];
 }

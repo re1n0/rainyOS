@@ -31,6 +31,8 @@
 
     asak
 
+    timg
+
     yt-dlp
     ytmdl
 
@@ -50,9 +52,5 @@
     asciinema_3
     asciinema-agg
     presenterm
-
-    sysinfo
-
-    timg
   ];
 }
