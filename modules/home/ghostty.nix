@@ -26,6 +26,8 @@ lib.optionalAttrs os.gui.enable {
       shell-integration-features = [
         "sudo"
         "title"
+        "ssh-env"
+        "ssh-terminfo"
       ];
 
       quit-after-last-window-closed = true;
