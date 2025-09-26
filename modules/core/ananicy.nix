@@ -1,7 +1,8 @@
-{ pkgs
-, lib
-, config
-, ...
+{
+  pkgs,
+  lib,
+  config,
+  ...
 }:
 lib.mkIf config.rainyos.ananicy.enable {
   services.ananicy = {

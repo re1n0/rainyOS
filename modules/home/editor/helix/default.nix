@@ -1,6 +1,7 @@
-{ pkgs
-, config
-, ...
+{
+  pkgs,
+  config,
+  ...
 }:
 let
   languages = import ./languages.nix;
@@ -10,9 +11,8 @@ in
 {
   home.packages = with pkgs; [
     deadnix
-    nil
+    nixd
     nixfmt-tree
-    nixfmt-rfc-style
     statix
 
     tombi

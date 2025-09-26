@@ -1,9 +1,10 @@
-{ pkgs
-, inputs
-, config
-, os
-, lib
-, ...
+{
+  pkgs,
+  inputs,
+  config,
+  os,
+  lib,
+  ...
 }:
 let
   inherit (config.home) username;
@@ -14,11 +15,9 @@ let
   mkAutoconfigJs =
     prefs:
     lib.concatStrings (
-      lib.mapAttrsToList
-        (name: value: ''
-          lockPref("${name}", ${builtins.toJSON value}); 
-        '')
-        prefs
+      lib.mapAttrsToList (name: value: ''
+        lockPref("${name}", ${builtins.toJSON value}); 
+      '') prefs
     );
 in
 {
@@ -73,5 +72,8 @@ in
     };
   };
 
-  stylix.targets.librewolf.profileNames = [ "${username}" ];
+  stylix.targets.librewolf = {
+    profileNames = [ "${username}" ];
+    colorTheme.enable = true;
+  };
 }

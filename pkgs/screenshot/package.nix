@@ -1,10 +1,10 @@
-{ lib
-, writeShellApplication
-, grim
-, wl-clipboard
-, libnotify
-, slurp
-,
+{
+  lib,
+  writeShellApplication,
+  grim,
+  wl-clipboard,
+  libnotify,
+  slurp,
 }:
 writeShellApplication {
   name = "screenshot";

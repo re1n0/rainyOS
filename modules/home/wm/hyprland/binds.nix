@@ -38,21 +38,20 @@ in
     "$super, F5, exec, brightnessctl set 5%+"
   ]
   ++ (builtins.concatLists (
-    builtins.genList
-      (
-        x:
-        let
-          ws =
-            let
-              c = (x + 1) / 10;
-            in
-            toString (x + 1 - (c * 10));
-        in
-        [
-          "$super, ${ws}, workspace, ${toString (x + 1)}"
-          "$superMod, ${ws}, movetoworkspace, ${toString (x + 1)}"
-        ]
-      ) 10
+    builtins.genList (
+      x:
+      let
+        ws =
+          let
+            c = (x + 1) / 10;
+          in
+          toString (x + 1 - (c * 10));
+      in
+      [
+        "$super, ${ws}, workspace, ${toString (x + 1)}"
+        "$superMod, ${ws}, movetoworkspace, ${toString (x + 1)}"
+      ]
+    ) 10
   ));
 
   bindm = [ "$super, mouse:272, movewindow" ];

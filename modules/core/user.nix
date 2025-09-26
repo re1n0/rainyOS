@@ -1,8 +1,9 @@
-{ pkgs
-, inputs
-, host
-, config
-, ...
+{
+  pkgs,
+  inputs,
+  host,
+  config,
+  ...
 }:
 let
   os = config.rainyos;

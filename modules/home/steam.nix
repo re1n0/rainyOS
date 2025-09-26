@@ -1,8 +1,9 @@
-{ pkgs
-, config
-, lib
-, os
-, ...
+{
+  pkgs,
+  config,
+  lib,
+  os,
+  ...
 }:
 
 lib.optionalAttrs os.gaming.steam.enable {

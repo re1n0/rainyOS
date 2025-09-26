@@ -1,6 +1,7 @@
-{ lib
-, os
-, ...
+{
+  lib,
+  os,
+  ...
 }:
 lib.optionalAttrs os.mpd.rmpc {
   programs.rmpc.enable = true;

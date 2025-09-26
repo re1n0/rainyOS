@@ -1,11 +1,11 @@
-{ lib
-, stdenv
-, fetchFromGitHub
-, pkg-config
-, # versionCheckHook,
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  pkg-config,
+  # versionCheckHook,
   # nix-update-script,
-  ncurses
-,
+  ncurses,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "sysinfo";

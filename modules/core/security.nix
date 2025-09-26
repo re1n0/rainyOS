@@ -1,6 +1,7 @@
-{ lib
-, config
-, ...
+{
+  lib,
+  config,
+  ...
 }:
 lib.mkIf config.rainyos.security.clamav.enable {
   services = {

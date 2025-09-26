@@ -1,7 +1,7 @@
-{ lib
-, writeShellApplication
-, nix-prefetch-git
-,
+{
+  lib,
+  writeShellApplication,
+  nix-prefetch-git,
 }:
 writeShellApplication {
   name = "nix-hash-url";

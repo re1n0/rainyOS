@@ -1,14 +1,14 @@
-{ lib
-, writeShellApplication
-, git
-, jq
-, nix
-, nixos-install-tools
-, disko
-, nixos-facter
-, coreutils
-, curl
-,
+{
+  lib,
+  writeShellApplication,
+  git,
+  jq,
+  nix,
+  nixos-install-tools,
+  disko,
+  nixos-facter,
+  coreutils,
+  curl,
 }:
 writeShellApplication {
   name = "rainy-install";

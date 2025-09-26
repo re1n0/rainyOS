@@ -1,16 +1,16 @@
-{ lib
-, zig_0_14
-, stdenv
-, fetchFromGitHub
-, pkg-config
-, pixman
-, lz4
-, ffmpeg
-, stb
-, wayland-protocols
-, wayland-scanner
-, callPackage
-,
+{
+  lib,
+  zig_0_14,
+  stdenv,
+  fetchFromGitHub,
+  pkg-config,
+  pixman,
+  lz4,
+  ffmpeg,
+  stb,
+  wayland-protocols,
+  wayland-scanner,
+  callPackage,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "yin";

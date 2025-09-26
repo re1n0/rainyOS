@@ -43,7 +43,6 @@
     nix-hash-url
     nix-output-monitor
     nix-update
-    nixpkgs-fmt
     nixpkgs-review
 
     grex
