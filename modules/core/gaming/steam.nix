@@ -14,7 +14,7 @@ lib.mkIf cfg.steam.enable {
 
     extraCompatPackages = with pkgs; [
       luxtorpeda
-      proton-cachyos
+      proton-cachyos_x86_64_v4
       proton-ge-custom
     ];
 
