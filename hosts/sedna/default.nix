@@ -19,7 +19,7 @@
         connector = "eDP-1";
         width = 1920;
         height = 1080;
-        refresh = 60.0;
+        refresh = 60;
         wide_color = true;
         hdr = true;
       }

@@ -49,8 +49,8 @@ with lib;
           };
 
           refresh = mkOption {
-            type = float;
-            example = 60.0;
+            type = int;
+            example = 60;
             description = "Monitor refresh rate";
           };
 

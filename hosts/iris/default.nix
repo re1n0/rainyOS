@@ -19,7 +19,7 @@
         connector = "HDMI-A-1";
         width = 2560;
         height = 1440;
-        refresh = 144.0;
+        refresh = 144;
         wide_color = true;
         hdr = true;
       }
