@@ -1,12 +1,6 @@
 { pkgs, ... }:
 {
   hardware.amdgpu = {
-    amdvlk = {
-      enable = true;
-      support32Bit.enable = true;
-      supportExperimental.enable = true;
-    };
-
     overdrive = {
       enable = true;
       ppfeaturemask = "0xffffffff";
