@@ -13,6 +13,7 @@ in
 
       "web/enable-adblock" = true;
       "web/ask-on-download" = true;
+      "web/remember-passwords" = false;
 
       homepage-url = "about:newtab";
       start-in-incognito-mode = false;
