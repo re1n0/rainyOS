@@ -6,9 +6,6 @@ in
   programs.git = {
     enable = true;
 
-    userName = "${cfg.username}";
-    userEmail = "${cfg.email}";
-
     package = pkgs.gitFull;
 
     delta.enable = true;
@@ -19,7 +16,12 @@ in
       signByDefault = cfg.signingKey != "";
     };
 
-    extraConfig.credential = {
+    settings.user = {
+      name = "${cfg.username}";
+      email = "${cfg.email}";
+    };
+
+    settings.credential = {
       helper = "gopass";
       color = {
         diff = "auto";
@@ -40,4 +42,9 @@ in
   home.packages = with pkgs; [
     git-credential-gopass
   ];
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+  };
 }

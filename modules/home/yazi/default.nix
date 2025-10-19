@@ -11,7 +11,7 @@ in
     fd
     ripgrep
 
-    ffmpeg
+    ffmpeg-full
     imagemagick
     mediainfo
     poppler

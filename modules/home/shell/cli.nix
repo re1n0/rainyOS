@@ -14,8 +14,9 @@
     tailspin
     eza
     du-dust
+    file
 
-    ffmpeg
+    ffmpeg-full
 
     killall
 
