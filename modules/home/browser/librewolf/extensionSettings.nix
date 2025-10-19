@@ -57,7 +57,7 @@
 
   "{a6c4a591-f1b2-4f03-b3ff-767e5bedf4e7}" = {
     settings = {
-      ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0";
+      ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0";
     };
 
     permissions = [
