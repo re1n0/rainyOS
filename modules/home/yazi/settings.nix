@@ -25,6 +25,15 @@
       mime = "application/postscript";
       run = "mediainfo";
     }
+
+    {
+      name = "/run/user/1000/gvfs/**/*";
+      run = "noop";
+    }
+    {
+      name = "/run/media/USER_NAME/**/*";
+      run = "noop";
+    }
   ];
 
   plugin.prepend_previewers = [
@@ -89,6 +98,23 @@
     {
       mime = "application/postscript";
       run = "mediainfo";
+    }
+
+    {
+      name = "*/";
+      run = "folder";
+    }
+    {
+      mime = "{text/*,application/x-subrip}";
+      run = "code";
+    }
+    {
+      name = "/run/user/1000/gvfs/**/*";
+      run = "noop";
+    }
+    {
+      name = "/run/media/USER_NAME/**/*";
+      run = "noop";
     }
   ];
 

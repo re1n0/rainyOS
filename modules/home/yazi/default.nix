@@ -20,6 +20,8 @@ in
     glow
     hexyl
 
+    gvfs
+
     (ouch.override { enableUnfree = true; })
   ];
 
@@ -36,6 +38,7 @@ in
         chmod
         git
         glow
+        gvfs
         mediainfo
         ouch
         piper
@@ -52,6 +55,9 @@ in
         	update_db = true,
         }
         require("starship"):setup()
+        require("gvfs"):setup {
+          password_vault = "pass",
+        }
       '';
   };
 }

@@ -8,8 +8,6 @@ in
 
     package = pkgs.gitFull;
 
-    delta.enable = true;
-
     signing = {
       format = "openpgp";
       key = "${cfg.signingKey}";

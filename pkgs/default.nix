@@ -11,4 +11,5 @@ final: prev: {
   yin = makePkg final ./yin;
   sysinfo = makePkg final ./sysinfo;
   steam = makePkg final ./steam;
+  yaziPlugins = prev.lib.recursiveUpdate prev.yaziPlugins { gvfs = makePkg final ./gvfs.yazi; };
 }
