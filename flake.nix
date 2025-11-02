@@ -26,11 +26,17 @@
 
     nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
 
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
       inputs.flake-compat.follows = "flake-compat";
+      inputs.rust-overlay.follows = "rust-overlay";
     };
 
     chaotic = {

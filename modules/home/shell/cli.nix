@@ -13,7 +13,7 @@
 
     tailspin
     eza
-    du-dust
+    dust
     file
 
     ffmpeg-full
