@@ -66,7 +66,7 @@ lib.mkIf cfg.steam.enable {
 
   environment.systemPackages = with pkgs; [
     vulkan-helper
-    nexusmods-app
+    nexusmods-app-unfree
     freetype
   ];
 }
