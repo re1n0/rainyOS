@@ -13,7 +13,7 @@ lib.mkIf (config.rainyos.configuration == "desktop") {
   ];
 
   boot = {
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_cachyos;
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_cachyos-lto;
 
     plymouth.enable = cfg.gui.enable;
     consoleLogLevel = 3;
