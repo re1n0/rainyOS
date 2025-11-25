@@ -14,11 +14,13 @@ lib.mkIf config.rainyos.gui.enable {
       noto-fonts-monochrome-emoji
       nerd-fonts.mononoki
       inter
+      wqy_microhei
       azuki
     ];
     fontconfig.defaultFonts = {
       sansSerif = [
         "Inter"
+        "wqy-microhei"
         "azuki"
       ];
       serif = config.fonts.fontconfig.defaultFonts.sansSerif;

@@ -24,12 +24,10 @@ lib.mkIf (config.rainyos.configuration == "desktop") {
     kernelParams = [
       "quiet"
       "splash"
-      "intremap=on"
       "boot.shell_on_fail"
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
-    ]
-    ++ (lib.optional config.hardware.nvidia.enabled "nvidia-drm.fbdev=1");
+    ];
 
     lanzaboote = lib.mkIf cfg.secureBoot.enable {
       enable = true;

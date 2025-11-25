@@ -10,8 +10,8 @@ stdenvNoCC.mkDerivation {
   src = fetchFromGitHub {
     owner = "boydaihungst";
     repo = "gvfs.yazi";
-    rev = "63b2bec50ac93242faff94eed5a6b01d8bd1d5f8";
-    hash = "sha256-c0e3MV3xlBJOwZS1wXy8H696gA/gUAwcfwLm7I38RuY=";
+    rev = "d4b8d83d37fcb10a53e1ca07f8ee011dff089c91";
+    hash = "sha256-6VNra6WUjDfBdGjCw/6VOAaAgZLF78/4Gj47BOh1Q/0=";
   };
 
   installPhase = ''

@@ -18,7 +18,6 @@ let
       "${builtins.toString primaryMonitor.height}"
       "--nested-refresh"
       "${builtins.toString primaryMonitor.refresh}"
-      "--adaptive-sync"
       "--force-windows-fullscreen"
     ]
     ++ (lib.optional cfg.rt.enable "--rt")

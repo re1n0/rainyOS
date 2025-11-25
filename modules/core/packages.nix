@@ -22,12 +22,14 @@
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
       "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
     ];
     substituters = [
       "https://cache.nixos.org"
       "https://nix-community.cachix.org"
-      "https://chaotic-nyx.cachix.org/"
+      "https://chaotic-nyx.cachix.org"
       "https://nix-gaming.cachix.org"
+      "https://hyprland.cachix.org"
     ];
 
     auto-optimise-store = true;

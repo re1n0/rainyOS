@@ -1,4 +1,8 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 let
   cfg = config.rainyos;
 in
@@ -20,4 +24,9 @@ in
   };
 
   time.hardwareClockInLocalTime = true;
+
+  hardware.graphics = lib.mkIf cfg.gui.enable {
+    enable = true;
+    enable32Bit = true;
+  };
 }

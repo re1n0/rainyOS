@@ -31,9 +31,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    chaotic = {
-      url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-      inputs.home-manager.follows = "home-manager";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-gaming = {
@@ -93,9 +95,10 @@
             inputs.disko.nixosModules.disko
             inputs.nixos-facter-modules.nixosModules.facter
             inputs.home-manager.nixosModules.home-manager
-            inputs.lanzaboote.nixosModules.lanzaboote
+            inputs.hyprland.nixosModules.default
             inputs.nixos-rocksmith.nixosModules.default
             inputs.stylix.nixosModules.stylix
+            inputs.lanzaboote.nixosModules.lanzaboote
           ];
         };
     in
