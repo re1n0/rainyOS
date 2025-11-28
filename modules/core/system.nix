@@ -37,5 +37,5 @@ in
     font = "${pkgs.kbd}/share/consolefonts/ruscii_8x16.psfu.gz";
   };
 
-  system.stateVersion = "25.11"; # DO NOT CHANGE!
+  system.stateVersion = "26.05"; # DO NOT CHANGE!
 }
