@@ -36,7 +36,7 @@ let
 
     home = {
       homeDirectory = "/home/${username}";
-      stateVersion = "25.11";
+      stateVersion = "26.05";
       inherit username;
     };
 
@@ -79,7 +79,7 @@ in
 
                   home = {
                     homeDirectory = "/home/${username}";
-                    stateVersion = "25.11";
+                    stateVersion = "26.05";
                     inherit username;
                   };
 

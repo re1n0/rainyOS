@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 lib.mkIf config.rainyos.audio.enable {
   services.pulseaudio.enable = false;
 
@@ -17,9 +22,14 @@ lib.mkIf config.rainyos.audio.enable {
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    rtaudio
+  ];
+
   services.pipewire.wireplumber.extraConfig."10-bluez" = {
     "monitor.bluez.properties" = {
       "bluez5.enable-sbc-xq" = true;
+      bluez5.a2dp.ldac.quality = "sq";
       "bluez5.enable-hw-volume" = true;
       "bluez5.roles" = [
         "a2dp_sink"
@@ -28,12 +38,17 @@ lib.mkIf config.rainyos.audio.enable {
         "hsp_ag"
         "hfp_hf"
         "hfp_ag"
+        "bap_sink"
+        "bap_source"
       ];
       "bluez5.codecs" = [
-        "aac"
         "aptx_hd"
+        "ldac"
+        "aptx_ll"
         "aptx"
         "sbc_xq"
+        "aac"
+        "lc3"
         "sbc"
       ];
     };
