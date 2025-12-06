@@ -33,6 +33,11 @@
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -90,6 +95,7 @@
             inputs.disko.nixosModules.disko
             inputs.nixos-facter-modules.nixosModules.facter
             inputs.home-manager.nixosModules.home-manager
+            inputs.hyprland.nixosModules.default
             inputs.nixos-rocksmith.nixosModules.default
             inputs.stylix.nixosModules.stylix
             inputs.lanzaboote.nixosModules.lanzaboote
