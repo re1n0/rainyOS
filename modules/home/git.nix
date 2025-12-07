@@ -20,7 +20,8 @@ in
     };
 
     settings.credential = {
-      helper = "gopass";
+      helper = "manager";
+      credentialStore = "gpg";
       color = {
         diff = "auto";
         status = "auto";
@@ -38,7 +39,7 @@ in
   };
 
   home.packages = with pkgs; [
-    git-credential-gopass
+    git-credential-manager
   ];
 
   programs.delta = {

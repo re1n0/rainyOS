@@ -25,9 +25,9 @@ lib.optionalAttrs os.gui.hyprland.enable {
       variables = [ "--all" ];
     };
 
-    # plugins = with pkgs.hyprlandPlugins; [
-    #   hypr-dynamic-cursors
-    # ];
+    plugins = with pkgs.hyprlandPlugins; [
+      hypr-dynamic-cursors
+    ];
 
     inherit settings;
   };

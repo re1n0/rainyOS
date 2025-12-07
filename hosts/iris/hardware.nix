@@ -8,6 +8,8 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+
   hardware.graphics = {
     extraPackages = with pkgs; [
       nvidia-vaapi-driver
