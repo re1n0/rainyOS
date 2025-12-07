@@ -38,6 +38,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hypr-dynamic-cursors = {
+      url = "github:VirtCode/hypr-dynamic-cursors";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -95,7 +101,6 @@
             inputs.disko.nixosModules.disko
             inputs.nixos-facter-modules.nixosModules.facter
             inputs.home-manager.nixosModules.home-manager
-            inputs.hyprland.nixosModules.default
             inputs.nixos-rocksmith.nixosModules.default
             inputs.stylix.nixosModules.stylix
             inputs.lanzaboote.nixosModules.lanzaboote

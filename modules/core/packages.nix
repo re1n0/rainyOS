@@ -38,7 +38,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.overlays = [
-    (import ../../pkgs)
+    (import ../../pkgs { inherit inputs; })
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];
