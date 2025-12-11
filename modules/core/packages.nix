@@ -39,6 +39,8 @@
 
   nixpkgs.overlays = [
     (import ../../pkgs)
+    inputs.nix-cachyos-kernel.overlay
+    inputs.proton-cachyos.overlays.default
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];

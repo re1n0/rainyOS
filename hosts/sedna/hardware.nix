@@ -12,6 +12,4 @@
   systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
-
-  chaotic.hdr.enable = true;
 }
