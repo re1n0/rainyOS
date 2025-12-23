@@ -117,6 +117,14 @@
       name = "toml";
       auto-format = true;
     }
+
+    {
+      name = "bash";
+      formatter = {
+        command = "shfmt";
+      };
+      auto-format = true;
+    }
   ];
 
   language-server = {

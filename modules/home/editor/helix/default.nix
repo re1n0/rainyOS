@@ -28,6 +28,7 @@ in
     rust-analyzer
 
     bash-language-server
+    shfmt
 
     lua-language-server
   ];
