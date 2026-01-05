@@ -70,9 +70,7 @@ settings:
     cm_fs_passthrough = 1;
   };
 
-  experimental = {
-    xx_color_management_v4 = true;
-  };
+  quirks.prefer_hdr = 1;
 
   decoration = {
     rounding = 0;
