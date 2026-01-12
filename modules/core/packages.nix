@@ -36,6 +36,8 @@
     auto-optimise-store = true;
   };
 
+  services.gvfs.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.overlays = [

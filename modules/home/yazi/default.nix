@@ -20,7 +20,7 @@ in
     glow
     hexyl
 
-    gvfs
+    glib
 
     (ouch.override { enableUnfree = true; })
   ];
