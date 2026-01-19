@@ -45,9 +45,6 @@
   starf = "astroterm -cmu -r 2.0";
   gitf = "tokei";
 
-  # password store
-  pass = "gopass";
-
   # nix
   ncg = "nh clean all -a && sudo /run/current-system/bin/switch-to-configuration boot";
   nrs = "nh os switch -a";
