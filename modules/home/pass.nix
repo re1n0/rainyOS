@@ -8,10 +8,10 @@
     gopass-hibp
     (writeShellApplication {
       name = "pass";
-      runtimeInputs = [ pass ];
+      runtimeInputs = [ gopass ];
       text = # shell
         ''
-          pass "$@"
+          gopass "$@"
         '';
     })
   ];

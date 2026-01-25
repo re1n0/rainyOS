@@ -294,6 +294,8 @@ with lib;
       };
     };
 
+    gaming.minecraft.enable = mkEnableOption "Enable PrismLauncher for Minecraft";
+
     # Virtualisation
     virtualisation.podman.enable = mkEnableOption "Enable Podman";
 

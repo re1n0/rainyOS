@@ -80,6 +80,8 @@
         session = true;
         rocksmithPatch = true;
       };
+
+      minecraft.enable = true;
     };
 
     virtualisation.podman.enable = true;

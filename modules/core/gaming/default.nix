@@ -2,7 +2,8 @@
 {
   imports = [
     ./gamescope.nix
-    ./steam.nix
+    ./minecraft.nix
     ./opengamepadui.nix
+    ./steam.nix
   ];
 }
