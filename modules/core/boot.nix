@@ -27,6 +27,7 @@ lib.mkIf (config.rainyos.configuration == "desktop") {
       "boot.shell_on_fail"
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
+      "transparent_hugepage=madvise"
     ];
 
     lanzaboote = lib.mkIf cfg.secureBoot.enable {

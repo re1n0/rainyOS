@@ -15,6 +15,10 @@ final: prev: {
 
   yaziPlugins = prev.lib.recursiveUpdate prev.yaziPlugins { gvfs = makePkg final ./gvfs.yazi; };
 
+  graalvmPackages = prev.lib.recursiveUpdate prev.graalvmPackages {
+    graalvm-oracle_21 = makePkg final ./graalvm-oracle_21;
+  };
+
   yin = makePkg final ./yin;
   sysinfo = makePkg final ./sysinfo;
 }
