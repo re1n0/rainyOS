@@ -8,7 +8,11 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+  hardware.nvidia.package =
+    let
+      base = config.boot.kernelPackages.nvidiaPackages.beta;
+    in
+    base;
 
   hardware.graphics = {
     extraPackages = with pkgs; [

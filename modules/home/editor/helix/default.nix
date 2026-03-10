@@ -31,6 +31,9 @@ in
     shfmt
 
     lua-language-server
+
+    kotlin-language-server
+    ktfmt
   ];
 
   programs.helix = {

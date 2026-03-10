@@ -125,6 +125,18 @@
       };
       auto-format = true;
     }
+
+    {
+      name = "kotlin";
+      formatter = {
+        command = "ktfmt";
+        args = [
+          "--google-style"
+          "-"
+        ];
+      };
+      auto-format = true;
+    }
   ];
 
   language-server = {
