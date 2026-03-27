@@ -13,11 +13,11 @@ let
       "${primaryMonitor.connector},*"
       "--fullscreen"
       "--output-width"
-      "${builtins.toString primaryMonitor.width}"
+      "${toString primaryMonitor.width}"
       "--output-height"
-      "${builtins.toString primaryMonitor.height}"
+      "${toString primaryMonitor.height}"
       "--nested-refresh"
-      "${builtins.toString primaryMonitor.refresh}"
+      "${toString primaryMonitor.refresh}"
       "--force-windows-fullscreen"
     ]
     ++ (lib.optional cfg.rt.enable "--rt")

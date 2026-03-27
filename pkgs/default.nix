@@ -10,7 +10,6 @@ final: prev: {
   themes = makePkg final ./themes;
 
   steam = makePkg final ./steam;
-  winetricks = makePkg final ./winetricks;
   close-steam-session = makePkg final ./close-steam-session;
 
   yaziPlugins = prev.lib.recursiveUpdate prev.yaziPlugins { gvfs = makePkg final ./gvfs.yazi; };
@@ -21,4 +20,6 @@ final: prev: {
 
   yin = makePkg final ./yin;
   sysinfo = makePkg final ./sysinfo;
+
+  freecad-fix = makePkg final ./freecad-fix;
 }

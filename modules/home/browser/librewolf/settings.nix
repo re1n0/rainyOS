@@ -1,4 +1,4 @@
-hdr: {
+_hdr: {
   "services.sync.engine.bookmarks" = true;
   "services.sync.engine.tabs" = true;
   "services.sync.engine.addons" = false;

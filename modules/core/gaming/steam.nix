@@ -30,6 +30,7 @@ lib.mkIf cfg.steam.enable {
         (lib.optionals cfg.steam.rocksmithPatch [
           patch-rocksmith
           wineasio
+          wineasio-32
         ]);
     };
 

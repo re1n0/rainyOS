@@ -3,9 +3,9 @@
   steam-unwrapped,
   buildFHSEnv,
   writeShellScript,
-  extraPkgs ? pkgs: [ ],
+  extraPkgs ? _pkgs: [ ],
   # extra packages to add to targetPkgs
-  extraLibraries ? pkgs: [ ],
+  extraLibraries ? _pkgs: [ ],
   # extra packages to add to multiPkgs
   extraProfile ? "",
   # string to append to profile
@@ -22,8 +22,8 @@
 let
   buildRuntimeEnv =
     {
-      extraPkgs ? pkgs: [ ],
-      extraLibraries ? pkgs: [ ],
+      extraPkgs ? _pkgs: [ ],
+      extraLibraries ? _pkgs: [ ],
       extraProfile ? "",
       extraPreBwrapCmds ? "",
       extraBwrapArgs ? [ ],
@@ -57,6 +57,7 @@ let
             file
             lsb-release # not documented, called from Big Picture
             pciutils # not documented, complains about lspci on startup
+            usbutils
             glibc_multi.bin
             xz
             zenity
