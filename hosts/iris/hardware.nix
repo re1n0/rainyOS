@@ -24,4 +24,9 @@
       egl-wayland
     ];
   };
+
+  # mesa-git = {
+  #   enable = true;
+  #   drivers = [ "nvidia" ];
+  # };
 }

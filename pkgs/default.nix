@@ -22,4 +22,6 @@ final: prev: {
   sysinfo = makePkg final ./sysinfo;
 
   freecad-fix = makePkg final ./freecad-fix;
+
+  winetricks = final.winetricks-git;
 }

@@ -44,8 +44,10 @@
 
   nixpkgs.overlays = [
     (import ../../pkgs)
+    # inputs.mesa-git.overlays.default
     inputs.nix-cachyos-kernel.overlay
     inputs.proton-cachyos.overlays.default
+    inputs.nix-gaming.overlays.default
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];

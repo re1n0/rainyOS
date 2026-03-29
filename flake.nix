@@ -18,6 +18,11 @@
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
+    # mesa-git = {
+    #   url = "github:daaboulex/mesa-git-nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
 
     nix-gaming = {
@@ -72,6 +77,7 @@
 
             inputs.disko.nixosModules.disko
             inputs.nixos-facter-modules.nixosModules.facter
+            # inputs.mesa-git.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             inputs.nixos-rocksmith.nixosModules.default
             inputs.stylix.nixosModules.stylix

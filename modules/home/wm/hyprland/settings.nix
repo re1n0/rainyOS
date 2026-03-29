@@ -33,12 +33,13 @@ settings:
 
   monitorv2 = map (m: {
     output = m.connector;
-    mode = "${builtins.toString m.width}x${builtins.toString m.height}@${builtins.toString m.refresh}";
+    mode = "${toString m.width}x${toString m.height}@${toString m.refresh}";
     inherit (m) position;
     inherit (m) scale;
     supports_wide_color = m.wide_color;
     supports_hdr = m.hdr;
     bitdepth = if m.wide_color then 10 else 8;
+    cm = if m.hdr then "hdr" else "auto";
   }) settings.gui.monitors;
 
   general = {
@@ -69,8 +70,6 @@ settings:
     direct_scanout = 2;
     cm_fs_passthrough = 1;
   };
-
-  quirks.prefer_hdr = 1;
 
   decoration = {
     rounding = 0;
