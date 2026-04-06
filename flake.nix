@@ -18,10 +18,10 @@
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
-    # mesa-git = {
-    #   url = "github:daaboulex/mesa-git-nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    mesa-git = {
+      url = "github:daaboulex/mesa-git-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
 
@@ -67,6 +67,7 @@
 
           specialArgs = {
             inherit
+              self
               inputs
               host
               system
@@ -77,7 +78,7 @@
 
             inputs.disko.nixosModules.disko
             inputs.nixos-facter-modules.nixosModules.facter
-            # inputs.mesa-git.nixosModules.default
+            inputs.mesa-git.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             inputs.nixos-rocksmith.nixosModules.default
             inputs.stylix.nixosModules.stylix
@@ -86,6 +87,7 @@
         };
     in
     {
+      overlays.default = import ./pkgs;
       packages.x86_64-linux.default = self.nixosConfigurations.thome.config.system.build.isoImage;
       nixosConfigurations = {
         sedna = makeConfiguration "sedna" "x86_64-linux";

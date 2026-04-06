@@ -2,6 +2,8 @@ let
   makePkg = pkgs: name: pkgs.callPackage "${name}/package.nix" { };
 in
 final: prev: {
+  sources = import ./lon.nix;
+
   nix-hash-git = makePkg final ./nix-hash-git;
   nix-hash-url = makePkg final ./nix-hash-url;
 
@@ -18,10 +20,8 @@ final: prev: {
     graalvm-oracle_21 = makePkg final ./graalvm-oracle_21;
   };
 
-  yin = makePkg final ./yin;
-  sysinfo = makePkg final ./sysinfo;
-
   freecad-fix = makePkg final ./freecad-fix;
 
   winetricks = final.winetricks-git;
+  nomm = makePkg final ./nomm;
 }

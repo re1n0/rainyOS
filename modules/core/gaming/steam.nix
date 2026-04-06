@@ -65,7 +65,8 @@ lib.mkIf cfg.steam.enable {
 
   environment.systemPackages = with pkgs; [
     vulkan-helper
-    (limo.override { withUnrar = true; })
     freetype
+    gale
+    nomm
   ];
 }

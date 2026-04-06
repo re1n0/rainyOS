@@ -1,5 +1,6 @@
 {
   inputs,
+  self,
   ...
 }:
 {
@@ -43,11 +44,11 @@
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.overlays = [
-    (import ../../pkgs)
-    # inputs.mesa-git.overlays.default
+    self.overlays.default
     inputs.nix-cachyos-kernel.overlay
     inputs.proton-cachyos.overlays.default
     inputs.nix-gaming.overlays.default
+    inputs.mesa-git.overlays.default
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];

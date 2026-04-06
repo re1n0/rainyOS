@@ -25,8 +25,8 @@
     ];
   };
 
-  # mesa-git = {
-  #   enable = true;
-  #   drivers = [ "nvidia" ];
-  # };
+  mesa-git = {
+    enable = true;
+    drivers = [ "nvidia" ];
+  };
 }

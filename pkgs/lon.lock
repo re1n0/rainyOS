@@ -1,0 +1,25 @@
+{
+  "version": "1",
+  "sources": {
+    "gvfs.yazi": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "boydaihungst",
+      "repo": "gvfs.yazi",
+      "branch": "master",
+      "revision": "3abc0a258f9d7aeaa453a2d0d6e103c5a305953d",
+      "url": "https://github.com/boydaihungst/gvfs.yazi/archive/3abc0a258f9d7aeaa453a2d0d6e103c5a305953d.tar.gz",
+      "hash": "sha256-UHneVJ+YXyDuPrZS+PZbs9n9h+VN5M2QG36FdprBkJc="
+    },
+    "nomm": {
+      "type": "GitHub",
+      "fetchType": "tarball",
+      "owner": "Allexio",
+      "repo": "nomm",
+      "branch": "main",
+      "revision": "dc5b2fdb90484e0c5b724c1a694b3c8fdee2b10b",
+      "url": "https://github.com/Allexio/nomm/archive/dc5b2fdb90484e0c5b724c1a694b3c8fdee2b10b.tar.gz",
+      "hash": "sha256-vaHZAkKClNbnf1hXCpQ0o6vkDZu0MpQoK4Afd27pjRM="
+    }
+  }
+}

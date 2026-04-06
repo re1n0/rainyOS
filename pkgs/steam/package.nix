@@ -32,7 +32,7 @@ let
       ...
     }@args:
     buildFHSEnv (
-      (builtins.removeAttrs args [
+      (removeAttrs args [
         "extraPkgs"
         "extraLibraries"
         "extraProfile"
