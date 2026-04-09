@@ -2,7 +2,7 @@ let
   makePkg = pkgs: name: pkgs.callPackage "${name}/package.nix" { };
 in
 final: prev: {
-  sources = import ./lon.nix;
+  pins = import ../npins;
 
   nix-hash-git = makePkg final ./nix-hash-git;
   nix-hash-url = makePkg final ./nix-hash-url;

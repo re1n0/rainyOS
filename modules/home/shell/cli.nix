@@ -43,8 +43,8 @@
     nix-hash-git
     nix-hash-url
     nix-output-monitor
-    lon
     nixpkgs-review
+    npins
 
     grex
     qrtool

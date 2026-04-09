@@ -1,13 +1,16 @@
 {
   lib,
   stdenvNoCC,
-  sources,
+  pins,
 }:
+let
+  gvfs-yazi = pins."gvfs.yazi";
+in
 stdenvNoCC.mkDerivation {
   pname = "gvfs.yazi";
-  version = "0-unstable-2025-10-21";
+  version = "0-git+${gvfs-yazi.revision}";
 
-  src = sources."gvfs.yazi";
+  src = gvfs-yazi;
 
   installPhase = ''
     runHook preInstall

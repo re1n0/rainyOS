@@ -1,0 +1,34 @@
+{
+  "pins": {
+    "gvfs.yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "boydaihungst",
+        "repo": "gvfs.yazi"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "3abc0a258f9d7aeaa453a2d0d6e103c5a305953d",
+      "url": "https://github.com/boydaihungst/gvfs.yazi/archive/3abc0a258f9d7aeaa453a2d0d6e103c5a305953d.tar.gz",
+      "hash": "sha256-UHneVJ+YXyDuPrZS+PZbs9n9h+VN5M2QG36FdprBkJc="
+    },
+    "nomm": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Allexio",
+        "repo": "nomm"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "0.6.2",
+      "revision": "e6599e9423b1c500c6deece7b23bc02195a28356",
+      "url": "https://api.github.com/repos/Allexio/nomm/tarball/refs/tags/0.6.2",
+      "hash": "sha256-0fyoZ1wsFmYwXg4BeceDvkmN/eXpczxyh9gZIVkFT1w="
+    }
+  },
+  "version": 7
+}

@@ -88,10 +88,10 @@ let
               ln -s /bin/ldconfig $out/sbin/ldconfig
             '')
 
-            # crashes on startup if it can't find libX11 locale files
+            # crashes on startup if it can't find libx11 locale files
             (pkgs.runCommand "xorg-locale" { } ''
               mkdir -p $out
-              ln -s ${xorg.libX11}/share $out/share
+              ln -s ${libx11}/share $out/share
             '')
           ]
           ++ extraPkgs pkgs;
@@ -196,7 +196,8 @@ buildRuntimeEnv {
       makeSteamRun =
         package:
         buildRuntimeEnv {
-          name = "steam-run";
+          inherit (steam-unwrapped) version;
+          pname = "steam-run";
 
           extraPkgs = pkgs: package ++ extraPkgs pkgs;
 
