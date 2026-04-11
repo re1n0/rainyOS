@@ -1,4 +1,4 @@
-_hdr: {
+hdr: {
   "services.sync.engine.bookmarks" = true;
   "services.sync.engine.tabs" = true;
   "services.sync.engine.addons" = false;
@@ -58,11 +58,18 @@ _hdr: {
   "extensions.webcompat.perform_injections" = true;
   "extensions.webcompat.perform_ua_overrides" = true;
 
+  "gfx.webrender.all" = true;
+  "gfx.webrender.compositor" = true;
+
   # "gfx.wayland.hdr" = hdr;
-  # "gfx.webrender.all" = true;
+  "gfx.color_management.hdr_video" = hdr;
+  "gfx.color_management.hdr_video_assume_rec2020_uses_pq" = hdr;
+  "gfx.webrender.overlay-hdr" = hdr;
+  "gfx.webrender.overlay-vp-auto-hdr" = hdr;
 
   "widget.dmabuf.force-enabled" = true;
 
+  "media.hardware-video-decoding.force-enabled" = true;
   "media.ffmpeg.vaapi.enabled" = true;
   "media.gpu-process-decoder" = true;
   "media.rdd-ffmpeg.enabled" = true;

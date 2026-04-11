@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -28,5 +29,18 @@ in
   hardware.graphics = lib.mkIf cfg.gui.enable {
     enable = true;
     enable32Bit = true;
+
+    extraPackages =
+      with pkgs;
+      [
+        libva-vdpau-driver
+        libvdpau-va-gl
+      ]
+      ++ (lib.optional config.hardware.nvidia.enabled nvidia-vaapi-driver);
+
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      libva-vdpau-driver
+      libvdpau-va-gl
+    ];
   };
 }
