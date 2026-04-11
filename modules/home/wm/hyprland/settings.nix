@@ -33,13 +33,19 @@ settings:
 
   monitorv2 = map (m: {
     output = m.connector;
+
     mode = "${toString m.width}x${toString m.height}@${toString m.refresh}";
-    inherit (m) position;
-    inherit (m) scale;
+
+    inherit (m) position scale;
+
     supports_wide_color = m.wide_color;
     supports_hdr = m.hdr;
+
     bitdepth = if m.wide_color then 10 else 8;
     cm = if m.hdr then "hdr" else "auto";
+
+    sdrbrightness = if m.hdr then 1.2 else 1.0;
+    sdrsaturation = if m.hdr then 1.1 else 1.0;
   }) settings.gui.monitors;
 
   general = {
