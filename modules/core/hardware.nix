@@ -35,12 +35,14 @@ in
       [
         libva-vdpau-driver
         libvdpau-va-gl
+        egl-wayland
       ]
       ++ (lib.optional config.hardware.nvidia.enabled nvidia-vaapi-driver);
 
     extraPackages32 = with pkgs.pkgsi686Linux; [
       libva-vdpau-driver
       libvdpau-va-gl
+      egl-wayland
     ];
   };
 }

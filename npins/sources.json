@@ -24,10 +24,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "0.6.2",
-      "revision": "e6599e9423b1c500c6deece7b23bc02195a28356",
-      "url": "https://api.github.com/repos/Allexio/nomm/tarball/refs/tags/0.6.2",
-      "hash": "sha256-0fyoZ1wsFmYwXg4BeceDvkmN/eXpczxyh9gZIVkFT1w="
+      "version": "0.7.0",
+      "revision": "54077b0a3b1f3f4a4c411b8f9cbc87ed1a33c68a",
+      "url": "https://api.github.com/repos/Allexio/nomm/tarball/refs/tags/0.7.0",
+      "hash": "sha256-LfL0QSRk1n7g5Ua3lk9GMRSOXQHb6NZwKfHnJCXiW1U="
     }
   },
   "version": 7

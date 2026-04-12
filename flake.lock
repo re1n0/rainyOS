@@ -539,11 +539,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775983377,
-        "narHash": "sha256-ZeRjipGQnVtQ/6batI+yVOrL853FZsL0m9A63OaSfgM=",
+        "lastModified": 1776030105,
+        "narHash": "sha256-b4cNpWPDSH+/CTTiw8++yGh1UYG2kQNrbIehV2iGoeo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e0ca734ffc85d25297715e98010b93303fa165c4",
+        "rev": "49088dc2e7a876e338e510c5f5f60f659819c650",
         "type": "github"
       },
       "original": {
@@ -575,22 +575,6 @@
         "type": "github"
       }
     },
-    "linux-rocksmith": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1773074512,
-        "narHash": "sha256-5tchphfL15fu/u0pIlQT9U9L8QPPBgZ+eEtGZRkSy6I=",
-        "ref": "refs/heads/main",
-        "rev": "b3ad5c031732a8bef7a53de6f560aac5779797f7",
-        "revCount": 231,
-        "type": "git",
-        "url": "https://codeberg.org/nizo/linux-rocksmith"
-      },
-      "original": {
-        "type": "git",
-        "url": "https://codeberg.org/nizo/linux-rocksmith"
-      }
-    },
     "mesa-git": {
       "inputs": {
         "git-hooks": "git-hooks",
@@ -599,11 +583,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775974316,
-        "narHash": "sha256-oNRRcUlAcnQ7amW+MoVB72xHaupvpwquHnaODaqBFWU=",
+        "lastModified": 1776014167,
+        "narHash": "sha256-/thUVvSSRGluJnqk+9lLu2BD/KVwkn8ZUNTz7TWEwKM=",
         "owner": "daaboulex",
         "repo": "mesa-git-nix",
-        "rev": "762d7221edbb3e1b54d7a080a15b8f475da1db3a",
+        "rev": "35d21575ddd77d0ea810207e41b0aaec355c6019",
         "type": "github"
       },
       "original": {
@@ -795,21 +779,19 @@
     "nixos-rocksmith": {
       "inputs": {
         "flake-parts": "flake-parts_3",
-        "linux-rocksmith": "linux-rocksmith",
         "nix-gaming": [
           "nix-gaming"
         ],
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "rs-linux-autoconnect": "rs-linux-autoconnect"
+        ]
       },
       "locked": {
-        "lastModified": 1775927565,
-        "narHash": "sha256-qaqn9ADN2IH6vzXgLCiCISkwJtWtwzK1ONUlcDG5vKM=",
+        "lastModified": 1776020454,
+        "narHash": "sha256-k/MFGMW8/eqpe0yb2EFyV98qKFJX9eRQyqim06ucKvE=",
         "owner": "re1n0",
         "repo": "nixos-rocksmith",
-        "rev": "ef2c6a415c0b9a285ba7f052bd693fc0ff6de2a8",
+        "rev": "b03e02a00c5ac63477e31e4d538a5cd63ec145de",
         "type": "github"
       },
       "original": {
@@ -992,22 +974,6 @@
         "nixpkgs": "nixpkgs_2",
         "proton-cachyos": "proton-cachyos",
         "stylix": "stylix"
-      }
-    },
-    "rs-linux-autoconnect": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1753454170,
-        "narHash": "sha256-Uk4J2ZGHZFI6RX7pmGbdgxUWWdOegsNtJLc/aeBnj54=",
-        "owner": "KczBen",
-        "repo": "rs-linux-autoconnect",
-        "rev": "09a3f0fd0492573dd48468ab413626edd0cba757",
-        "type": "github"
-      },
-      "original": {
-        "owner": "KczBen",
-        "repo": "rs-linux-autoconnect",
-        "type": "github"
       }
     },
     "rust-overlay": {
