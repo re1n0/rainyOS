@@ -71,6 +71,20 @@ with lib;
           wide_color = mkEnableOption "Monitor supports wide (10bit) color";
 
           hdr = mkEnableOption "Monitor supports HDR";
+
+          icc = mkOption {
+            type = path;
+            default = null;
+            example = ../DP-1.icm;
+            description = "ICC profile";
+          };
+
+          eotf = mkOption {
+            type = str;
+            default = "srgb";
+            example = "gamma22";
+            description = "SDR EOTF curve";
+          };
         };
       });
       default = [ ];

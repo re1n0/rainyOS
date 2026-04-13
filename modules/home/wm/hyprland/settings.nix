@@ -42,10 +42,17 @@ settings:
     supports_hdr = m.hdr;
 
     bitdepth = if m.wide_color then 10 else 8;
-    cm = if m.hdr then "hdr" else "auto";
+    cm = if m.hdr then "hdredid" else "auto";
 
     sdrbrightness = if m.hdr then 1.2 else 1.0;
     sdrsaturation = if m.hdr then 1.1 else 1.0;
+
+    sdr_max_luminance = if m.hdr then 200 else null;
+    sdr_min_luminance = if m.hdr then 0.005 else null;
+
+    sdr_eotf = if m.hdr then m.eotf else null;
+
+    # icc = m.icc
   }) settings.gui.monitors;
 
   general = {

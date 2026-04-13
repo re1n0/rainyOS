@@ -22,6 +22,7 @@
         refresh = 60;
         wide_color = true;
         hdr = true;
+        icc = ./eDP-1.icm;
       }
     ];
 

@@ -2,6 +2,10 @@
   "version": 1,
   "system": "x86_64-linux",
   "virtualisation": "none",
+  "uefi": {
+    "supported": true,
+    "platform_size": 64
+  },
   "hardware": {
     "bios": {
       "apm_info": {
@@ -877,7 +881,7 @@
         "fpu_exception": false,
         "cpuid_level": 22,
         "write_protect": false,
-        "tlb_size": 32766,
+        "tlb_size": 32576,
         "clflush_size": 64,
         "cache_alignment": 64,
         "address_sizes": {
@@ -1318,7 +1322,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.17.8-cachyos xhci-hcd",
+          "name": "Linux 6.19.11-cachyos-lto xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1328,11 +1332,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.17",
+          "name": "6.19",
           "value": 0
         },
         "serial": "0000:00:14.0",
-        "model": "Linux 6.17.8-cachyos xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.19.11-cachyos-lto xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-0:1.0",
         "sysfs_bus_id": "1-0:1.0",
         "resources": [
@@ -1380,7 +1384,7 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0002d0617dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0619dc09dsc00dp01ic09isc00ip00in00"
       },
       {
         "index": 72,
@@ -1491,7 +1495,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.17.8-cachyos xhci-hcd",
+          "name": "Linux 6.19.11-cachyos-lto xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1501,11 +1505,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.17",
+          "name": "6.19",
           "value": 0
         },
         "serial": "0000:00:14.0",
-        "model": "Linux 6.17.8-cachyos xhci-hcd xHCI Host Controller",
+        "model": "Linux 6.19.11-cachyos-lto xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb2/2-0:1.0",
         "sysfs_bus_id": "2-0:1.0",
         "detail": {
@@ -1543,7 +1547,7 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0003d0617dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0619dc09dsc00dp03ic09isc00ip00in00"
       }
     ],
     "keyboard": [
@@ -1595,7 +1599,7 @@
           "/dev/input/by-id/usb-Logitech_USB_Receiver-event-kbd",
           "/dev/input/by-path/pci-0000:00:14.0-usb-0:9:1.0-event-kbd",
           "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:9:1.0-event-kbd",
-          "/dev/input/event3"
+          "/dev/input/event0"
         ],
         "resources": [
           {
@@ -1799,7 +1803,7 @@
           "/dev/input/by-id/usb-Corsair_CORSAIR_SLIPSTREAM_WIRELESS_USB_Receiver_12F3DC3C88D42B15-if05-event-kbd",
           "/dev/input/by-path/pci-0000:00:14.0-usb-0:10:1.5-event-kbd",
           "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:10:1.5-event-kbd",
-          "/dev/input/event12"
+          "/dev/input/event8"
         ],
         "resources": [
           {
@@ -1902,7 +1906,7 @@
           "/dev/input/by-id/usb-Corsair_CORSAIR_SLIPSTREAM_WIRELESS_USB_Receiver_12F3DC3C88D42B15-if03-event-kbd",
           "/dev/input/by-path/pci-0000:00:14.0-usb-0:10:1.3-event-kbd",
           "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:10:1.3-event-kbd",
-          "/dev/input/event14"
+          "/dev/input/event10"
         ],
         "resources": [
           {
@@ -2557,7 +2561,7 @@
         },
         "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-9/1-9:1.3/0003:046D:C548.0004/input/input16",
         "unix_device_names": [
-          "/dev/input/event8",
+          "/dev/input/event15",
           "/dev/input/ + handler"
         ]
       }
@@ -2653,28 +2657,6 @@
     "network_interface": [
       {
         "index": 74,
-        "attached_to": 0,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Loopback",
-          "value": 0
-        },
-        "model": "Loopback network interface",
-        "sysfs_id": "/class/net/lo",
-        "unix_device_names": [
-          "lo"
-        ]
-      },
-      {
-        "index": 75,
         "attached_to": 37,
         "class_list": [
           "network_interface"
@@ -2712,6 +2694,28 @@
         ],
         "driver_modules": [
           "r8169"
+        ]
+      },
+      {
+        "index": 75,
+        "attached_to": 0,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Loopback",
+          "value": 0
+        },
+        "model": "Loopback network interface",
+        "sysfs_id": "/class/net/lo",
+        "unix_device_names": [
+          "lo"
         ]
       }
     ],
@@ -3921,7 +3925,7 @@
       }
     ],
     "system": {
-      "form_factor": "desktop"
+      "form_factor": "laptop"
     },
     "unknown": [
       {
@@ -4015,7 +4019,7 @@
           "/dev/input/by-id/usb-Corsair_CORSAIR_SLIPSTREAM_WIRELESS_USB_Receiver_12F3DC3C88D42B15-event-if04",
           "/dev/input/by-path/pci-0000:00:14.0-usb-0:10:1.4-event",
           "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:10:1.4-event",
-          "/dev/input/event13"
+          "/dev/input/event9"
         ],
         "resources": [
           {
@@ -4663,7 +4667,7 @@
           "/dev/input/by-id/usb-MSI_MYSTIC_LIGHT_A0202105210B-event-if00",
           "/dev/input/by-path/pci-0000:00:14.0-usb-0:12:1.0-event",
           "/dev/input/by-path/pci-0000:00:14.0-usbv2-0:12:1.0-event",
-          "/dev/input/event15"
+          "/dev/input/event11"
         ],
         "resources": [
           {
@@ -5276,7 +5280,7 @@
           296352743492,
           300647710789,
           369367187526,
-          4471060955222
+          158913790038
         ]
       }
     ],
