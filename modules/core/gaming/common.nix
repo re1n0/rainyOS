@@ -24,6 +24,7 @@ let
     ++ (lib.optionals primaryMonitor.hdr [
       "--hdr-enable"
       "--hdr-itm-enable"
+      "-- env DXVK_HDR=1"
     ])
     ++ args;
 in

@@ -44,8 +44,7 @@ settings:
     bitdepth = if m.wide_color then 10 else 8;
     cm = if m.hdr then "hdredid" else "auto";
 
-    sdrbrightness = if m.hdr then 1.2 else 1.0;
-    sdrsaturation = if m.hdr then 1.1 else 1.0;
+    sdrsaturation = if m.hdr then 1.2 else 1.0;
 
     sdr_max_luminance = if m.hdr then 200 else null;
     sdr_min_luminance = if m.hdr then 0.005 else null;
