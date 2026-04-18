@@ -23,6 +23,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-millennium = {
+      url = "github:re1n0/nixos-millennium";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
 
     nix-gaming = {
@@ -83,6 +88,7 @@
             inputs.nixos-rocksmith.nixosModules.default
             inputs.stylix.nixosModules.stylix
             inputs.lanzaboote.nixosModules.lanzaboote
+            inputs.nixos-millennium.nixosModules.default
           ];
         };
     in

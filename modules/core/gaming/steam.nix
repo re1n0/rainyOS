@@ -16,7 +16,7 @@ lib.mkIf cfg.steam.enable {
       proton-cachyos-x86_64_v4
     ];
 
-    package = pkgs.steam.override {
+    package = pkgs.millennium-steam.override {
       extraLibraries =
         pkgs':
         with pkgs';
@@ -27,14 +27,17 @@ lib.mkIf cfg.steam.enable {
       extraPkgs =
         pkgs':
         with pkgs';
-        (lib.optionals cfg.steam.rocksmithPatch [
+        [
+          close-steam-session
+        ]
+        ++ (lib.optionals cfg.steam.rocksmithPatch [
           patch-rocksmith
           wineasio
           wineasio-32
         ]);
     };
 
-    # extest.enable = true;
+    extest.enable = true;
     protontricks.enable = true;
 
     rocksmithPatch.enable = cfg.steam.rocksmithPatch;
