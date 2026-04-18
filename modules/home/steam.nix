@@ -5,25 +5,10 @@
   os,
   ...
 }:
-
 lib.optionalAttrs os.gaming.steam.enable {
-  home.packages = [ pkgs.adwsteamgtk ];
-
-  home.activation =
-    let
-      applySteamTheme = pkgs.writeShellScript "applySteamTheme" ''
-        custom="$HOME/.cache/AdwSteamInstaller/extracted/custom/custom.css"
-        if [[ -f "$custom" ]]; then
-          rm -f "$custom"
-        fi
-        ${lib.getExe pkgs.adwsteamgtk} -i -o "login_qrlogin_qr:hover_only;rounded_corners:no;win_controls_layout:none"
-      '';
-    in
-    {
-      updateSteamTheme = config.lib.dag.entryAfter [ "writeBoundary" "dconfSettings" ] ''
-        run ${applySteamTheme}
-      '';
-    };
+  home.activation.updateSteamTheme = config.lib.dag.entryAfter [ "writeBoundary" "dconfSettings" ] ''
+    ${lib.getExe pkgs.adwsteamgtk} -i
+  '';
 
   dconf.settings."io/github/Foldex/AdwSteamGtk".prefs-install-custom-css = true;
 
