@@ -1,49 +1,28 @@
 {
   # misc
-  q = "exit";
-  c = "clear";
   icat = "timg -p k";
-  s = "ssh";
 
   # ls
   exa = "eza --icons --git";
-  l = "exa -lo --no-user --no-permissions --no-time";
-  ll = "exa -l";
-  ls = "l";
-  la = "l -a";
+  l = "eza --icons --git -lo --no-user --no-permissions --no-time";
+  ll = "eza --icons --git -l";
+  ls = "eza --icons --git -lo --no-user --no-permissions --no-time";
+  la = "eza --icons --git -lo --no-user --no-permissions --no-time -a";
 
   # tree
-  t = "exa --tree";
-  tree = "t";
-  tl = "ll --tree";
-
-  # du
-  du = "dust";
+  t = "eza --icons --git --tree";
+  tree = "eza --icons --git --tree";
+  tl = "eza --icons --git -l --tree";
 
   # cat
   cat = "bat";
 
-  # utils
-  cf = "wl-copy <";
-  pf = "wl-paste >";
-  cv = "ffmpeg -i";
-
   # editor
   v = "$EDITOR";
 
-  # music player
-  mp = "rmpc";
-
-  # YouTube download
-  ytdl = "yt-dlp";
-
-  # clock
+  # clock & fetch
   clock = "rsclock -S -c";
-
-  # fetch
-  ff = "fastfetch";
   starf = "astroterm -cmu -r 2.0";
-  gitf = "tokei";
 
   # nix
   ncg = "nh clean all -a && sudo /run/current-system/bin/switch-to-configuration boot";
@@ -54,5 +33,5 @@
   reboot = "systemctl reboot";
   poweroff = "systemctl poweroff";
   suspend = "systemctl suspend";
-  logout = "loginctl terminate-session $(< /proc/self/sessionid)";
+  logout = "loginctl terminate-session (cat /proc/self/sessionid)";
 }

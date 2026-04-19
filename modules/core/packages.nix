@@ -52,7 +52,5 @@
     inputs.mesa-git.overlays.default
   ];
 
-  environment.pathsToLink = [ "/share/zsh" ];
-
   services.fwupd.enable = true;
 }

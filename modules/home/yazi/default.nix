@@ -29,7 +29,7 @@ in
     inherit keymap settings;
     enable = true;
 
-    enableZshIntegration = true;
+    enableFishIntegration = true;
     shellWrapperName = "lf";
 
     plugins = with pkgs.yaziPlugins; {

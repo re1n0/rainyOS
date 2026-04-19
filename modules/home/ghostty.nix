@@ -7,7 +7,7 @@ lib.optionalAttrs os.gui.enable {
   programs.ghostty = {
     enable = true;
 
-    enableZshIntegration = true;
+    enableFishIntegration = true;
 
     settings = {
       font-family = [

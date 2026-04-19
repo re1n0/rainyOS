@@ -1,8 +1,4 @@
-_:
-let
-  shellAliases = import ../shell/aliases.nix;
-in
-{
+_: {
   imports = [
     ../shell/bat.nix
     ../shell/fzf.nix
@@ -10,15 +6,6 @@ in
     ../shell/man.nix
     ../shell/ripgrep.nix
     ../shell/zoxide.nix
-    ../shell/cli.nix
+    ../shell/fish.nix
   ];
-
-  programs.zsh = {
-    enable = true;
-
-    autocd = true;
-    enableCompletion = true;
-
-    inherit shellAliases;
-  };
 }

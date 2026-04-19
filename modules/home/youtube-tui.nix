@@ -42,7 +42,7 @@ lib.optionalAttrs os.gui.enable {
     provider = "YouTube";
     search_provider = "RustyPipe";
 
-    shell = "zsh";
+    shell = "fish";
 
     legacy_input_handling = false;
 

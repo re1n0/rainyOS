@@ -22,7 +22,7 @@ let
   userSettings = {
     isNormalUser = true;
     description = os.git.username;
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
     ignoreShellProgramCheck = true;
     openssh.authorizedKeys.keys = os.ssh.authorizedKeys;
     inherit extraGroups;
@@ -103,7 +103,7 @@ in
           {
             nixos = {
               isNormalUser = true;
-              shell = pkgs.zsh;
+              shell = pkgs.fish;
               ignoreShellProgramCheck = true;
               openssh.authorizedKeys.keys = os.ssh.authorizedKeys;
               extraGroups = [
