@@ -21,6 +21,7 @@
     ./steam.nix
     ./xdg
     ./yazi
+    ./youtube-tui.nix
     ./wm
     ./zathura.nix
   ];

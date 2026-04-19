@@ -2,13 +2,16 @@
   pkgs,
   lib,
   os,
+  ...
 }:
 lib.optionalAttrs os.gui.enable {
   home.packages = with pkgs; [
     youtube-tui
+
+    yt-dlp
   ];
 
-  xdg.configFile."youtube-tui/main.yaml".text = lib.generators.toINIWithGlobalSection { } {
+  xdg.configFile."youtube-tui/main.yaml".text = builtins.toJSON {
     mouse_support = true;
 
     invidious_instance = "https://yewtu.be";

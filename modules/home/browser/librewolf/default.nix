@@ -46,7 +46,6 @@ in
           (foxyproxy-standard.override { private_browsing = true; })
           github-file-icons
           gopass-bridge
-          libredirect
           localcdn
           return-youtube-dislikes
           shiori

@@ -42,7 +42,7 @@ settings:
     supports_hdr = m.hdr;
 
     bitdepth = if m.wide_color then 10 else 8;
-    cm = if m.hdr then "hdredid" else "auto";
+    cm = if m.hdr then "hdr" else "auto";
 
     sdrsaturation = if m.hdr then 1.2 else 1.0;
 

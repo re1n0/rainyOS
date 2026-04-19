@@ -17,5 +17,8 @@ lib.optionalAttrs os.gaming.steam.enable {
     };
   };
 
-  programs.steam.plugins = with pkgs.millenniumPlugins; [ extendium ];
+  programs.steam.plugins = with pkgs.millenniumPlugins; [
+    extendium
+    hltb
+  ];
 }

@@ -17,6 +17,10 @@ lib.optionalAttrs os.gui.enable {
 
       autoload
       sponsorblock-minimal
+      youtube-upnext
+      quality-menu
+
+      uosc
     ];
 
     config = {
@@ -56,6 +60,14 @@ lib.optionalAttrs os.gui.enable {
       # YouTube
       script-opts = [
         "ytdl_hook-ytdl_path=yt-dlp"
+      ];
+    };
+
+    scriptOpts.uosc = {
+      controls = builtins.concatStringsSep "," [
+        "<!has_many_video,video,stream>command:theaters:script-binding quality_menu/video_formats_toggle#@vformats>1?Video"
+        "<!has_many_audio,has_audio,stream>command:graphic_eq:script-binding quality_menu/audio_formats_toggle#@aformats>1?Audio"
+        "<stream>command:queue_play_next:script-message-to youtube_upnext menu?Up Next"
       ];
     };
   };

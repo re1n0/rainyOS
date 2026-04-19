@@ -26,7 +26,7 @@
         enable_selector = false;
         handlers = [
           {
-            exec = "freetube %u";
+            exec = "mpv %u";
             regexes = [ "youtu(be.com|.be)" ];
           }
           {
