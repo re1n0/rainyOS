@@ -4,7 +4,7 @@
       name = "html";
       file-types = [
         "html"
-        { glob = "*.html.hbs"; }
+        "*.html.hbs"
       ];
       auto-format = true;
     }
@@ -60,7 +60,7 @@
           name = "typescript-language-server";
           except-features = [ "format" ];
         }
-        "biome"
+        { name = "biome"; }
       ];
       auto-format = true;
     }
@@ -72,7 +72,7 @@
           name = "typescript-language-server";
           except-features = [ "format" ];
         }
-        "biome"
+        { name = "biome"; }
       ];
       auto-format = true;
     }
@@ -84,7 +84,7 @@
           name = "typescript-language-server";
           except-features = [ "format" ];
         }
-        "biome"
+        { name = "biome"; }
       ];
       auto-format = true;
     }
@@ -96,7 +96,7 @@
           name = "typescript-language-server";
           except-features = [ "format" ];
         }
-        "biome"
+        { name = "biome"; }
       ];
       auto-format = true;
     }
@@ -108,7 +108,7 @@
           name = "vscode-json-language-server";
           except-features = [ "format" ];
         }
-        "biome"
+        { name = "biome"; }
       ];
       auto-format = true;
     }
