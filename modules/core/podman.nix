@@ -30,5 +30,6 @@ lib.mkIf config.rainyos.virtualisation.podman.enable {
 
   environment.systemPackages = with pkgs; [
     docker-credential-helpers
+    podman-compose
   ];
 }

@@ -25,6 +25,8 @@
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+      "nixos-millennium.cachix.org-1:AaMK3uqfgzCUpjs7+gdHTwwaqkT/vvLMCnUKSY37QAQ="
+      "nixos-rocksmith.cachix.org-1:gg6dJg9svbP30JVrtFwkCpGVBkHbEwYswGS2VoXJ2qo="
     ];
     substituters = [
       "https://cache.nixos.org"
@@ -34,6 +36,8 @@
       "https://hyprland.cachix.org"
       "https://cache.garnix.io"
       "https://attic.xuyh0120.win/lantian"
+      "https://nixos-millennium.cachix.org"
+      "https://nixos-rocksmith.cachix.org"
     ];
 
     auto-optimise-store = true;
@@ -47,6 +51,7 @@
     self.overlays.default
     inputs.nix-cachyos-kernel.overlay
     inputs.nixos-millennium.overlays.default
+    inputs.nixos-rocksmith.overlays.default
     inputs.proton-cachyos.overlays.default
     inputs.nix-gaming.overlays.default
     inputs.mesa-git.overlays.default

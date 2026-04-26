@@ -38,8 +38,8 @@ settings:
 
     inherit (m) position scale;
 
-    supports_wide_color = m.wide_color;
-    supports_hdr = m.hdr;
+    supports_wide_color = if m.wide_color then 1 else -1;
+    supports_hdr = if m.hdr then 1 else -1;
 
     bitdepth = if m.wide_color then 10 else 8;
     cm = if m.hdr then "hdr" else "auto";
@@ -49,7 +49,7 @@ settings:
     sdr_max_luminance = if m.hdr then 200 else null;
     sdr_min_luminance = if m.hdr then 0.005 else null;
 
-    sdr_eotf = if m.hdr then m.eotf else null;
+    sdr_eotf = "srgb";
 
     # icc = m.icc
   }) settings.gui.monitors;
@@ -79,8 +79,7 @@ settings:
   };
 
   render = {
-    direct_scanout = 2;
-    cm_fs_passthrough = 1;
+    cm_auto_hdr = 0;
   };
 
   decoration = {

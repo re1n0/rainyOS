@@ -78,13 +78,6 @@ with lib;
             example = ../DP-1.icm;
             description = "ICC profile";
           };
-
-          eotf = mkOption {
-            type = str;
-            default = "srgb";
-            example = "gamma22";
-            description = "SDR EOTF curve";
-          };
         };
       });
       default = [ ];

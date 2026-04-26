@@ -19,6 +19,8 @@ lib.optionalAttrs os.gaming.steam.enable {
 
   programs.steam.plugins = with pkgs.millenniumPlugins; [
     extendium
+    gratitude
     hltb
+    non-steam-playtimes
   ];
 }
