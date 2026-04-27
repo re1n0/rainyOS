@@ -19,5 +19,6 @@
     ./stylix.nix
     ./system.nix
     ./user.nix
+    ./virt-manager.nix
   ];
 }

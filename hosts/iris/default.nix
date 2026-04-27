@@ -85,6 +85,9 @@
       minecraft.enable = true;
     };
 
-    virtualisation.podman.enable = true;
+    virtualisation = {
+      podman.enable = true;
+      virt-manager.enable = true;
+    };
   };
 }

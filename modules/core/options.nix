@@ -305,6 +305,7 @@ with lib;
 
     # Virtualisation
     virtualisation.podman.enable = mkEnableOption "Enable Podman";
+    virtualisation.virt-manager.enable = mkEnableOption "Enable virt-manager";
 
     # Wine
     wine.enable = mkOption {

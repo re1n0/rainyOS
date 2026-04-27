@@ -2,6 +2,7 @@
   lib,
   host,
   options,
+  config,
   ...
 }:
 {
@@ -10,9 +11,14 @@
     networkmanager.enable = true;
     timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
 
-    firewall.enable = true;
-
     wireguard.enable = true;
+  };
+
+  networking.firewall = {
+    enable = true;
+
+    trustedInterfaces =
+      [ ] ++ (lib.optional config.rainyos.virtualisation.virt-manager.enable "virbr0");
   };
 
   systemd.network.wait-online.enable = lib.mkForce false;
