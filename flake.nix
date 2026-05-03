@@ -23,12 +23,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-gaming-edge = {
+      url = "github:powerofthe69/nix-gaming-edge";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-millennium = {
       url = "github:re1n0/nixos-millennium";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
 
     nix-gaming = {
       url = "github:fufexan/nix-gaming";
@@ -86,8 +89,9 @@
             inputs.mesa-git.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             inputs.nixos-rocksmith.nixosModules.default
-            inputs.stylix.nixosModules.stylix
+            inputs.nix-gaming-edge.nixosModules.default
             inputs.lanzaboote.nixosModules.lanzaboote
+            inputs.stylix.nixosModules.stylix
             inputs.nixos-millennium.nixosModules.default
           ];
         };

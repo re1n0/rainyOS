@@ -17,8 +17,7 @@
   networking.firewall = {
     enable = true;
 
-    trustedInterfaces =
-      [ ] ++ (lib.optional config.rainyos.virtualisation.virt-manager.enable "virbr0");
+    trustedInterfaces = lib.optional config.rainyos.virtualisation.virt-manager.enable "virbr0";
   };
 
   systemd.network.wait-online.enable = lib.mkForce false;

@@ -27,6 +27,7 @@
       "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       "nixos-millennium.cachix.org-1:AaMK3uqfgzCUpjs7+gdHTwwaqkT/vvLMCnUKSY37QAQ="
       "nixos-rocksmith.cachix.org-1:gg6dJg9svbP30JVrtFwkCpGVBkHbEwYswGS2VoXJ2qo="
+      "tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk="
     ];
     substituters = [
       "https://cache.nixos.org"
@@ -38,6 +39,7 @@
       "https://attic.xuyh0120.win/lantian"
       "https://nixos-millennium.cachix.org"
       "https://nixos-rocksmith.cachix.org"
+      "https://nix-cache.tokidoki.dev/tokidoki"
     ];
 
     auto-optimise-store = true;
@@ -50,11 +52,11 @@
   nixpkgs.overlays = [
     self.overlays.default
     inputs.nix-cachyos-kernel.overlay
+    inputs.mesa-git.overlays.default
+    inputs.nix-gaming-edge.overlays.default
     inputs.nixos-millennium.overlays.default
     inputs.nixos-rocksmith.overlays.default
-    inputs.proton-cachyos.overlays.default
     inputs.nix-gaming.overlays.default
-    inputs.mesa-git.overlays.default
   ];
 
   services.fwupd.enable = true;

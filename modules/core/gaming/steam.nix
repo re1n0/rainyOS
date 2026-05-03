@@ -13,7 +13,7 @@ lib.mkIf cfg.steam.enable {
     enable = true;
 
     extraCompatPackages = with pkgs; [
-      proton-cachyos-x86_64_v4
+      proton-cachyos-x86_64-v3
     ];
 
     package = pkgs.millennium-steam.override {
