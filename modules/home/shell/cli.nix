@@ -10,6 +10,7 @@
     ntfs3g
 
     fd
+    ripgrep
 
     tailspin
     eza
@@ -32,7 +33,11 @@
 
     asak
 
-    timg
+    chafa
+
+    hexyl
+
+    procs
 
     yt-dlp
     ytmdl

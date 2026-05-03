@@ -4,6 +4,8 @@ in
 final: prev: {
   pins = import ../npins;
 
+  buildFishPlugin = makePkg final ./build-fish-plugin;
+
   nix-hash-git = makePkg final ./nix-hash-git;
   nix-hash-url = makePkg final ./nix-hash-url;
 
@@ -12,6 +14,8 @@ final: prev: {
   themes = makePkg final ./themes;
 
   yaziPlugins = prev.lib.recursiveUpdate prev.yaziPlugins { gvfs = makePkg final ./gvfs.yazi; };
+
+  fishPlugins = prev.lib.recursiveUpdate prev.fishPlugins { fzf-tab = makePkg final ./fzf-tab.fish; };
 
   graalvmPackages = prev.lib.recursiveUpdate prev.graalvmPackages {
     graalvm-oracle_21 = makePkg final ./graalvm-oracle_21;

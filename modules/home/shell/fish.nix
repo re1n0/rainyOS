@@ -15,6 +15,8 @@ in
 
     interactiveShellInit = ''
       set -g fish_greeting "" # Disable greeting
+
+      set -Ux fifc_editor hx
     '';
 
     plugins =
@@ -25,11 +27,10 @@ in
           inherit (pkg) src;
         })
         [
-          bang-bang
-          fzf-fish
+          puffer
+          fzf-tab
           git-abbr
           plugin-sudope
-          puffer
           spark
         ];
   };

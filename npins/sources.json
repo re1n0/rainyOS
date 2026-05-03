@@ -1,5 +1,18 @@
 {
   "pins": {
+    "fzf-tab-fish": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "xxxbrian",
+        "repo": "fzf-tab.fish"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "22326fa2d51e771b8253eb8bf1eb72e635a9d303",
+      "url": "https://github.com/xxxbrian/fzf-tab.fish/archive/22326fa2d51e771b8253eb8bf1eb72e635a9d303.tar.gz",
+      "hash": "sha256-Itmk9COzXeFSZS9nHMcPkPTgh4bJx/0W3IvekFmt2Tw="
+    },
     "gvfs.yazi": {
       "type": "Git",
       "repository": {

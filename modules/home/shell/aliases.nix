@@ -1,6 +1,7 @@
 {
   # misc
-  icat = "timg -p k";
+  icat = "chafa -f iterm";
+  ps = "procs";
 
   # ls
   exa = "eza --icons --git";
