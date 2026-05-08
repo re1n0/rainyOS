@@ -5,8 +5,8 @@
   ...
 }:
 lib.optionalAttrs os.gaming.steam.enable {
-  programs.steam.config = {
-    themes.conditions."adwaita" = {
+  programs.steam.millenniumConfig = {
+    themes.conditions."adwaita-for-steam" = {
       "Login QR code" = "Show";
       "Keep pointer cursor for clickable elements" = "yes";
       "Remove rounded corners" = "yes";
@@ -20,7 +20,8 @@ lib.optionalAttrs os.gaming.steam.enable {
   programs.steam.plugins = with pkgs.millenniumPlugins; [
     extendium
     gratitude
-    hltb
+    # hltb
     non-steam-playtimes
+    browser-history
   ];
 }

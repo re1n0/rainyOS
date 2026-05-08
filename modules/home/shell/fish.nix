@@ -17,6 +17,8 @@ in
       set -g fish_greeting "" # Disable greeting
 
       set -Ux fifc_editor hx
+
+      set -x FZF_DEFAULT_OPTS "--bind=tab:down,shift-tab:up,ctrl-space:toggle"
     '';
 
     plugins =

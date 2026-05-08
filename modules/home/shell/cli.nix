@@ -16,6 +16,8 @@
     eza
     dust
     file
+    delta
+    hexyl
 
     ffmpeg-full
 
@@ -34,8 +36,6 @@
     asak
 
     chafa
-
-    hexyl
 
     procs
 

@@ -6,5 +6,4 @@
       quiet = true;
     };
   };
-  programs.lesspipe.enable = true;
 }
