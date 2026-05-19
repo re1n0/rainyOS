@@ -5,7 +5,7 @@
   ...
 }:
 let
-  settings = import ./settings.nix os;
+  nixVars = import ./settings.nix { inherit lib os pkgs; };
 in
 lib.optionalAttrs os.gui.hyprland.enable {
   home.packages = with pkgs; [
@@ -25,12 +25,20 @@ lib.optionalAttrs os.gui.hyprland.enable {
       variables = [ "--all" ];
     };
 
+    configType = "lua";
+
     plugins = with pkgs.hyprlandPlugins; [
-      hypr-dynamic-cursors
+      # hypr-dynamic-cursors
     ];
 
-    inherit settings;
+    extraLuaFiles = {
+      "00-nix-vars" = nixVars;
+      binds = ./binds.lua;
+      settings = ./settings.lua;
+    };
   };
 
   home.pointerCursor.hyprcursor.enable = true;
+
+  stylix.targets.hyprland.enable = false;
 }

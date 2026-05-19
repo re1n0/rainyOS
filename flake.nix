@@ -44,7 +44,8 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      # url = "github:nix-community/home-manager";
+      url = "github:khaneliman/home-manager/hyprland-lua";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -62,6 +63,11 @@
       url = "github:re1n0/nixos-rocksmith";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-gaming.follows = "nix-gaming";
+    };
+
+    sheetsui = {
+      url = "github:zaphar/sheetsui";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -95,14 +101,20 @@
             inputs.nixos-millennium.nixosModules.default
           ];
         };
+
+      forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
     in
     {
-      overlays.default = import ./pkgs;
+      overlays.default = import ./pkgs { inherit inputs; };
+
       packages.x86_64-linux.default = self.nixosConfigurations.thome.config.system.build.isoImage;
+
       nixosConfigurations = {
         sedna = makeConfiguration "sedna" "x86_64-linux";
         iris = makeConfiguration "iris" "x86_64-linux";
         thome = makeConfiguration "thome" "x86_64-linux";
       };
+
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
     };
 }

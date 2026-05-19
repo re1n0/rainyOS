@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   home.packages = with pkgs; [
     curl
@@ -39,6 +39,8 @@
 
     procs
 
+    sheetui
+
     yt-dlp
     ytmdl
 
@@ -54,7 +56,7 @@
     grex
     qrtool
 
-    asciinema_3
+    asciinema
     asciinema-agg
     presenterm
   ];
