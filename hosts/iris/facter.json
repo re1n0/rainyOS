@@ -881,7 +881,6 @@
         "fpu_exception": false,
         "cpuid_level": 22,
         "write_protect": false,
-        "tlb_size": 32576,
         "clflush_size": 64,
         "cache_alignment": 64,
         "address_sizes": {
@@ -893,87 +892,6 @@
     "disk": [
       {
         "index": 42,
-        "attached_to": 32,
-        "class_list": [
-          "disk",
-          "block_device",
-          "nvme"
-        ],
-        "bus_type": {
-          "hex": "0096",
-          "name": "NVME",
-          "value": 150
-        },
-        "slot": {
-          "bus": 0,
-          "number": 0
-        },
-        "base_class": {
-          "hex": "0106",
-          "name": "Mass Storage Device",
-          "value": 262
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Disk",
-          "value": 0
-        },
-        "vendor": {
-          "hex": "c0a9",
-          "value": 49321
-        },
-        "sub_vendor": {
-          "hex": "c0a9",
-          "value": 49321
-        },
-        "device": {
-          "hex": "5407",
-          "name": "CT1000P5PSSD8",
-          "value": 21511
-        },
-        "sub_device": {
-          "hex": "0100",
-          "value": 256
-        },
-        "serial": "2136316D444C",
-        "model": "CT1000P5PSSD8",
-        "sysfs_id": "/class/block/nvme0n1",
-        "sysfs_bus_id": "nvme0",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:1d.0/0000:05:00.0/nvme/nvme0",
-        "unix_device_names": [
-          "/dev/disk/by-id/nvme-CT1000P5PSSD8_2136316D444C",
-          "/dev/disk/by-id/nvme-CT1000P5PSSD8_2136316D444C_1",
-          "/dev/disk/by-id/nvme-eui.000000000000000100a07521316d444c",
-          "/dev/disk/by-path/pci-0000:05:00.0-nvme-1",
-          "/dev/nvme0n1"
-        ],
-        "resources": [
-          {
-            "type": "disk_geo",
-            "cylinders": 953869,
-            "heads": 64,
-            "sectors": 32,
-            "size": "0x0",
-            "geo_type": "logical"
-          },
-          {
-            "type": "size",
-            "unit": "sectors",
-            "value_1": 1953525168,
-            "value_2": 512
-          }
-        ],
-        "driver": "nvme",
-        "driver_module": "nvme",
-        "drivers": [
-          "nvme"
-        ],
-        "driver_modules": [
-          "nvme"
-        ]
-      },
-      {
-        "index": 43,
         "attached_to": 24,
         "class_list": [
           "disk",
@@ -987,7 +905,7 @@
         },
         "slot": {
           "bus": 0,
-          "number": 1
+          "number": 0
         },
         "base_class": {
           "hex": "0106",
@@ -1018,15 +936,15 @@
         },
         "serial": "50026B76866FC2EE",
         "model": "KINGSTON SKC3000D2048G",
-        "sysfs_id": "/class/block/nvme1n1",
-        "sysfs_bus_id": "nvme1",
-        "sysfs_device_link": "/devices/pci0000:00/0000:00:1b.0/0000:02:00.0/nvme/nvme1",
+        "sysfs_id": "/class/block/nvme0n1",
+        "sysfs_bus_id": "nvme0",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:1b.0/0000:02:00.0/nvme/nvme0",
         "unix_device_names": [
           "/dev/disk/by-id/nvme-KINGSTON_SKC3000D2048G_50026B76866FC2EE",
           "/dev/disk/by-id/nvme-KINGSTON_SKC3000D2048G_50026B76866FC2EE_1",
           "/dev/disk/by-id/nvme-eui.00000000000000000026b76866fc2ee5",
           "/dev/disk/by-path/pci-0000:02:00.0-nvme-1",
-          "/dev/nvme1n1"
+          "/dev/nvme0n1"
         ],
         "resources": [
           {
@@ -1041,6 +959,87 @@
             "type": "size",
             "unit": "sectors",
             "value_1": 4000797360,
+            "value_2": 512
+          }
+        ],
+        "driver": "nvme",
+        "driver_module": "nvme",
+        "drivers": [
+          "nvme"
+        ],
+        "driver_modules": [
+          "nvme"
+        ]
+      },
+      {
+        "index": 43,
+        "attached_to": 32,
+        "class_list": [
+          "disk",
+          "block_device",
+          "nvme"
+        ],
+        "bus_type": {
+          "hex": "0096",
+          "name": "NVME",
+          "value": 150
+        },
+        "slot": {
+          "bus": 0,
+          "number": 1
+        },
+        "base_class": {
+          "hex": "0106",
+          "name": "Mass Storage Device",
+          "value": 262
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Disk",
+          "value": 0
+        },
+        "vendor": {
+          "hex": "c0a9",
+          "value": 49321
+        },
+        "sub_vendor": {
+          "hex": "c0a9",
+          "value": 49321
+        },
+        "device": {
+          "hex": "5407",
+          "name": "CT1000P5PSSD8",
+          "value": 21511
+        },
+        "sub_device": {
+          "hex": "0100",
+          "value": 256
+        },
+        "serial": "2136316D444C",
+        "model": "CT1000P5PSSD8",
+        "sysfs_id": "/class/block/nvme1n1",
+        "sysfs_bus_id": "nvme1",
+        "sysfs_device_link": "/devices/pci0000:00/0000:00:1d.0/0000:05:00.0/nvme/nvme1",
+        "unix_device_names": [
+          "/dev/disk/by-id/nvme-CT1000P5PSSD8_2136316D444C",
+          "/dev/disk/by-id/nvme-CT1000P5PSSD8_2136316D444C_1",
+          "/dev/disk/by-id/nvme-eui.000000000000000100a07521316d444c",
+          "/dev/disk/by-path/pci-0000:05:00.0-nvme-1",
+          "/dev/nvme1n1"
+        ],
+        "resources": [
+          {
+            "type": "disk_geo",
+            "cylinders": 953869,
+            "heads": 64,
+            "sectors": 32,
+            "size": "0x0",
+            "geo_type": "logical"
+          },
+          {
+            "type": "size",
+            "unit": "sectors",
+            "value_1": 1953525168,
             "value_2": 512
           }
         ],
@@ -1322,7 +1321,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.19.11-cachyos-lto xhci-hcd",
+          "name": "Linux 7.0.5-cachyos-lto xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1332,11 +1331,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.19",
+          "name": "7.00",
           "value": 0
         },
         "serial": "0000:00:14.0",
-        "model": "Linux 6.19.11-cachyos-lto xhci-hcd xHCI Host Controller",
+        "model": "Linux 7.0.5-cachyos-lto xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb1/1-0:1.0",
         "sysfs_bus_id": "1-0:1.0",
         "resources": [
@@ -1384,7 +1383,7 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0002d0619dc09dsc00dp01ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0002d0700dc09dsc00dp01ic09isc00ip00in00"
       },
       {
         "index": 72,
@@ -1495,7 +1494,7 @@
         },
         "vendor": {
           "hex": "1d6b",
-          "name": "Linux 6.19.11-cachyos-lto xhci-hcd",
+          "name": "Linux 7.0.5-cachyos-lto xhci-hcd",
           "value": 7531
         },
         "device": {
@@ -1505,11 +1504,11 @@
         },
         "revision": {
           "hex": "0000",
-          "name": "6.19",
+          "name": "7.00",
           "value": 0
         },
         "serial": "0000:00:14.0",
-        "model": "Linux 6.19.11-cachyos-lto xhci-hcd xHCI Host Controller",
+        "model": "Linux 7.0.5-cachyos-lto xhci-hcd xHCI Host Controller",
         "sysfs_id": "/devices/pci0000:00/0000:00:14.0/usb2/2-0:1.0",
         "sysfs_bus_id": "2-0:1.0",
         "detail": {
@@ -1547,7 +1546,7 @@
         "driver_modules": [
           "usbcore"
         ],
-        "module_alias": "usb:v1D6Bp0003d0619dc09dsc00dp03ic09isc00ip00in00"
+        "module_alias": "usb:v1D6Bp0003d0700dc09dsc00dp03ic09isc00ip00in00"
       }
     ],
     "keyboard": [
@@ -2657,6 +2656,28 @@
     "network_interface": [
       {
         "index": 74,
+        "attached_to": 0,
+        "class_list": [
+          "network_interface"
+        ],
+        "base_class": {
+          "hex": "0107",
+          "name": "Network Interface",
+          "value": 263
+        },
+        "sub_class": {
+          "hex": "0000",
+          "name": "Loopback",
+          "value": 0
+        },
+        "model": "Loopback network interface",
+        "sysfs_id": "/class/net/lo",
+        "unix_device_names": [
+          "lo"
+        ]
+      },
+      {
+        "index": 75,
         "attached_to": 37,
         "class_list": [
           "network_interface"
@@ -2694,28 +2715,6 @@
         ],
         "driver_modules": [
           "r8169"
-        ]
-      },
-      {
-        "index": 75,
-        "attached_to": 0,
-        "class_list": [
-          "network_interface"
-        ],
-        "base_class": {
-          "hex": "0107",
-          "name": "Network Interface",
-          "value": 263
-        },
-        "sub_class": {
-          "hex": "0000",
-          "name": "Loopback",
-          "value": 0
-        },
-        "model": "Loopback network interface",
-        "sysfs_id": "/class/net/lo",
-        "unix_device_names": [
-          "lo"
         ]
       }
     ],
@@ -3350,7 +3349,7 @@
           },
           "interface_protocol": 32,
           "interface_number": 1,
-          "interface_alternate_setting": 0,
+          "interface_alternate_setting": 1,
           "interface_association": {
             "function_class": {
               "hex": "0001",
@@ -3563,7 +3562,7 @@
           },
           "interface_protocol": 32,
           "interface_number": 2,
-          "interface_alternate_setting": 0,
+          "interface_alternate_setting": 1,
           "interface_association": {
             "function_class": {
               "hex": "0001",
@@ -3925,7 +3924,7 @@
       }
     ],
     "system": {
-      "form_factor": "laptop"
+      "form_factor": "desktop"
     },
     "unknown": [
       {
@@ -5280,7 +5279,7 @@
           296352743492,
           300647710789,
           369367187526,
-          158913790038
+          2546915606614
         ]
       }
     ],

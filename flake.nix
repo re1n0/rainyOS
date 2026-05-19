@@ -44,7 +44,8 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      # url = "github:nix-community/home-manager";
+      url = "github:khaneliman/home-manager/hyprland-lua";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -95,14 +96,20 @@
             inputs.nixos-millennium.nixosModules.default
           ];
         };
+
+      forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
     in
     {
       overlays.default = import ./pkgs;
+
       packages.x86_64-linux.default = self.nixosConfigurations.thome.config.system.build.isoImage;
+
       nixosConfigurations = {
         sedna = makeConfiguration "sedna" "x86_64-linux";
         iris = makeConfiguration "iris" "x86_64-linux";
         thome = makeConfiguration "thome" "x86_64-linux";
       };
+
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
     };
 }

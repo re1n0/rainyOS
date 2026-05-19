@@ -22,7 +22,8 @@
         refresh = 144;
         wide_color = true;
         hdr = true;
-        icc = ./DP-1.icm;
+        eotf = "gamma22";
+        # icc = ./DP-1.icm;
       }
     ];
 

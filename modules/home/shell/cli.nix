@@ -54,7 +54,7 @@
     grex
     qrtool
 
-    asciinema_3
+    asciinema
     asciinema-agg
     presenterm
   ];
