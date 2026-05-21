@@ -39,6 +39,4 @@ lib.optionalAttrs os.gui.hyprland.enable {
   };
 
   home.pointerCursor.hyprcursor.enable = true;
-
-  stylix.targets.hyprland.enable = false;
 }
