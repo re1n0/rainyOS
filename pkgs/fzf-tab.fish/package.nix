@@ -1,16 +1,15 @@
 {
   lib,
   buildFishPlugin,
-  pins,
+  rainySources,
 }:
-let
-  inherit (pins) fzf-tab-fish;
-in
 buildFishPlugin {
-  pname = "fzf-tab";
-  version = "0-git+${fzf-tab-fish.revision}";
-
-  src = fzf-tab-fish;
+  inherit (rainySources."fzf-tab.fish")
+    pname
+    version
+    src
+    date
+    ;
 
   meta = {
     description = "Configurable fzf completions for fish shell ";

@@ -1,0 +1,91 @@
+{
+    "ferium": {
+        "cargoLock": {
+            "Cargo.lock": [
+                "sha256-Y0O_DRAh4+pGgUnibOYsgxLb0iej8zzxDB2gwm+KLpI=/Cargo.lock",
+                {}
+            ]
+        },
+        "date": "2026-05-16",
+        "extract": null,
+        "name": "ferium",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "gorilla-devs",
+            "repo": "ferium",
+            "rev": "9d6f16a5397edbfde8cbe82c0e6657355105b7e1",
+            "sha256": "sha256-Y0O/DRAh4+pGgUnibOYsgxLb0iej8zzxDB2gwm+KLpI=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "9d6f16a5397edbfde8cbe82c0e6657355105b7e1"
+    },
+    "fzf-tab.fish": {
+        "cargoLock": null,
+        "date": "2026-03-26",
+        "extract": null,
+        "name": "fzf-tab.fish",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "xxxbrian",
+            "repo": "fzf-tab.fish",
+            "rev": "22326fa2d51e771b8253eb8bf1eb72e635a9d303",
+            "sha256": "sha256-Itmk9COzXeFSZS9nHMcPkPTgh4bJx/0W3IvekFmt2Tw=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "22326fa2d51e771b8253eb8bf1eb72e635a9d303"
+    },
+    "gvfs.yazi": {
+        "cargoLock": null,
+        "date": "2026-03-30",
+        "extract": null,
+        "name": "gvfs.yazi",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "boydaihungst",
+            "repo": "gvfs.yazi",
+            "rev": "3abc0a258f9d7aeaa453a2d0d6e103c5a305953d",
+            "sha256": "sha256-UHneVJ+YXyDuPrZS+PZbs9n9h+VN5M2QG36FdprBkJc=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3abc0a258f9d7aeaa453a2d0d6e103c5a305953d"
+    },
+    "nomm": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "nomm",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Allexio",
+            "repo": "nomm",
+            "rev": "0.8.0",
+            "sha256": "sha256-m2OXKfqHSTEAGkkrsMXjOMkwBJ2dZgyh4nYjdv2a8l0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "0.8.0"
+    }
+}

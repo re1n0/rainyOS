@@ -1,0 +1,16 @@
+[ferium]
+src.git = "https://github.com/gorilla-devs/ferium.git"
+fetch.github = "gorilla-devs/ferium"
+cargo_lock = ["Cargo.lock"]
+
+["fzf-tab.fish"]
+src.git = "https://github.com/xxxbrian/fzf-tab.fish.git"
+fetch.github = "xxxbrian/fzf-tab.fish"
+
+["gvfs.yazi"]
+src.git = "https://github.com/boydaihungst/gvfs.yazi.git"
+fetch.github = "boydaihungst/gvfs.yazi"
+
+[nomm]
+fetch.github = "Allexio/nomm"
+src.github_tag = "Allexio/nomm"

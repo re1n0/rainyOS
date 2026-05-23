@@ -3,12 +3,9 @@ let
   makePkg = pkgs: name: pkgs.callPackage "${name}/package.nix" { };
 in
 final: prev: {
-  pins = import ../npins;
+  rainySources = prev.callPackage ../_sources/generated.nix { };
 
   buildFishPlugin = makePkg final ./build-fish-plugin;
-
-  nix-hash-git = makePkg final ./nix-hash-git;
-  nix-hash-url = makePkg final ./nix-hash-url;
 
   rainy-install = makePkg final ./rainy-install;
   screenshot = makePkg final ./screenshot;
@@ -28,4 +25,6 @@ final: prev: {
   nomm = makePkg final ./nomm;
 
   sheetui = inputs.sheetsui.packages.${prev.stdenv.hostPlatform.system}.default;
+
+  ferium = makePkg final ./ferium;
 }

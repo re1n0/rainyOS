@@ -7,20 +7,18 @@
   wrapGAppsHook4,
   gobject-introspection,
   libnotify,
-  pins,
   makeDesktopItem,
   copyDesktopItems,
+  rainySources,
 }:
-let
-  inherit (pins) nomm;
-in
 python3Packages.buildPythonApplication {
-  pname = "nomm";
-  inherit (nomm) version;
+  inherit (rainySources.nomm)
+    pname
+    version
+    src
+    ;
 
   format = "other";
-
-  src = nomm;
 
   nativeBuildInputs = [
     wrapGAppsHook4

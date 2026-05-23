@@ -59,6 +59,6 @@ lib.optionalAttrs os.gaming.steam.enable {
     gratitude
     # hltb
     non-steam-playtimes
-    browser-history
+    # browser-history
   ];
 }

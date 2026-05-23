@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     curl
@@ -47,11 +47,9 @@
     wireguard-tools
 
     nix-tree
-    nix-hash-git
-    nix-hash-url
     nix-output-monitor
     nixpkgs-review
-    npins
+    nvfetcher
 
     grex
     qrtool
