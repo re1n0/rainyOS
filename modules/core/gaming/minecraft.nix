@@ -15,7 +15,7 @@ lib.mkIf cfg.minecraft.enable {
       additionalPrograms = [ ffmpeg ];
 
       jdks = [
-        graalvmPackages.graalvm-ce
+        graalvmPackages.graalvm-oracle
         graalvmPackages.graalvm-oracle_21
         temurin-bin
       ];
