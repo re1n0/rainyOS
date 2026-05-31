@@ -44,8 +44,6 @@
     yt-dlp
     ytmdl
 
-    wireguard-tools
-
     nix-tree
     nix-output-monitor
     nixpkgs-review
