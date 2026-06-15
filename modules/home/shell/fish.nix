@@ -8,6 +8,10 @@ in
     ./cli.nix
   ];
 
+  home.packages = with pkgs; [
+    babelfish
+  ];
+
   programs.fish = {
     enable = true;
 
@@ -17,8 +21,11 @@ in
       set -g fish_greeting "" # Disable greeting
 
       set -Ux fifc_editor hx
+      set -U fifc_bat_opts --style=numbers
+      set -U fifc_fd_opts --hidden
+      set -U fifc_eza_opts --icons --tree
 
-      set -x FZF_DEFAULT_OPTS "--bind=tab:down,shift-tab:up,ctrl-space:toggle"
+      set -Ux FZF_DEFAULT_OPTS "--bind=tab:down,shift-tab:up,ctrl-space:toggle"
     '';
 
     plugins =

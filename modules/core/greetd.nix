@@ -14,11 +14,7 @@ lib.mkIf cfg.enable {
     enable = true;
     settings = {
       default_session = {
-        command = ''
-          ${lib.getExe pkgs.tuigreet} \
-                    -t --time-format '%I:%M %p | %a • %h | %F' \
-                    -g 'Access is restricted to authorized personel only.'
-        '';
+        command = "${lib.getExe pkgs.tuigreet} -t --time-format '%I:%M %p | %a • %h | %F' -g 'Access is restricted to authorized personel only.'";
       };
     };
   };

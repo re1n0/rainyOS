@@ -18,15 +18,15 @@ lib.mkIf cfg.steam.enable {
 
     package = pkgs.millennium-steam.override {
       extraLibraries =
-        pkgs':
-        with pkgs';
+        _:
+        with pkgs;
         (lib.optionals cfg.steam.rocksmithPatch [
           pipewire.jack
           rs-autoconnect
         ]);
       extraPkgs =
-        pkgs':
-        with pkgs';
+        _:
+        with pkgs;
         [
           close-steam-session
         ]

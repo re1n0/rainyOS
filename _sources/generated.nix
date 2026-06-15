@@ -21,8 +21,8 @@
     };
     date = "2026-05-16";
   };
-  "fzf-tab.fish" = {
-    pname = "fzf-tab.fish";
+  fzf-tab = {
+    pname = "fzf-tab";
     version = "22326fa2d51e771b8253eb8bf1eb72e635a9d303";
     src = fetchFromGitHub {
       owner = "xxxbrian";

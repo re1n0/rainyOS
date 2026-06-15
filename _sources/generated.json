@@ -25,11 +25,11 @@
         },
         "version": "9d6f16a5397edbfde8cbe82c0e6657355105b7e1"
     },
-    "fzf-tab.fish": {
+    "fzf-tab": {
         "cargoLock": null,
         "date": "2026-03-26",
         "extract": null,
-        "name": "fzf-tab.fish",
+        "name": "fzf-tab",
         "passthru": null,
         "pinned": false,
         "src": {

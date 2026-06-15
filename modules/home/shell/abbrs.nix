@@ -3,6 +3,7 @@
   q = "exit";
   c = "clear";
   s = "ssh";
+  rm = "rm -i";
 
   # du
   du = "dust";

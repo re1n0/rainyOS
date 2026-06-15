@@ -42,19 +42,43 @@ in
   xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
     [filechooser]
     cmd = ${pkgs.writeShellScript "yazi-wrapper" ''
-      #!/usr/bin/env bash
+      multiple="$1"
+      directory="$2"
+      save="$3"
       path="$4"
       out="$5"
+      debug="$6"
 
-      if [ -f "$path" ]; then
-        target_dir="$(dirname "$path")"
-      elif [ -d "$path" ]; then
-        target_dir="$path"
-      else
-        target_dir="$HOME"
+      set -e
+
+      if [ "$debug" = 1 ]; then
+          set -x
       fi
 
-      exec ghostty -e yazi --chooser-file="$out" "$target_dir"
+      if [ "$save" = "1" ]; then
+          # save a file
+          set -- --chooser-file="$out" "$path"
+      elif [ "$directory" = "1" ]; then
+          # upload files from a directory
+          set -- --chooser-file="$out" --cwd-file="$out"".1" "$path"
+      elif [ "$multiple" = "1" ]; then
+          # upload multiple files
+          set -- --chooser-file="$out" "$path"
+      else
+          # upload only 1 file
+          set -- --chooser-file="$out" "$path"
+      fi
+
+      exec ghostty -e yazi "$@"
+
+      if [ "$directory" = "1" ]; then
+          if [ ! -s "$out" ] && [ -s "$out"".1" ]; then
+              cat "$out"".1" > "$out"
+              rm "$out"".1"
+          else
+              rm "$out"".1"
+          fi
+      fi
     ''}
     default_dir = $HOME
     open_mode = suggested

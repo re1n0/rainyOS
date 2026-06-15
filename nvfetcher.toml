@@ -3,7 +3,7 @@ src.git = "https://github.com/gorilla-devs/ferium.git"
 fetch.github = "gorilla-devs/ferium"
 cargo_lock = ["Cargo.lock"]
 
-["fzf-tab.fish"]
+["fzf-tab"]
 src.git = "https://github.com/xxxbrian/fzf-tab.fish.git"
 fetch.github = "xxxbrian/fzf-tab.fish"
 

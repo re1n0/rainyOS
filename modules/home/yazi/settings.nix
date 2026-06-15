@@ -2,12 +2,12 @@
   plugin.prepend_fetchers = [
     {
       id = "git";
-      name = "*";
+      url = "*";
       run = "git";
     }
     {
       id = "git";
-      name = "*/";
+      url = "*/";
       run = "git";
     }
   ];
@@ -27,18 +27,18 @@
     }
 
     {
-      name = "/run/user/1000/gvfs/**/*";
+      url = "/run/user/1000/gvfs/**/*";
       run = "noop";
     }
     {
-      name = "/run/media/USER_NAME/**/*";
+      url = "/run/media/USER_NAME/**/*";
       run = "noop";
     }
   ];
 
   plugin.prepend_previewers = [
     {
-      name = "*.md";
+      url = "*.md";
       run = "glow";
     }
 
@@ -101,7 +101,7 @@
     }
 
     {
-      name = "*/";
+      url = "*/";
       run = "folder";
     }
     {
@@ -109,18 +109,18 @@
       run = "code";
     }
     {
-      name = "/run/user/1000/gvfs/**/*";
+      url = "/run/user/1000/gvfs/**/*";
       run = "noop";
     }
     {
-      name = "/run/media/USER_NAME/**/*";
+      url = "/run/media/USER_NAME/**/*";
       run = "noop";
     }
   ];
 
   plugin.append_previewers = [
     {
-      name = "*";
+      url = "*";
       run = ''piper -- hexyl --border=none --terminal-width=$w "$1"'';
     }
   ];
