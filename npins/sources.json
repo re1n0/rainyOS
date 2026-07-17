@@ -1,0 +1,50 @@
+{
+  "pins": {
+    "fifc": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "gazorby",
+        "repo": "fifc"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "v0.2.3",
+      "revision": "acae610ec73d0dee2925abac3a29a76f9cadbafe",
+      "url": "https://api.github.com/repos/gazorby/fifc/tarball/refs/tags/v0.2.3",
+      "hash": "sha256-7LYgg42QDyftBYSXXkzzq/l1RPS3F7vxAOJK10Bb0pU="
+    },
+    "gvfs.yazi": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "boydaihungst",
+        "repo": "gvfs.yazi"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "c5a0bb924eceeeb8b44bfc00aba0a97ba0287fa3",
+      "url": "https://github.com/boydaihungst/gvfs.yazi/archive/c5a0bb924eceeeb8b44bfc00aba0a97ba0287fa3.tar.gz",
+      "hash": "sha256-hSHEN/F4uc1FFScB5lLRAKryLwP+O7I9vgEgobGbQyw="
+    },
+    "nomm": {
+      "type": "GitRelease",
+      "repository": {
+        "type": "GitHub",
+        "owner": "Allexio",
+        "repo": "nomm"
+      },
+      "pre_releases": false,
+      "version_upper_bound": null,
+      "release_prefix": null,
+      "submodules": false,
+      "version": "0.10.1",
+      "revision": "f99ac3fb4bce35ff07489096ef0468b9d696738d",
+      "url": "https://api.github.com/repos/Allexio/nomm/tarball/refs/tags/0.10.1",
+      "hash": "sha256-0+374FbaTkAjXf2+anZtckz/Ozz/B47UQVRCQTZCqus="
+    }
+  },
+  "version": 8
+}

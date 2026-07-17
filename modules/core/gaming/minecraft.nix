@@ -9,8 +9,6 @@ let
 in
 lib.mkIf cfg.minecraft.enable {
   environment.systemPackages = with pkgs; [
-    ferium
-
     (prismlauncher.override {
       additionalPrograms = [ ffmpeg ];
 

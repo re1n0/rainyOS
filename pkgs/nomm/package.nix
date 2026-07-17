@@ -9,16 +9,19 @@
   libnotify,
   makeDesktopItem,
   copyDesktopItems,
-  rainySources,
+  pins,
 }:
+let
+  inherit (pins) nomm;
+in
 python3Packages.buildPythonApplication {
-  inherit (rainySources.nomm)
-    pname
-    version
-    src
-    ;
+  pname = "nomm";
+
+  inherit (nomm) version;
 
   format = "other";
+
+  src = nomm;
 
   nativeBuildInputs = [
     wrapGAppsHook4

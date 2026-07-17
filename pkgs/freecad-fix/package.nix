@@ -1,13 +1,13 @@
 {
   symlinkJoin,
-  freecad-qt6,
+  freecad,
   makeWrapper,
   mesa,
 }:
 symlinkJoin {
   name = "freecad-fix";
   paths = [
-    freecad-qt6
+    freecad
   ];
   buildInputs = [ makeWrapper ];
   postBuild = ''

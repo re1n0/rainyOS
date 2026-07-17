@@ -3,7 +3,7 @@ let
   makePkg = pkgs: name: pkgs.callPackage "${name}/package.nix" { };
 in
 final: prev: {
-  rainySources = prev.callPackage ../_sources/generated.nix { };
+  pins = import ../npins;
 
   buildFishPlugin = makePkg final ./build-fish-plugin;
 
@@ -11,9 +11,16 @@ final: prev: {
   screenshot = makePkg final ./screenshot;
   themes = makePkg final ./themes;
 
-  yaziPlugins = prev.lib.recursiveUpdate prev.yaziPlugins { gvfs = makePkg final ./gvfs.yazi; };
+  yaziPlugins = prev.lib.recursiveUpdate prev.yaziPlugins {
+    gvfs = makePkg final ./gvfs.yazi;
+  };
 
-  fishPlugins = prev.lib.recursiveUpdate prev.fishPlugins { fzf-tab = makePkg final ./fzf-tab.fish; };
+  fishPlugins = prev.lib.recursiveUpdate prev.fishPlugins {
+    fifc-git = prev.fishPlugins.fifc.overrideDerivation (_: {
+      src = final.pins.fifc;
+      version = final.pins.fifc.version;
+    });
+  };
 
   graalvmPackages = prev.lib.recursiveUpdate prev.graalvmPackages {
     graalvm-oracle_21 = makePkg final ./graalvm-oracle_21;
@@ -25,6 +32,4 @@ final: prev: {
   nomm = makePkg final ./nomm;
 
   sheetui = inputs.sheetsui.packages.${prev.stdenv.hostPlatform.system}.default;
-
-  ferium = makePkg final ./ferium;
 }

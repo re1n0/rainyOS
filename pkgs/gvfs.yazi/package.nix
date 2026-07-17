@@ -1,15 +1,16 @@
 {
   lib,
   stdenvNoCC,
-  rainySources,
+  pins,
 }:
+let
+  gvfs-yazi = pins."gvfs.yazi";
+in
 stdenvNoCC.mkDerivation {
-  inherit (rainySources."gvfs.yazi")
-    pname
-    version
-    src
-    date
-    ;
+  pname = "gvfs.yazi";
+  version = "0-git+${gvfs-yazi.revision}";
+
+  src = gvfs-yazi;
 
   installPhase = ''
     runHook preInstall

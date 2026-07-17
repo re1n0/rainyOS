@@ -47,7 +47,7 @@
     nix-tree
     nix-output-monitor
     nixpkgs-review
-    nvfetcher
+    npins
 
     grex
     qrtool

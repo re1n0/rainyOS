@@ -4,4 +4,6 @@ lib.optionalAttrs os.gui.enable {
     ./hyprland
     ./awww.nix
   ];
+
+  home.pointerCursor.enable = true;
 }

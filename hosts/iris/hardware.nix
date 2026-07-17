@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+_: {
   hardware.nvidia = {
     open = true;
 
@@ -8,11 +7,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  hardware.nvidia.package =
-    let
-      base = config.boot.kernelPackages.nvidiaPackages.beta;
-    in
-    base;
+  hardware.nvidia.branch = "bleeding_edge";
 
   mesa-git = {
     enable = true;
