@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v0.2.3",
-      "revision": "acae610ec73d0dee2925abac3a29a76f9cadbafe",
-      "url": "https://api.github.com/repos/gazorby/fifc/tarball/refs/tags/v0.2.3",
-      "hash": "sha256-7LYgg42QDyftBYSXXkzzq/l1RPS3F7vxAOJK10Bb0pU="
+      "version": "v0.2.4",
+      "revision": "0e7d013478a8f2b2e9e6628b026180ca23164224",
+      "url": "https://api.github.com/repos/gazorby/fifc/tarball/refs/tags/v0.2.4",
+      "hash": "sha256-pEjA1c8ULiUn19ccoCDt19oADK+zrzNHZ+lSybrH9uE="
     },
     "gvfs.yazi": {
       "type": "Git",
