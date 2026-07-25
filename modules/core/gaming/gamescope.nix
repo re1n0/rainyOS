@@ -9,6 +9,7 @@ in
 lib.mkIf config.rainyos.gaming.gamescope.enable {
   programs.gamescope = {
     enable = true;
+    enableWsi = true;
     capSysNice = true;
     args = common.makeGamescopeArgs [ ];
   };

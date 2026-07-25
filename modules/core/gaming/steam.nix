@@ -31,9 +31,8 @@ lib.mkIf cfg.steam.enable {
           close-steam-session
         ]
         ++ (lib.optionals cfg.steam.rocksmithPatch [
-          patch-rocksmith
-          wineasio
-          wineasio-32
+          wineWow64Packages.stable
+          pipeasio
         ]);
     };
 
@@ -69,6 +68,5 @@ lib.mkIf cfg.steam.enable {
   environment.systemPackages = with pkgs; [
     vulkan-helper
     freetype
-    nomm
   ];
 }

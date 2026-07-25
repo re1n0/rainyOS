@@ -48,6 +48,7 @@
     nix-output-monitor
     nixpkgs-review
     npins
+    nurl
 
     grex
     qrtool

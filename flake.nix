@@ -23,6 +23,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-gaming = {
+      url = "github:fufexan/nix-gaming";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-gaming-edge = {
       url = "github:powerofthe69/nix-gaming-edge";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,11 +35,6 @@
 
     nixos-millennium = {
       url = "github:re1n0/nixos-millennium";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nix-gaming = {
-      url = "github:fufexan/nix-gaming";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -59,7 +59,7 @@
     };
 
     nixos-rocksmith = {
-      url = "github:re1n0/nixos-rocksmith";
+      url = "github:re1n0/nixos-rocksmith/rewrite";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-gaming.follows = "nix-gaming";
     };

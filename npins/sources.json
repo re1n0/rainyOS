@@ -11,10 +11,10 @@
       "version_upper_bound": null,
       "release_prefix": null,
       "submodules": false,
-      "version": "v0.2.4",
-      "revision": "0e7d013478a8f2b2e9e6628b026180ca23164224",
-      "url": "https://api.github.com/repos/gazorby/fifc/tarball/refs/tags/v0.2.4",
-      "hash": "sha256-pEjA1c8ULiUn19ccoCDt19oADK+zrzNHZ+lSybrH9uE="
+      "version": "v0.3.4",
+      "revision": "bea24d554e5e5edd163520b081a8d38b3a9f2b79",
+      "url": "https://api.github.com/repos/gazorby/fifc/tarball/refs/tags/v0.3.4",
+      "hash": "sha256-huBcOdjiRztGyqcMX4vnrr8lLjtWBcCYvBLXr1JNNQs="
     },
     "gvfs.yazi": {
       "type": "Git",
@@ -25,25 +25,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "c5a0bb924eceeeb8b44bfc00aba0a97ba0287fa3",
-      "url": "https://github.com/boydaihungst/gvfs.yazi/archive/c5a0bb924eceeeb8b44bfc00aba0a97ba0287fa3.tar.gz",
-      "hash": "sha256-hSHEN/F4uc1FFScB5lLRAKryLwP+O7I9vgEgobGbQyw="
-    },
-    "nomm": {
-      "type": "GitRelease",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Allexio",
-        "repo": "nomm"
-      },
-      "pre_releases": false,
-      "version_upper_bound": null,
-      "release_prefix": null,
-      "submodules": false,
-      "version": "0.10.1",
-      "revision": "f99ac3fb4bce35ff07489096ef0468b9d696738d",
-      "url": "https://api.github.com/repos/Allexio/nomm/tarball/refs/tags/0.10.1",
-      "hash": "sha256-0+374FbaTkAjXf2+anZtckz/Ozz/B47UQVRCQTZCqus="
+      "revision": "364b0a811d722a1fdb3c2bde36aa640591437967",
+      "url": "https://github.com/boydaihungst/gvfs.yazi/archive/364b0a811d722a1fdb3c2bde36aa640591437967.tar.gz",
+      "hash": "sha256-bQDcT04m1WvMRCiVIyer4WHgjYMaamMfolmH49lVSig="
     }
   },
   "version": 8
