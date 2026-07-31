@@ -85,6 +85,8 @@
         enable = true;
         session = true;
       };
+
+      minecraft.enable = true;
     };
 
     virtualisation.podman.enable = true;

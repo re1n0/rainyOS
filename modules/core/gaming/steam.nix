@@ -17,13 +17,11 @@ lib.mkIf cfg.steam.enable {
     ];
 
     package = pkgs.millennium-steam.override {
-      extraLibraries =
-        _:
-        with pkgs;
-        (lib.optionals cfg.steam.rocksmithPatch [
-          pipewire.jack
-          rs-autoconnect
-        ]);
+      # extraLibraries =
+      #   _:
+      #   with pkgs;
+      #   (lib.optionals cfg.steam.rocksmithPatch [
+      #   ]);
       extraPkgs =
         _:
         with pkgs;
@@ -31,8 +29,8 @@ lib.mkIf cfg.steam.enable {
           close-steam-session
         ]
         ++ (lib.optionals cfg.steam.rocksmithPatch [
-          wineWow64Packages.stable
-          pipeasio
+          # wineWow64Packages.stable
+          # pipeasio
         ]);
     };
 

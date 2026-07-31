@@ -25,9 +25,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "364b0a811d722a1fdb3c2bde36aa640591437967",
-      "url": "https://github.com/boydaihungst/gvfs.yazi/archive/364b0a811d722a1fdb3c2bde36aa640591437967.tar.gz",
-      "hash": "sha256-bQDcT04m1WvMRCiVIyer4WHgjYMaamMfolmH49lVSig="
+      "revision": "cb7084d4bb0a72e4d3db8ff02eab1e5fbb358144",
+      "url": "https://github.com/boydaihungst/gvfs.yazi/archive/cb7084d4bb0a72e4d3db8ff02eab1e5fbb358144.tar.gz",
+      "hash": "sha256-GpcCITgdwn8pQHGPRHWeDwGkI1l9vwafmSSCIIIVvoQ="
     }
   },
   "version": 8

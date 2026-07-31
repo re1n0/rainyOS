@@ -59,7 +59,7 @@
     };
 
     nixos-rocksmith = {
-      url = "github:re1n0/nixos-rocksmith/rewrite";
+      url = "github:re1n0/nixos-rocksmith";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nix-gaming.follows = "nix-gaming";
     };

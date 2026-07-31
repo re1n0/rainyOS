@@ -29,5 +29,5 @@ let
     ++ args;
 in
 {
-  inherit makeGamescopeArgs;
+  inherit makeGamescopeArgs primaryMonitor;
 }

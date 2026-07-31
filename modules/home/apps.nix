@@ -10,5 +10,6 @@ lib.optionalAttrs os.gui.enable {
     crosspipe
     android-tools
     freecad-fix
+    zbar
   ];
 }
