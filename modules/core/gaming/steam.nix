@@ -17,27 +17,26 @@ lib.mkIf cfg.steam.enable {
     ];
 
     package = pkgs.millennium-steam.override {
-      # extraLibraries =
-      #   _:
-      #   with pkgs;
-      #   (lib.optionals cfg.steam.rocksmithPatch [
-      #   ]);
       extraPkgs =
-        _:
-        with pkgs;
-        [
+        _: with pkgs; [
           close-steam-session
-        ]
-        ++ (lib.optionals cfg.steam.rocksmithPatch [
-          # wineWow64Packages.stable
-          # pipeasio
-        ]);
+          wineWow64Packages.stable
+          pipeasio
+        ];
+      extraLibraries =
+        _: with pkgs; [
+          pipeasio
+        ];
     };
 
     extest.enable = true;
     protontricks.enable = true;
 
-    rocksmithPatch.enable = cfg.steam.rocksmithPatch;
+    rocksmithPatch = lib.mkIf cfg.steam.rocksmithPatch {
+      enable = true;
+
+      pipewireLowLatency.rate = 48000;
+    };
   };
 
   programs.steam.gamescopeSession = lib.mkIf cfg.steam.session {

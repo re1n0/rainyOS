@@ -42,6 +42,7 @@ lib.mkIf config.rainyos.audio.enable {
         "bap_source"
       ];
       "bluez5.codecs" = [
+        "lhdc_v5"
         "aptx_hd"
         "ldac"
         "aptx_ll"
