@@ -84,6 +84,7 @@
       steam = {
         enable = true;
         session = true;
+        rocksmithPatch = true;
       };
 
       minecraft.enable = true;

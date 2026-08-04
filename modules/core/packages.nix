@@ -1,6 +1,7 @@
 {
   inputs,
   self,
+  lib,
   ...
 }:
 {
@@ -45,8 +46,6 @@
 
   services.gvfs.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
   nixpkgs.overlays = [
     self.overlays.default
     inputs.nix-cachyos-kernel.overlays.default
@@ -57,5 +56,48 @@
     inputs.nix-gaming.overlays.default
   ];
 
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "azuki"
+      "evafast"
+      "ouch"
+      "steam"
+      "steam-unwrapped"
+      "youtube-upnext"
+      "win-sdk"
+      "xwin-fetch-msvc"
+    ];
+
+  nixpkgs.config.microsoftVisualStudioLicenseAccepted = true;
+
   services.fwupd.enable = true;
+
+  # system.replaceDependencies.replacements = [
+  #   {
+  #     oldDependency = pkgs.xdg-utils;
+  #     replacement = pkgs.xdg-utils.overrideAttrs (
+  #       _:
+  #       let
+  #         handlr-open = pkgs.writeShellScriptBin "xdg-open" ''${pkgs.handlr-regex}/bin/handlr open -- "$@"'';
+  #       in
+  #       {
+  #         postInstall = ''
+  #           cp ${handlr-open}/bin/xdg-open $out/bin/xdg-open
+  #         '';
+  #       }
+  #     );
+  #   }
+
+  #   {
+  #     oldDependency = pkgs.xterm;
+  #     replacement = pkgs.writeShellApplication {
+  #       name = "xterm";
+  #       runtimeInputs = [ pkgs.handlr-regex ];
+  #       text = ''
+  #         handlr launch x-scheme-handler/terminal -- "$@"
+  #       '';
+  #     };
+  #   }
+  # ];
 }

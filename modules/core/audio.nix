@@ -18,7 +18,7 @@ lib.mkIf config.rainyos.audio.enable {
     lowLatency = {
       enable = true;
       quantum = 256;
-      rate = 48000;
+      rate = 192000;
     };
   };
 
@@ -42,6 +42,7 @@ lib.mkIf config.rainyos.audio.enable {
         "bap_source"
       ];
       "bluez5.codecs" = [
+        "lhdc_v5"
         "aptx_hd"
         "ldac"
         "aptx_ll"

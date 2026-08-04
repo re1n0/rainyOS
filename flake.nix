@@ -59,9 +59,8 @@
     };
 
     nixos-rocksmith = {
-      url = "github:re1n0/nixos-rocksmith";
+      url = "github:re1n0/nixos-rocksmith/rewrite";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nix-gaming.follows = "nix-gaming";
     };
 
     sheetsui = {
@@ -94,6 +93,7 @@
             inputs.mesa-git.nixosModules.default
             inputs.home-manager.nixosModules.home-manager
             inputs.nixos-rocksmith.nixosModules.default
+            inputs.nix-gaming.nixosModules.pipewireLowLatency
             inputs.nix-gaming-edge.nixosModules.default
             inputs.lanzaboote.nixosModules.lanzaboote
             inputs.stylix.nixosModules.stylix

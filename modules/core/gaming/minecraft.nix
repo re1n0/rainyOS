@@ -15,8 +15,6 @@ lib.mkIf cfg.minecraft.enable {
       jdks = [
         temurin-jre-bin-21
         temurin-jre-bin
-        graalvmPackages.graalvm-oracle_21
-        graalvmPackages.graalvm-oracle
       ];
     })
   ];

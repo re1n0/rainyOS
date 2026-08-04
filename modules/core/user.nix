@@ -61,7 +61,6 @@ in
     users =
       if os.configuration == "desktop" then
         {
-          work = homeSettings "work";
           priv = homeSettings "priv";
         }
       else
@@ -94,7 +93,6 @@ in
   users.users =
     if os.configuration == "desktop" then
       {
-        work = userSettings;
         priv = userSettings;
       }
     else
@@ -121,6 +119,5 @@ in
 
   nix.settings.allowed-users = [
     "priv"
-    "work"
   ];
 }
