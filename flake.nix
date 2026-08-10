@@ -59,7 +59,7 @@
     };
 
     nixos-rocksmith = {
-      url = "github:re1n0/nixos-rocksmith/rewrite";
+      url = "github:re1n0/nixos-rocksmith/release";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -114,6 +114,6 @@
         thome = makeConfiguration "thome" "x86_64-linux";
       };
 
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-rfc-style);
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
     };
 }
