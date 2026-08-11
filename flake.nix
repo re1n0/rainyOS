@@ -34,7 +34,7 @@
     };
 
     nixos-millennium = {
-      url = "github:re1n0/nixos-millennium";
+      url = "github:re1n0/nixos-millennium/release";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

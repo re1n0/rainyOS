@@ -61,7 +61,7 @@ hdr: {
   "gfx.webrender.all" = true;
   "gfx.webrender.compositor" = true;
 
-  # "gfx.wayland.hdr" = hdr;
+  "gfx.wayland.hdr" = hdr;
   "gfx.color_management.hdr_video" = hdr;
   "gfx.color_management.hdr_video_assume_rec2020_uses_pq" = hdr;
   "gfx.webrender.overlay-hdr" = hdr;
