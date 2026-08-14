@@ -61,6 +61,8 @@
     builtins.elem (lib.getName pkg) [
       "azuki"
       "evafast"
+      "nvidia-x11"
+      "nvidia-settings"
       "ouch"
       "steam"
       "steam-unwrapped"
