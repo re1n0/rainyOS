@@ -34,7 +34,7 @@ in {
       })
       [
         puffer
-        fifc-git
+        fifc
         git-abbr
         plugin-sudope
         spark

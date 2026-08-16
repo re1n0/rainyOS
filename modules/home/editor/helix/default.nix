@@ -10,7 +10,6 @@ in {
   home.packages = with pkgs; [
     deadnix
     nixd
-    nixfmt-tree
     statix
 
     tombi

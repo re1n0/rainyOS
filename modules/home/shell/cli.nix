@@ -46,8 +46,9 @@
     nix-tree
     nix-output-monitor
     nixpkgs-review
-    npins
+    nix-update
     nurl
+    nix-init
 
     grex
     qrtool
