@@ -1,8 +1,10 @@
-{ pkgs, os, ... }:
-let
-  cfg = os.git;
-in
 {
+  pkgs,
+  os,
+  ...
+}: let
+  cfg = os.git;
+in {
   programs.git = {
     enable = true;
 

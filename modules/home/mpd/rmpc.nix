@@ -132,7 +132,7 @@ lib.optionalAttrs os.mpd.rmpc {
               ),
               (
                   name: "Lyrics",
-                  pane: Pane(Lyrics),       
+                  pane: Pane(Lyrics),
               ),
               (
                   name: "Albums",
@@ -158,7 +158,8 @@ lib.optionalAttrs os.mpd.rmpc {
       )
     '';
 
-  home.file.".config/rmpc/themes/theme.ron".text = # ron
+  home.file.".config/rmpc/themes/theme.ron".text =
+    # ron
     ''
       #![enable(implicit_some)]
       #![enable(unwrap_newtypes)]
@@ -173,7 +174,7 @@ lib.optionalAttrs os.mpd.rmpc {
               panes: [
                   (
                       pane: Pane(Tabs),
-                      size: "3",    
+                      size: "3",
                   ),
                   (
                       pane: Pane(TabContent),

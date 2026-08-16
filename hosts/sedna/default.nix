@@ -1,12 +1,9 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ../../modules/core
     ./hardware.nix
     ./partitioning.nix
   ];
-
-  facter.reportPath = ./facter.json;
 
   rainyos = {
     configuration = "desktop";

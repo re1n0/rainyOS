@@ -1,18 +1,18 @@
 {
   mgr.prepend_keymap = [
     {
-      on = [ "l" ];
+      on = ["l"];
       run = "plugin bypass smart-enter";
       desc = "Open a file, or recursively enter child directory, skipping children with only a single subdirectory";
     }
     {
-      on = [ "H" ];
+      on = ["H"];
       run = "plugin bypass reverse";
       desc = "Recursively enter parent directory, skipping parents with only a single subdirectory";
     }
 
     {
-      on = [ "C" ];
+      on = ["C"];
       run = "plugin ouch";
       desc = "Compress with ouch";
     }

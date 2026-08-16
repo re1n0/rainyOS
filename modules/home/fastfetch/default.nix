@@ -1,7 +1,6 @@
 let
   modules = import ./modules.nix;
-in
-{
+in {
   programs.fastfetch = {
     enable = true;
     settings = {

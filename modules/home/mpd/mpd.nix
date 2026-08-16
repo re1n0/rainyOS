@@ -1,5 +1,4 @@
-{ os, ... }:
-{
+{os, ...}: {
   services.mpd = {
     enable = true;
   };

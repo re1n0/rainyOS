@@ -2,12 +2,10 @@
   config,
   lib,
   ...
-}:
-let
+}: let
   cfg = config.rainyos;
   primaryMonitor = builtins.elemAt cfg.gui.monitors cfg.gui.primaryMonitor;
-  makeGamescopeArgs =
-    args:
+  makeGamescopeArgs = args:
     [
       "--prefer-output"
       "${primaryMonitor.connector},*"
@@ -27,7 +25,6 @@ let
       "-- env DXVK_HDR=1"
     ])
     ++ args;
-in
-{
+in {
   inherit makeGamescopeArgs primaryMonitor;
 }

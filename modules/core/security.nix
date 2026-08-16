@@ -13,14 +13,14 @@ lib.mkIf config.rainyos.security.clamav.enable {
   };
 
   /*
-    security.sudo = {
-      package = pkgs.sudo.override { withInsults = true; };
-      extraConfig = # sudo
-        ''
-          Defaults lecture = never
-          Defaults insults
-        '';
-    };
+  security.sudo = {
+    package = pkgs.sudo.override { withInsults = true; };
+    extraConfig = # sudo
+      ''
+        Defaults lecture = never
+        Defaults insults
+      '';
+  };
   */
 
   security.sudo.enable = false;

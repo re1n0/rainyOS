@@ -1,7 +1,6 @@
 let
   colors = import ./colors.nix;
-in
-{
+in {
   programs.bottom = {
     enable = true;
     settings = {

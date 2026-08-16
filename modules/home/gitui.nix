@@ -1,6 +1,7 @@
 {
   programs.gitui.enable = true;
-  programs.gitui.keyConfig = # ron
+  programs.gitui.keyConfig =
+    # ron
     ''
       open_help: Some(( code: F(1), modifiers: "")),
 

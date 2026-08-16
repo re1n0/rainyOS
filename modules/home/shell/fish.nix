@@ -1,9 +1,7 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   shellAbbrs = import ./abbrs.nix;
   shellAliases = import ./aliases.nix;
-in
-{
+in {
   imports = [
     ./cli.nix
   ];
@@ -28,19 +26,18 @@ in
       set -Ux FZF_DEFAULT_OPTS "--bind=tab:down,shift-tab:up,ctrl-space:toggle"
     '';
 
-    plugins =
-      with pkgs.fishPlugins;
+    plugins = with pkgs.fishPlugins;
       map
-        (pkg: {
-          name = pkg.pname;
-          inherit (pkg) src;
-        })
-        [
-          puffer
-          fifc-git
-          git-abbr
-          plugin-sudope
-          spark
-        ];
+      (pkg: {
+        name = pkg.pname;
+        inherit (pkg) src;
+      })
+      [
+        puffer
+        fifc-git
+        git-abbr
+        plugin-sudope
+        spark
+      ];
   };
 }

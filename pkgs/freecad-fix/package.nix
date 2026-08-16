@@ -9,7 +9,7 @@ symlinkJoin {
   paths = [
     freecad
   ];
-  buildInputs = [ makeWrapper ];
+  buildInputs = [makeWrapper];
   postBuild = ''
     wrapProgram $out/bin/FreeCAD \
       --prefix __GLX_VENDOR_LIBRARY_NAME : mesa \

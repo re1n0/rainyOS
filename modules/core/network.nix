@@ -4,12 +4,11 @@
   options,
   config,
   ...
-}:
-{
+}: {
   networking = {
     hostName = "${host}";
     networkmanager.enable = true;
-    timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
+    timeServers = options.networking.timeServers.default ++ ["pool.ntp.org"];
 
     wireguard.enable = true;
   };

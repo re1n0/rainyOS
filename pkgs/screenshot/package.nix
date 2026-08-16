@@ -16,7 +16,8 @@ writeShellApplication {
     slurp
   ];
 
-  text = # bash
+  text =
+    # bash
     ''
       DATE="$(date +'%y-%m-%d_%H:%M:%S')"
       DIR="$HOME/Pictures/screenshots"

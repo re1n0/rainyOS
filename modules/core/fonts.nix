@@ -24,7 +24,7 @@ lib.mkIf config.rainyos.gui.enable {
         "azuki"
       ];
       serif = config.fonts.fontconfig.defaultFonts.sansSerif;
-      monospace = [ "Mononoki Nerd Font" ];
+      monospace = ["Mononoki Nerd Font"];
       emoji = [
         "Noto Color Emoji"
         "Noto Emoji"

@@ -3,11 +3,9 @@
   pkgs,
   config,
   ...
-}:
-let
+}: let
   cfg = config.rainyos;
-in
-{
+in {
   documentation.nixos.enable = false;
 
   services.automatic-timezoned.enable = cfg.tz.automatic;

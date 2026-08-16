@@ -1,4 +1,8 @@
-{ lib, os, ... }:
+{
+  lib,
+  os,
+  ...
+}:
 lib.optionalAttrs os.gui.enable {
   programs.zathura = {
     enable = true;

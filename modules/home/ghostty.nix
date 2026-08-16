@@ -22,7 +22,7 @@ lib.optionalAttrs os.gui.enable {
       window-decoration = "none";
       window-padding-x = 10;
 
-      app-notifications = [ "no-clipboard-copy" ];
+      app-notifications = ["no-clipboard-copy"];
 
       shell-integration-features = [
         "sudo"

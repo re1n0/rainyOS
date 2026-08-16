@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   hardware.amdgpu = {
     overdrive = {
       enable = true;
@@ -11,7 +10,7 @@
 
   mesa-git = {
     enable = true;
-    drivers = [ "amd" ];
+    drivers = ["amd"];
   };
 
   systemd.tmpfiles.rules = [

@@ -1,12 +1,7 @@
-{
-  pkgs,
-  ...
-}:
-let
+{pkgs, ...}: let
   keymap = import ./keymap.nix;
   settings = import ./settings.nix;
-in
-{
+in {
   home.packages = with pkgs; [
     fd
     ripgrep
@@ -22,7 +17,7 @@ in
 
     glib
 
-    (ouch.override { enableUnfree = true; })
+    (ouch.override {enableUnfree = true;})
   ];
 
   programs.yazi = {
@@ -48,7 +43,8 @@ in
         ;
     };
 
-    initLua = # lua
+    initLua =
+      # lua
       ''
         require("git"):setup()
         require("zoxide"):setup {

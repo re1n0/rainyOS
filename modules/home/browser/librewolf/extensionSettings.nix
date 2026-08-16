@@ -47,9 +47,9 @@
           password = "";
           color = "#e5a50a";
           proxyDNS = true;
-          include = [ ];
-          exclude = [ ];
-          tabProxy = [ ];
+          include = [];
+          exclude = [];
+          tabProxy = [];
         }
       ];
     };

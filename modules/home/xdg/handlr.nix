@@ -1,19 +1,24 @@
-{ pkgs, inputs, ... }:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     handlr-regex
     (writeShellApplication {
       name = "xdg-open";
-      runtimeInputs = [ handlr-regex ];
-      text = # shell
+      runtimeInputs = [handlr-regex];
+      text =
+        # shell
         ''
           handlr open -- "$@"
         '';
     })
     (writeShellApplication {
       name = "xterm";
-      runtimeInputs = [ handlr-regex ];
-      text = # shell
+      runtimeInputs = [handlr-regex];
+      text =
+        # shell
         ''
           handlr launch x-scheme-handler/terminal -- "$@"
         '';
@@ -27,11 +32,11 @@
         handlers = [
           {
             exec = "mpv %u";
-            regexes = [ "youtu(be.com|.be)" ];
+            regexes = ["youtu(be.com|.be)"];
           }
           {
             exec = "handlr open steam://openurl/%u";
-            regexes = [ "^https://([[:alpha:]]*\.)?steam(powered|community).com/" ];
+            regexes = ["^https://([[:alpha:]]*\.)?steam(powered|community).com/"];
           }
         ];
       };

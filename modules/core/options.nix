@@ -1,6 +1,9 @@
-{ lib, config, ... }:
-with lib;
 {
+  lib,
+  config,
+  ...
+}:
+with lib; {
   options.rainyos = with types; {
     configuration = mkOption {
       type = enum [
@@ -93,7 +96,7 @@ with lib;
           };
         };
       });
-      default = [ ];
+      default = [];
       description = "Monitors settings";
     };
 
@@ -140,7 +143,7 @@ with lib;
 
       authorizedKeys = mkOption {
         type = listOf str;
-        default = [ ];
+        default = [];
         description = "List of authorized keys for SSH";
       };
     };
@@ -160,7 +163,7 @@ with lib;
 
       supported = mkOption {
         type = listOf str;
-        default = [ "en_US.UTF-8/UTF-8" ];
+        default = ["en_US.UTF-8/UTF-8"];
         example = [
           "en_US.UTF-8/UTF-8"
           "de_DE.UTF-8/UTF-8"
@@ -335,62 +338,60 @@ with lib;
     };
   };
 
-  config =
-    let
-      cfg = config.rainyos;
-      defaultLocale = cfg.locales.default;
-      mpdEnabled = cfg.mpd.enable;
-      isDesktop = cfg.configuration == "desktop";
-    in
-    {
-      # GUI
-      rainyos.gui.enable = mkDefault isDesktop;
-      rainyos.gui.hyprland.enable = mkDefault cfg.gui.enable;
+  config = let
+    cfg = config.rainyos;
+    defaultLocale = cfg.locales.default;
+    mpdEnabled = cfg.mpd.enable;
+    isDesktop = cfg.configuration == "desktop";
+  in {
+    # GUI
+    rainyos.gui.enable = mkDefault isDesktop;
+    rainyos.gui.hyprland.enable = mkDefault cfg.gui.enable;
 
-      # System
-      rainyos.locales.extraSettings = {
-        ctype = mkDefault defaultLocale;
-        address = mkDefault defaultLocale;
-        identification = mkDefault defaultLocale;
-        measurement = mkDefault defaultLocale;
-        messages = mkDefault defaultLocale;
-        monetary = mkDefault defaultLocale;
-        name = mkDefault defaultLocale;
-        numeric = mkDefault defaultLocale;
-        paper = mkDefault defaultLocale;
-        telephone = mkDefault defaultLocale;
-        time = mkDefault defaultLocale;
-        collate = mkDefault defaultLocale;
-      };
-
-      # Security
-      rainyos.security.clamav.enable = mkDefault isDesktop;
-
-      # Devices
-      rainyos.audio.enable = mkDefault isDesktop;
-
-      rainyos.bluetooth.enable = mkDefault isDesktop;
-
-      rainyos.keymap.supported = mkDefault [ cfg.keymap.console ];
-
-      hardware.nvidia-container-toolkit.enable = mkDefault (
-        config.hardware.nvidia.enabled && cfg.virtualisation.podman.enable
-      );
-
-      # Music
-      rainyos.mpd = {
-        rmpc = mkDefault mpdEnabled;
-        mpris = mkDefault mpdEnabled;
-      };
-
-      # Gaming
-      rainyos.gaming.steam.session = mkDefault cfg.gaming.gamescope.enable;
-      rainyos.gaming.opengamepadui.session = mkDefault cfg.gaming.gamescope.enable;
-
-      # Wine
-      rainyos.wine.enable = mkDefault isDesktop;
-
-      # GPG
-      rainyos.gpg.enable = mkDefault isDesktop;
+    # System
+    rainyos.locales.extraSettings = {
+      ctype = mkDefault defaultLocale;
+      address = mkDefault defaultLocale;
+      identification = mkDefault defaultLocale;
+      measurement = mkDefault defaultLocale;
+      messages = mkDefault defaultLocale;
+      monetary = mkDefault defaultLocale;
+      name = mkDefault defaultLocale;
+      numeric = mkDefault defaultLocale;
+      paper = mkDefault defaultLocale;
+      telephone = mkDefault defaultLocale;
+      time = mkDefault defaultLocale;
+      collate = mkDefault defaultLocale;
     };
+
+    # Security
+    rainyos.security.clamav.enable = mkDefault isDesktop;
+
+    # Devices
+    rainyos.audio.enable = mkDefault isDesktop;
+
+    rainyos.bluetooth.enable = mkDefault isDesktop;
+
+    rainyos.keymap.supported = mkDefault [cfg.keymap.console];
+
+    hardware.nvidia-container-toolkit.enable = mkDefault (
+      config.hardware.nvidia.enabled && cfg.virtualisation.podman.enable
+    );
+
+    # Music
+    rainyos.mpd = {
+      rmpc = mkDefault mpdEnabled;
+      mpris = mkDefault mpdEnabled;
+    };
+
+    # Gaming
+    rainyos.gaming.steam.session = mkDefault cfg.gaming.gamescope.enable;
+    rainyos.gaming.opengamepadui.session = mkDefault cfg.gaming.gamescope.enable;
+
+    # Wine
+    rainyos.wine.enable = mkDefault isDesktop;
+
+    # GPG
+    rainyos.gpg.enable = mkDefault isDesktop;
+  };
 }

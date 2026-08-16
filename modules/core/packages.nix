@@ -3,15 +3,14 @@
   self,
   lib,
   ...
-}:
-{
+}: {
   programs = {
     dconf.enable = true;
     fuse.userAllowOther = true;
     mtr.enable = true;
   };
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
   nix.settings = {
     experimental-features = [
       "nix-command"
@@ -48,7 +47,7 @@
 
   nixpkgs.overlays = [
     self.overlays.default
-    inputs.nix-cachyos-kernel.overlays.default
+    inputs.nix-cachyos-kernel.overlays.pinned
     inputs.mesa-git.overlays.default
     inputs.nix-gaming-edge.overlays.default
     inputs.nixos-millennium.overlays.default
@@ -56,8 +55,7 @@
     inputs.nix-gaming.overlays.default
   ];
 
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
+  nixpkgs.config.allowUnfreePredicate = pkg:
     builtins.elem (lib.getName pkg) [
       "azuki"
       "evafast"

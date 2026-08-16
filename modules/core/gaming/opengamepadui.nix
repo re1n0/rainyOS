@@ -2,32 +2,31 @@
   config,
   lib,
   ...
-}:
-let
+}: let
   cfg = config.rainyos.gaming;
-  common = import ./common.nix { inherit config lib; };
+  common = import ./common.nix {inherit config lib;};
 in
-lib.mkIf cfg.opengamepadui.enable {
-  programs.opengamepadui = {
-    enable = true;
+  lib.mkIf cfg.opengamepadui.enable {
+    programs.opengamepadui = {
+      enable = true;
 
-    inputplumber.enable = true;
+      inputplumber.enable = true;
 
-    powerstation.enable = config.rainyos.powerManagement.enable;
-  };
+      powerstation.enable = config.rainyos.powerManagement.enable;
+    };
 
-  programs.opengamepadui.gamescopeSession = lib.mkIf cfg.opengamepadui.session {
-    enable = true;
-    args = common.makeGamescopeArgs [
-      "--xwayland-count"
-      "2"
-      "--default-touch-mode"
-      "4"
-      "--hide-cursor-delay"
-      "1000"
-      "--fade-out-duration"
-      "200"
-      "--steam"
-    ];
-  };
-}
+    programs.opengamepadui.gamescopeSession = lib.mkIf cfg.opengamepadui.session {
+      enable = true;
+      args = common.makeGamescopeArgs [
+        "--xwayland-count"
+        "2"
+        "--default-touch-mode"
+        "4"
+        "--hide-cursor-delay"
+        "1000"
+        "--fade-out-duration"
+        "200"
+        "--steam"
+      ];
+    };
+  }

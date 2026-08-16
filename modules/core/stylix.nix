@@ -2,8 +2,7 @@
   pkgs,
   config,
   ...
-}:
-{
+}: {
   stylix = {
     enable = true;
     polarity = "dark";

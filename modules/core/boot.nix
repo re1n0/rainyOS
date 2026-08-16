@@ -3,50 +3,48 @@
   pkgs,
   lib,
   ...
-}:
-let
+}: let
   cfg = config.rainyos;
 in
-lib.mkIf (config.rainyos.configuration == "desktop") {
-  environment.systemPackages = with pkgs; [
-    sbctl
-  ];
-
-  boot = {
-    kernelPackages = lib.mkDefault pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
-
-    plymouth.enable = cfg.gui.enable;
-    consoleLogLevel = 3;
-    initrd.verbose = false;
-
-    initrd.systemd.enable = true;
-
-    kernelParams = [
-      "quiet"
-      "splash"
-      "boot.shell_on_fail"
-      "udev.log_priority=3"
-      "rd.systemd.show_status=auto"
-      "transparent_hugepage=madvise"
+  lib.mkIf (config.rainyos.configuration == "desktop") {
+    environment.systemPackages = with pkgs; [
+      sbctl
     ];
 
-    lanzaboote = lib.mkIf cfg.secureBoot.enable {
-      enable = true;
-      pkiBundle = "/var/lib/sbctl";
+    boot = {
+      kernelPackages = lib.mkDefault pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
+
+      plymouth.enable = cfg.gui.enable;
+      consoleLogLevel = 3;
+      initrd.verbose = false;
+
+      initrd.systemd.enable = true;
+
+      kernelParams = [
+        "quiet"
+        "splash"
+        "boot.shell_on_fail"
+        "udev.log_priority=3"
+        "rd.systemd.show_status=auto"
+        "transparent_hugepage=madvise"
+      ];
+
+      lanzaboote = lib.mkIf cfg.secureBoot.enable {
+        enable = true;
+        pkiBundle = "/var/lib/sbctl";
+      };
+
+      supportedFilesystems = ["ntfs"];
     };
 
-    supportedFilesystems = [ "ntfs" ];
-  };
-
-  boot.loader =
-    if cfg.secureBoot.enable then
-      {
+    boot.loader =
+      if cfg.secureBoot.enable
+      then {
         systemd-boot.enable = lib.mkForce false;
       }
-    else
-      {
+      else {
         systemd-boot.enable = true;
         efi.canTouchEfiVariables = true;
         timeout = 3;
       };
-}
+  }

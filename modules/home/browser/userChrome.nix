@@ -1,5 +1,4 @@
-pkgs:
-let
+pkgs: let
   compileScss = pkgs.stdenv.mkDerivation {
     name = "compiled-css";
     src = ./styles;
@@ -11,7 +10,6 @@ let
   };
 
   css = builtins.readFile compileScss;
-in
-{
+in {
   inherit css;
 }

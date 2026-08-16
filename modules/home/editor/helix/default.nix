@@ -2,13 +2,11 @@
   pkgs,
   config,
   ...
-}:
-let
+}: let
   languages = import ./languages.nix;
   settings = import ./settings.nix;
   themes = import ./themes.nix config;
-in
-{
+in {
   home.packages = with pkgs; [
     deadnix
     nixd

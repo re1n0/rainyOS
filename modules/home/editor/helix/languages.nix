@@ -11,19 +11,19 @@
 
     {
       name = "rust";
-      roots = [ "Cargo.toml" ];
+      roots = ["Cargo.toml"];
       auto-format = true;
     }
 
     {
       name = "java";
-      roots = [ "build.gradle" ];
+      roots = ["build.gradle"];
       auto-format = true;
     }
 
     {
       name = "jinja";
-      language-servers = [ "jinja-lsp" ];
+      language-servers = ["jinja-lsp"];
       auto-format = true;
     }
 
@@ -37,7 +37,7 @@
       name = "scss";
       scope = "source.scss";
       injection-regex = "scss";
-      file-types = [ "scss" ];
+      file-types = ["scss"];
       block-comment-tokens = {
         start = "/*";
         end = "*/";
@@ -58,9 +58,9 @@
       language-servers = [
         {
           name = "typescript-language-server";
-          except-features = [ "format" ];
+          except-features = ["format"];
         }
-        { name = "biome"; }
+        {name = "biome";}
       ];
       auto-format = true;
     }
@@ -70,9 +70,9 @@
       language-servers = [
         {
           name = "typescript-language-server";
-          except-features = [ "format" ];
+          except-features = ["format"];
         }
-        { name = "biome"; }
+        {name = "biome";}
       ];
       auto-format = true;
     }
@@ -82,9 +82,9 @@
       language-servers = [
         {
           name = "typescript-language-server";
-          except-features = [ "format" ];
+          except-features = ["format"];
         }
-        { name = "biome"; }
+        {name = "biome";}
       ];
       auto-format = true;
     }
@@ -94,9 +94,9 @@
       language-servers = [
         {
           name = "typescript-language-server";
-          except-features = [ "format" ];
+          except-features = ["format"];
         }
-        { name = "biome"; }
+        {name = "biome";}
       ];
       auto-format = true;
     }
@@ -106,9 +106,9 @@
       language-servers = [
         {
           name = "vscode-json-language-server";
-          except-features = [ "format" ];
+          except-features = ["format"];
         }
-        { name = "biome"; }
+        {name = "biome";}
       ];
       auto-format = true;
     }
@@ -142,29 +142,29 @@
   language-server = {
     biome = {
       command = "biome";
-      args = [ "lsp-proxy" ];
+      args = ["lsp-proxy"];
     };
 
     jinja-lsp = {
       command = "jinja-lsp";
       config = {
         templates = "./templates";
-        backend = [ "./src" ];
+        backend = ["./src"];
         lang = "rust";
       };
       timeout = 5;
     };
 
     qmlls = {
-      args = [ "-E" ];
+      args = ["-E"];
       command = "qmlls";
     };
 
-    rust-analyzer.config.diagnostics.disabled = [ "unlinked-file" ];
+    rust-analyzer.config.diagnostics.disabled = ["unlinked-file"];
 
     some-sass = {
       command = "some-sass-language-server";
-      args = [ "--stdio" ];
+      args = ["--stdio"];
       timeout = 5;
     };
 

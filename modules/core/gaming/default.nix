@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./gamescope.nix
     ./minecraft.nix

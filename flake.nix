@@ -9,15 +9,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-facter-modules.url = "github:nix-community/nixos-facter-modules";
-
     lanzaboote = {
       url = "github:nix-community/lanzaboote";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     mesa-git = {
       url = "github:daaboulex/mesa-git-nix";
@@ -70,51 +67,64 @@
     };
   };
 
-  outputs =
-    { self, nixpkgs, ... }@inputs:
-    let
-      makeConfiguration =
-        host: system:
-        nixpkgs.lib.nixosSystem {
-          inherit system;
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: let
+    makeConfiguration = host: system:
+      nixpkgs.lib.nixosSystem {
+        inherit system;
 
-          specialArgs = {
-            inherit
-              self
-              inputs
-              host
-              system
-              ;
-          };
-          modules = [
-            ./hosts/${host}
-
-            inputs.disko.nixosModules.disko
-            inputs.nixos-facter-modules.nixosModules.facter
-            inputs.mesa-git.nixosModules.default
-            inputs.home-manager.nixosModules.home-manager
-            inputs.nixos-rocksmith.nixosModules.default
-            inputs.nix-gaming.nixosModules.pipewireLowLatency
-            inputs.nix-gaming-edge.nixosModules.default
-            inputs.lanzaboote.nixosModules.lanzaboote
-            inputs.stylix.nixosModules.stylix
-            inputs.nixos-millennium.nixosModules.default
-          ];
+        specialArgs = {
+          inherit
+            self
+            inputs
+            host
+            system
+            ;
         };
+        modules = [
+          ./hosts/${host}
 
-      forAllSystems = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
-    in
-    {
-      overlays.default = import ./pkgs { inherit inputs; };
-
-      packages.x86_64-linux.default = self.nixosConfigurations.thome.config.system.build.isoImage;
-
-      nixosConfigurations = {
-        sedna = makeConfiguration "sedna" "x86_64-linux";
-        iris = makeConfiguration "iris" "x86_64-linux";
-        thome = makeConfiguration "thome" "x86_64-linux";
+          inputs.disko.nixosModules.disko
+          inputs.mesa-git.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager
+          inputs.nixos-rocksmith.nixosModules.default
+          inputs.nix-gaming.nixosModules.pipewireLowLatency
+          inputs.nix-gaming-edge.nixosModules.default
+          inputs.lanzaboote.nixosModules.lanzaboote
+          inputs.stylix.nixosModules.stylix
+          inputs.nixos-millennium.nixosModules.default
+        ];
       };
 
-      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
+    forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux"];
+  in {
+    overlays.default = import ./pkgs {inherit inputs;};
+
+    packages.x86_64-linux.default = self.nixosConfigurations.thome.config.system.build.isoImage;
+
+    nixosConfigurations = {
+      sedna = makeConfiguration "sedna" "x86_64-linux";
+      iris = makeConfiguration "iris" "x86_64-linux";
+      thome = makeConfiguration "thome" "x86_64-linux";
     };
+
+    formatter = forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+        pkgs.treefmt.withConfig {
+          runtimeInputs = [pkgs.alejandra];
+          settings = {
+            on-unmatched = "info";
+            formatter.alejandra = {
+              command = "alejandra";
+              includes = ["*.nix"];
+            };
+          };
+        }
+    );
+  };
 }

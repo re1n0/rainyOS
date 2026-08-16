@@ -1,16 +1,16 @@
 {
-  config,
   lib,
   pkgs,
+  host,
+  config,
   ...
-}:
-let
+}: let
   cfg = config.rainyos;
-in
-{
+in {
   hardware = {
     enableRedistributableFirmware = true;
     keyboard.qmk.enable = true;
+    facter.reportPath = ../../hosts/${host}/facter.json;
   };
 
   hardware.bluetooth = lib.mkIf cfg.bluetooth.enable {
@@ -30,8 +30,7 @@ in
     enable = true;
     enable32Bit = true;
 
-    extraPackages =
-      with pkgs;
+    extraPackages = with pkgs;
       [
         libva-vdpau-driver
         libvdpau-va-gl

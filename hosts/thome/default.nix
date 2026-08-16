@@ -1,5 +1,8 @@
-{ pkgs, modulesPath, ... }:
 {
+  pkgs,
+  modulesPath,
+  ...
+}: {
   imports = [
     ../../modules/core
     (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")

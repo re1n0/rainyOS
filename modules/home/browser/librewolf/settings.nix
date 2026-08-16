@@ -139,7 +139,7 @@ hdr: {
         "_762f9885-5a13-4abd-9c77-433dcd38b8fd_-browser-action"
       ];
 
-      widget-overflow-fixed-list = [ ];
+      widget-overflow-fixed-list = [];
     };
 
     seen = [

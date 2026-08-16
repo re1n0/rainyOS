@@ -4,8 +4,7 @@
   host,
   config,
   ...
-}:
-let
+}: let
   os = config.rainyos;
   extraGroups = [
     "adbusers"
@@ -42,8 +41,7 @@ let
 
     programs.home-manager.enable = true;
   };
-in
-{
+in {
   users.mutableUsers = true;
 
   home-manager = {
@@ -59,62 +57,58 @@ in
     };
 
     users =
-      if os.configuration == "desktop" then
-        {
-          priv = homeSettings "priv";
-        }
+      if os.configuration == "desktop"
+      then {
+        priv = homeSettings "priv";
+      }
       else
         (
-          if os.configuration == "iso" then
-            {
-              nixos =
-                let
-                  username = "nixos";
-                in
-                {
-                  imports = [
-                    ./../home/iso
-                  ];
+          if os.configuration == "iso"
+          then {
+            nixos = let
+              username = "nixos";
+            in {
+              imports = [
+                ./../home/iso
+              ];
 
-                  home = {
-                    homeDirectory = "/home/${username}";
-                    stateVersion = "26.05";
-                    inherit username;
-                  };
+              home = {
+                homeDirectory = "/home/${username}";
+                stateVersion = "26.05";
+                inherit username;
+              };
 
-                  programs.home-manager.enable = true;
-                };
-            }
-          else
-            { }
+              programs.home-manager.enable = true;
+            };
+          }
+          else {}
         );
   };
 
   users.users =
-    if os.configuration == "desktop" then
-      {
-        priv = userSettings;
-      }
+    if os.configuration == "desktop"
+    then {
+      priv = userSettings;
+    }
     else
       (
-        if os.configuration == "iso" then
-          {
-            nixos = {
-              isNormalUser = true;
-              shell = pkgs.fish;
-              ignoreShellProgramCheck = true;
-              openssh.authorizedKeys.keys = os.ssh.authorizedKeys;
-              extraGroups = [
-                "adbusers"
-                "input"
-                "networkmanager"
-                "rtkit"
-                "wheel"
-              ];
-            };
-          }
-        else
-          { }
+        if os.configuration == "iso"
+        then {
+          nixos = {
+            isNormalUser = true;
+            shell = pkgs.fish;
+            ignoreShellProgramCheck = true;
+            openssh.authorizedKeys.keys = os.ssh.authorizedKeys;
+            extraGroups = [
+              "adbusers"
+              "input"
+              "networkmanager"
+              "rtkit"
+              "wheel"
+            ];
+          };
+        }
+        else {}
       );
 
   nix.settings.allowed-users = [

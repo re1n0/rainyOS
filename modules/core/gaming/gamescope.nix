@@ -2,15 +2,14 @@
   config,
   lib,
   ...
-}:
-let
-  common = import ./common.nix { inherit config lib; };
+}: let
+  common = import ./common.nix {inherit config lib;};
 in
-lib.mkIf config.rainyos.gaming.gamescope.enable {
-  programs.gamescope = {
-    enable = true;
-    enableWsi = common.primaryMonitor.hdr;
-    capSysNice = true;
-    args = common.makeGamescopeArgs [ ];
-  };
-}
+  lib.mkIf config.rainyos.gaming.gamescope.enable {
+    programs.gamescope = {
+      enable = true;
+      enableWsi = common.primaryMonitor.hdr;
+      capSysNice = true;
+      args = common.makeGamescopeArgs [];
+    };
+  }

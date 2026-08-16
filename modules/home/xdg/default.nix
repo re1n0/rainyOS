@@ -3,15 +3,14 @@
   lib,
   os,
   ...
-}:
-let
+}: let
   mimeApps = import ./mimeapps.nix;
   desktopEntries = import ./apps.nix;
   inherit (os.gui) hyprland;
-in
-{
-  imports = [ ./handlr.nix ];
+in {
+  imports = [./handlr.nix];
   xdg = {
+    enable = true;
     userDirs.enable = true;
 
     inherit mimeApps desktopEntries;
@@ -20,21 +19,26 @@ in
   xdg.portal = lib.mkIf os.gui.enable {
     enable = lib.mkForce true;
     xdgOpenUsePortal = true;
-    extraPortals =
-      with pkgs;
+    extraPortals = with pkgs;
       [
         xdg-desktop-portal-wlr
         xdg-desktop-portal-termfilechooser
       ]
-      ++ (if hyprland.enable then [ pkgs.xdg-desktop-portal-hyprland ] else [ ]);
+      ++ (
+        if hyprland.enable
+        then [pkgs.xdg-desktop-portal-hyprland]
+        else []
+      );
     config = {
       common = {
-        default = lib.optional hyprland.enable "hyprland" ++ [
-          "termfilechooser"
-          "wlr"
-          "gtk"
-        ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
+        default =
+          lib.optional hyprland.enable "hyprland"
+          ++ [
+            "termfilechooser"
+            "wlr"
+            "gtk"
+          ];
+        "org.freedesktop.impl.portal.FileChooser" = ["termfilechooser"];
       };
     };
   };

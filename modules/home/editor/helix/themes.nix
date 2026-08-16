@@ -3,7 +3,7 @@ config: {
     "attribute" = base09;
     "comment" = {
       fg = base03;
-      modifiers = [ "italic" ];
+      modifiers = ["italic"];
     };
     "constant" = base09;
     "constant.character.escape" = base0C;
@@ -11,7 +11,7 @@ config: {
     "constructor" = base0D;
     "debug" = base03;
     "diagnostic" = {
-      modifiers = [ "underlined" ];
+      modifiers = ["underlined"];
     };
     "diff.delta" = base09;
     "diff.minus" = base08;
@@ -33,46 +33,46 @@ config: {
 
     "markup.bold" = {
       fg = base0A;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "markup.heading.1" = {
       fg = base0D;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "markup.heading.2" = {
       fg = base08;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "markup.heading.3" = {
       fg = base09;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "markup.heading.4" = {
       fg = base0A;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "markup.heading.5" = {
       fg = base0B;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "markup.heading.6" = {
       fg = base0C;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "markup.italic" = {
       fg = base0E;
-      modifiers = [ "italic" ];
+      modifiers = ["italic"];
     };
     "markup.link.text" = base08;
     "markup.link.url" = {
       fg = base09;
-      modifiers = [ "underlined" ];
+      modifiers = ["underlined"];
     };
     "markup.list" = base08;
     "markup.quote" = base0C;
     "markup.raw" = base0B;
     "markup.strikethrough" = {
-      modifiers = [ "crossed_out" ];
+      modifiers = ["crossed_out"];
     };
 
     "diagnostic.hint" = {
@@ -102,7 +102,7 @@ config: {
     "ui.bufferline.active" = {
       fg = base00;
       bg = base03;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "ui.bufferline" = {
       fg = base04;
@@ -111,11 +111,11 @@ config: {
 
     "ui.cursor" = {
       fg = base06;
-      modifiers = [ "reversed" ];
+      modifiers = ["reversed"];
     };
     "ui.cursor.primary" = {
       fg = base05;
-      modifiers = [ "reversed" ];
+      modifiers = ["reversed"];
     };
     "ui.cursorline.primary" = {
       fg = base05;
@@ -124,11 +124,11 @@ config: {
     "ui.cursor.match" = {
       fg = base05;
       bg = base02;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "ui.cursor.select" = {
       fg = base05;
-      modifiers = [ "reversed" ];
+      modifiers = ["reversed"];
     };
 
     "ui.gutter" = {
@@ -144,7 +144,7 @@ config: {
     };
     "ui.linenr.selected" = {
       fg = base0C;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "ui.menu" = {
       fg = base05;
@@ -195,7 +195,7 @@ config: {
     };
     "ui.virtual.jump-label" = {
       fg = base0A;
-      modifiers = [ "bold" ];
+      modifiers = ["bold"];
     };
     "ui.virtual.whitespace" = {
       fg = base03;
