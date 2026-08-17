@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   os,
   ...
@@ -22,7 +23,7 @@ in {
     };
 
     settings.credential = {
-      helper = "manager";
+      helper = lib.getExe pkgs.git-credential-manager;
       credentialStore = "gpg";
       color = {
         diff = "auto";
@@ -34,10 +35,6 @@ in {
       };
     };
   };
-
-  home.packages = with pkgs; [
-    git-credential-manager
-  ];
 
   programs.delta = {
     enable = true;
