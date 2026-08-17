@@ -3,6 +3,7 @@
     ./bat.nix
     ./fish.nix
     ./fzf.nix
+    ./github.nix
     ./less.nix
     ./man.nix
     ./ripgrep.nix

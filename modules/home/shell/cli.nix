@@ -26,6 +26,9 @@
     pciutils
     usbutils
 
+    gopass
+    gopass-hibp
+
     rsclock
     astroterm
     tukai
