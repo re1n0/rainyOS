@@ -35,5 +35,7 @@ in {
     font = "${pkgs.kbd}/share/consolefonts/ruscii_8x16.psfu.gz";
   };
 
+  environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
+
   system.stateVersion = "26.05"; # DO NOT CHANGE!
 }

@@ -2,7 +2,7 @@
   imports = [
     ./apps.nix
     ./bluetooth.nix
-    ./bottom
+    ./bottom.nix
     ./browser
     ./easyeffects.nix
     ./editor

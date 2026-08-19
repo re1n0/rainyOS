@@ -1,6 +1,4 @@
-let
-  colors = import ./colors.nix;
-in {
+{...}: {
   programs.bottom = {
     enable = true;
     settings = {
@@ -10,7 +8,6 @@ in {
         case_sensitive = true;
         enable_gpu = true;
       };
-      inherit colors;
     };
   };
 }

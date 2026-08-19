@@ -34,5 +34,5 @@
   reboot = "systemctl reboot";
   poweroff = "systemctl poweroff";
   suspend = "systemctl suspend";
-  logout = "loginctl terminate-session (cat /proc/self/sessionid)";
+  logout = "loginctl terminate-session auto";
 }

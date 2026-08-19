@@ -2,6 +2,7 @@
   pkgs,
   lib,
   os,
+  config,
   ...
 }: let
   mimeApps = import ./mimeapps.nix;
@@ -43,49 +44,16 @@ in {
     };
   };
 
-  xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
-    [filechooser]
-    cmd = ${pkgs.writeShellScript "yazi-wrapper" ''
-      multiple="$1"
-      directory="$2"
-      save="$3"
-      path="$4"
-      out="$5"
-      debug="$6"
-
-      set -e
-
-      if [ "$debug" = 1 ]; then
-          set -x
-      fi
-
-      if [ "$save" = "1" ]; then
-          # save a file
-          set -- --chooser-file="$out" "$path"
-      elif [ "$directory" = "1" ]; then
-          # upload files from a directory
-          set -- --chooser-file="$out" --cwd-file="$out"".1" "$path"
-      elif [ "$multiple" = "1" ]; then
-          # upload multiple files
-          set -- --chooser-file="$out" "$path"
-      else
-          # upload only 1 file
-          set -- --chooser-file="$out" "$path"
-      fi
-
-      exec ghostty -e yazi "$@"
-
-      if [ "$directory" = "1" ]; then
-          if [ ! -s "$out" ] && [ -s "$out"".1" ]; then
-              cat "$out"".1" > "$out"
-              rm "$out"".1"
-          else
-              rm "$out"".1"
-          fi
-      fi
-    ''}
-    default_dir = $HOME
-    open_mode = suggested
-    save_mode = last
-  '';
+  xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = lib.generators.toINI {} {
+    filechooser = {
+      cmd = "${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh";
+      default_dir = config.home.homeDirectory;
+      env = ''
+        TERMCMD=${lib.getExe pkgs.xterm} --title="filechooser" -e
+      '';
+      create_help_file = 1;
+      open_mode = "suggested";
+      save_mode = "last";
+    };
+  };
 }

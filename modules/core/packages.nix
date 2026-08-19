@@ -2,6 +2,7 @@
   inputs,
   self,
   lib,
+  pkgs,
   ...
 }: {
   programs = {
@@ -73,31 +74,46 @@
 
   services.fwupd.enable = true;
 
-  # system.replaceDependencies.replacements = [
-  #   {
-  #     oldDependency = pkgs.xdg-utils;
-  #     replacement = pkgs.xdg-utils.overrideAttrs (
-  #       _:
-  #       let
-  #         handlr-open = pkgs.writeShellScriptBin "xdg-open" ''${pkgs.handlr-regex}/bin/handlr open -- "$@"'';
-  #       in
-  #       {
-  #         postInstall = ''
-  #           cp ${handlr-open}/bin/xdg-open $out/bin/xdg-open
-  #         '';
-  #       }
-  #     );
-  #   }
+  system.replaceDependencies.replacements = [
+    {
+      oldDependency = pkgs.xdg-utils;
+      replacement = pkgs.xdg-utils.overrideAttrs (old: let
+        handlr-open = pkgs.writeShellScriptBin "xdg-open" ''
+          exec ${pkgs.handlr-regex}/bin/handlr open -- "$@"
+        '';
+      in {
+        postFixup =
+          (old.postFixup or "")
+          + ''
+            cp ${handlr-open}/bin/xdg-open $out/bin/xdg-open
+          '';
+      });
+    }
 
-  #   {
-  #     oldDependency = pkgs.xterm;
-  #     replacement = pkgs.writeShellApplication {
-  #       name = "xterm";
-  #       runtimeInputs = [ pkgs.handlr-regex ];
-  #       text = ''
-  #         handlr launch x-scheme-handler/terminal -- "$@"
-  #       '';
-  #     };
-  #   }
-  # ];
+    {
+      oldDependency = pkgs.xterm;
+      replacement =
+        pkgs.symlinkJoin
+        {
+          name = "xterm-999";
+          paths = let
+            handlr-xterm =
+              pkgs.writeShellApplication
+              {
+                name = "xterm";
+                runtimeInputs = [pkgs.handlr-regex];
+                text = ''
+                  exec handlr launch x-scheme-handler/terminal -- "$@"
+                '';
+              };
+          in [
+            handlr-xterm
+          ];
+          postBuild = ''
+            ln -sf $out/bin/xterm $out/bin/uxterm
+            ln -sf $out/bin/xterm $out/bin/koi8rxterm
+          '';
+        };
+    }
+  ];
 }

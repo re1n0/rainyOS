@@ -5,24 +5,7 @@
 }: {
   home.packages = with pkgs; [
     handlr-regex
-    (writeShellApplication {
-      name = "xdg-open";
-      runtimeInputs = [handlr-regex];
-      text =
-        # shell
-        ''
-          handlr open -- "$@"
-        '';
-    })
-    (writeShellApplication {
-      name = "xterm";
-      runtimeInputs = [handlr-regex];
-      text =
-        # shell
-        ''
-          handlr launch x-scheme-handler/terminal -- "$@"
-        '';
-    })
+    xterm
   ];
 
   xdg.configFile."handlr/handlr.toml".source =
