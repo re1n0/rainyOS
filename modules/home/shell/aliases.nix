@@ -1,7 +1,8 @@
 {
   # misc
-  icat = "chafa -f iterm";
+  icat = "mcat";
   ps = "procs";
+  grep = "grep --color=always";
 
   # ls
   exa = "eza --icons --git";

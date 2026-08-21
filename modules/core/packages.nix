@@ -48,7 +48,7 @@
 
   nixpkgs.overlays = [
     self.overlays.default
-    inputs.nix-cachyos-kernel.overlays.pinned
+    inputs.nix-cachyos-kernel.overlays.default
     inputs.mesa-git.overlays.default
     inputs.nix-gaming-edge.overlays.default
     inputs.nixos-millennium.overlays.default
