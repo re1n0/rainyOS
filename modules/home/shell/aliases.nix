@@ -1,6 +1,6 @@
 {
   # misc
-  icat = "chafa -f iterm";
+  icat = "mcat";
   ps = "procs";
 
   # ls
