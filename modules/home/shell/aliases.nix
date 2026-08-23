@@ -1,6 +1,6 @@
 {
   # misc
-  icat = "mcat";
+  icat = "mcat --kitty";
   ps = "procs";
   grep = "grep --color=always";
 

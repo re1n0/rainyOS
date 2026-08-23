@@ -29,22 +29,14 @@ in
         "transparent_hugepage=madvise"
       ];
 
-      lanzaboote = lib.mkIf cfg.secureBoot.enable {
-        enable = true;
-        pkiBundle = "/var/lib/sbctl";
-      };
-
       supportedFilesystems = ["ntfs"];
     };
 
-    boot.loader =
-      if cfg.secureBoot.enable
-      then {
-        systemd-boot.enable = lib.mkForce false;
-      }
-      else {
-        systemd-boot.enable = true;
-        efi.canTouchEfiVariables = true;
-        timeout = 3;
-      };
+    boot.loader.systemd-boot.enable = lib.mkForce false;
+
+    boot.loader.limine = {
+      enable = true;
+      secureBoot.enable = cfg.secureBoot.enable;
+      secureBoot.autoEnrollKeys.enable = cfg.secureBoot.enable;
+    };
   }

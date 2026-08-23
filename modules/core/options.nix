@@ -119,7 +119,7 @@ with lib; {
       };
     };
 
-    secureBoot.enable = mkEnableOption "Enable secure boot via lanzaboote";
+    secureBoot.enable = mkEnableOption "Enable secure boot";
 
     # Devices
     audio.enable = mkOption {

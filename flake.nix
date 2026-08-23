@@ -9,11 +9,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    lanzaboote = {
-      url = "github:nix-community/lanzaboote";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     mesa-git = {
@@ -93,7 +88,6 @@
           inputs.nixos-rocksmith.nixosModules.default
           inputs.nix-gaming.nixosModules.pipewireLowLatency
           inputs.nix-gaming-edge.nixosModules.default
-          inputs.lanzaboote.nixosModules.lanzaboote
           inputs.stylix.nixosModules.stylix
           inputs.nixos-millennium.nixosModules.default
         ];
