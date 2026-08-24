@@ -1,23 +1,18 @@
 {
   # misc
   icat = "mcat --kitty";
-  ps = "procs";
   grep = "grep --color=always";
 
   # ls
-  exa = "eza --icons --git";
-  l = "eza --icons --git -lo --no-user --no-permissions --no-time";
-  ll = "eza --icons --git -l";
-  ls = "eza --icons --git -lo --no-user --no-permissions --no-time";
-  la = "eza --icons --git -lo --no-user --no-permissions --no-time -a";
+  l = "eza -lo --no-user --no-permissions --no-time";
+  ll = "eza -l";
+  ls = "eza -lo --no-user --no-permissions --no-time";
+  la = "eza -lo --no-user --no-permissions --no-time -a";
 
   # tree
-  t = "eza --icons --git --tree";
-  tree = "eza --icons --git --tree";
-  tl = "eza --icons --git -l --tree";
-
-  # cat
-  cat = "bat";
+  t = "eza --tree";
+  tree = "eza --tree";
+  tl = "eza -l --tree";
 
   # editor
   v = "$EDITOR";

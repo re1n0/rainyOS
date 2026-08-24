@@ -8,11 +8,9 @@
     btrfs-progs
     ntfs3g
 
-    fd
     ripgrep
 
     tailspin
-    eza
     dust
     file
     delta

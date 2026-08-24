@@ -18,10 +18,8 @@ in {
     interactiveShellInit = ''
       set -g fish_greeting "" # Disable greeting
 
-      set -Ux fifc_editor hx
-      set -U fifc_bat_opts --style=numbers
+      set -Ux fifc_editor v
       set -U fifc_fd_opts --hidden
-      set -U fifc_eza_opts --icons --tree
 
       set -Ux FZF_DEFAULT_OPTS "--bind=tab:down,shift-tab:up,ctrl-space:toggle"
     '';

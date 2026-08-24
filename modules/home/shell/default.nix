@@ -1,6 +1,8 @@
 {...}: {
   imports = [
     ./bat.nix
+    ./eza.nix
+    ./fd.nix
     ./fish.nix
     ./fzf.nix
     ./github.nix

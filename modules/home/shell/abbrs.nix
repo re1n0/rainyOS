@@ -1,16 +1,16 @@
 {
-  # misc
   q = "exit";
   c = "clear";
   s = "ssh";
 
-  # du
   du = "dust";
 
-  # pass
+  ps = "procs";
+
+  cat = "bat";
+
   pass = "gopass";
 
-  # utils
   cf = {
     expansion = "wl-copy <";
   };
@@ -19,11 +19,9 @@
   };
   cv = "ffmpeg -i";
 
-  # music & media
   mp = "rmpc";
   ytdl = "yt-dlp";
 
-  # clock & fetch
   ff = "fastfetch";
   gitf = "tokei";
 }

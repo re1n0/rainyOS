@@ -2,7 +2,7 @@
   programs.less = {
     enable = true;
     options = {
-      RAW-CONTROL-CHARS = true;
+      raw-control-chars = true;
       quiet = true;
     };
   };
