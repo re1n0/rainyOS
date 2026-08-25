@@ -42,6 +42,8 @@
     programs.home-manager.enable = true;
   };
 in {
+  programs.fish.enable = true;
+
   users.mutableUsers = true;
 
   home-manager = {

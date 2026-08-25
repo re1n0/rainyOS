@@ -79,7 +79,7 @@
       oldDependency = pkgs.xdg-utils;
       replacement = pkgs.xdg-utils.overrideAttrs (old: let
         handlr-open = pkgs.writeShellScriptBin "xdg-open" ''
-          exec ${pkgs.handlr-regex}/bin/handlr open -- "$@"
+          exec ${lib.getExe pkgs.handlr-regex} open -- "$@"
         '';
       in {
         postFixup =
@@ -95,7 +95,7 @@
       replacement =
         pkgs.symlinkJoin
         {
-          name = "xterm-999";
+          name = "xterm-${pkgs.xterm.version}";
           paths = let
             handlr-xterm =
               pkgs.writeShellApplication
@@ -114,6 +114,25 @@
             ln -sf $out/bin/xterm $out/bin/koi8rxterm
           '';
         };
+    }
+
+    {
+      oldDependency = pkgs.pass;
+      replacement = pkgs.symlinkJoin {
+        pname = "password-store";
+        version = pkgs.pass.version;
+        paths = let
+          gopass-pass = pkgs.writeShellApplication {
+            name = "pass";
+            runtimeInputs = [pkgs.gopass];
+            text = ''
+              exec gopass "$@"
+            '';
+          };
+        in [
+          gopass-pass
+        ];
+      };
     }
   ];
 }

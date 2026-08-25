@@ -13,6 +13,7 @@
       QT_QPA_PLATFORMTHEME = "qt6ct";
 
       GTK_USE_PORTAL = 1;
+      GDK_DEBUG = "portals";
 
       GDK_BACKEND = "wayland,x11,*";
 

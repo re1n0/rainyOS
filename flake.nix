@@ -110,14 +110,14 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
         pkgs.treefmt.withConfig {
-          runtimeInputs = [pkgs.alejandra];
-          settings = {
-            on-unmatched = "info";
-            formatter.alejandra = {
-              command = "alejandra";
-              includes = ["*.nix"];
-            };
-          };
+          runtimeInputs = with pkgs; [
+            alejandra
+            prettier
+            stylua
+            shfmt
+            yamlfmt
+          ];
+          settings = import ./treefmt.nix;
         }
     );
   };

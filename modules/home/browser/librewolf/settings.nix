@@ -78,25 +78,32 @@ hdr: {
 
   # Automatically clear history on shutdown
   # Do not clear cookies or local storage on shutdown
-  "privacy.clearOnShutdown.cookies" = false;
-  "privacy.clearOnShutdown.history" = true;
-  "privacy.sanitize.sanitizeOnShutdown" = false;
+  "privacy.sanitize.sanitizeOnShutdown" = true;
+  "privacy.sanitize.clearOnShutdown.hasMigratedToNewPrefs3" = true;
 
+  "privacy.clearOnShutdown_v2.cache" = true;
   "privacy.clearOnShutdown_v2.cookiesAndStorage" = false;
   "privacy.clearOnShutdown_v2.browsingHistoryAndDownloads" = true;
-  "privacy.clearOnShutdown_v2.cache" = false;
 
   # Enable userChrome.css
   "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
 
-  # Enable WebGL
-  "webgl.disabled" = false;
+  # WebGL
+  "librewolf.webgl.prompt" = true;
+  "librewolf.webgl.prompt.hide" = true;
 
   # Use xdg utils for better integration with the rest of thingies
   "widget.use-xdg-desktop-portal.file-picker" = 1;
   "widget.use-xdg-desktop-portal.mime-handler" = 1;
   "widget.use-xdg-desktop-portal.settings" = 1;
   "widget.use-xdg-desktop-portal.open-uri" = 1;
+
+  # Smooth scrolling
+  "mousewheel.min_line_scroll_amount" = 40;
+  "general.smoothScroll" = false;
+  "general.smoothScroll.pages" = false;
+  "image.mem.min_discard_timeout_ms" = 2100000000;
+  "image.mem.max_decoded_image_kb" = 64000;
 
   # Custom toolbar
   "browser.uiCustomization.state" = builtins.toJSON {

@@ -16,6 +16,7 @@ in {
     hexyl
 
     glib
+    pass
 
     (ouch.override {enableUnfree = true;})
   ];

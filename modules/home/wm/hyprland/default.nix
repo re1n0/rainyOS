@@ -27,7 +27,7 @@ in
       configType = "lua";
 
       plugins = with pkgs.hyprlandPlugins; [
-        # hypr-dynamic-cursors
+        hypr-dynamic-cursors
       ];
 
       extraLuaFiles = {

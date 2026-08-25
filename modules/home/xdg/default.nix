@@ -2,7 +2,6 @@
   pkgs,
   lib,
   os,
-  config,
   ...
 }: let
   mimeApps = import ./mimeapps.nix;
@@ -47,11 +46,12 @@ in {
   xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = lib.generators.toINI {} {
     filechooser = {
       cmd = "${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh";
-      default_dir = config.home.homeDirectory;
       env = ''
         TERMCMD=${lib.getExe pkgs.xterm} --title="filechooser" -e
+        PATH="$PATH:/run/current-system/sw/bin"
       '';
       create_help_file = 1;
+      default_dir = "$HOME";
       open_mode = "suggested";
       save_mode = "last";
     };
