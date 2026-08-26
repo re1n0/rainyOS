@@ -49,7 +49,7 @@ hl.config({
 hl.config({
 	cursor = {
 		sync_gsettings_theme = true,
-		enable_hyprcursor = false,
+		enable_hyprcursor = true,
 		use_cpu_buffer = true,
 	},
 })

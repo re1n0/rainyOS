@@ -61,13 +61,12 @@
       "azuki"
       "evafast"
       "nvidia-x11"
-      "nvidia-settings"
       "ouch"
       "steam"
       "steam-unwrapped"
       "youtube-upnext"
-      "win-sdk"
       "xwin-fetch-msvc"
+      "win-sdk"
     ];
 
   nixpkgs.config.microsoftVisualStudioLicenseAccepted = true;

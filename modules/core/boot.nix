@@ -29,6 +29,10 @@ in
         "transparent_hugepage=madvise"
       ];
 
+      kernelModules = [
+        "ntsync"
+      ];
+
       supportedFilesystems = ["ntfs"];
     };
 
