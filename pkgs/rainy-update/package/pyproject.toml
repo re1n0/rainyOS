@@ -1,0 +1,20 @@
+[project]
+name = "rainy-update"
+version = "0.1.0"
+description = "Batch-run passthru.updateScript for flake packages and commit or create a PR"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+dependencies = [
+  "PyGithub>=2.0",
+  "pyforgejo>=2.0",
+]
+
+[project.scripts]
+rainy-update = "rainy_update.main:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
