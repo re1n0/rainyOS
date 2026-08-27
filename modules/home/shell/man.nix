@@ -1,3 +1,0 @@
-{
-  programs.man.enable = true;
-}
