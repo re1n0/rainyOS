@@ -1,2 +1,1 @@
 flake.lock -diff
-hosts/*/facter.json -diff
