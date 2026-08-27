@@ -60,6 +60,11 @@
       url = "github:zaphar/sheetsui";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    xdp-termfilepickers = {
+      url = "github:Guekka/xdg-desktop-portal-termfilepickers";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {

@@ -2,13 +2,17 @@
   pkgs,
   lib,
   os,
+  inputs,
   ...
 }: let
   mimeApps = import ./mimeapps.nix;
   desktopEntries = import ./apps.nix;
   inherit (os.gui) hyprland;
 in {
-  imports = [./handlr.nix];
+  imports = [
+    ./handlr.nix
+    inputs.xdp-termfilepickers.homeManagerModules.default
+  ];
   xdg = {
     enable = true;
     userDirs.enable = true;
@@ -22,7 +26,6 @@ in {
     extraPortals = with pkgs;
       [
         xdg-desktop-portal-wlr
-        xdg-desktop-portal-termfilechooser
       ]
       ++ (
         if hyprland.enable
@@ -34,26 +37,24 @@ in {
         default =
           lib.optional hyprland.enable "hyprland"
           ++ [
-            "termfilechooser"
+            "termfilepickers"
             "wlr"
             "gtk"
           ];
-        "org.freedesktop.impl.portal.FileChooser" = ["termfilechooser"];
+        "org.freedesktop.impl.portal.FileChooser" = ["termfilepickers"];
       };
     };
   };
 
-  xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = lib.generators.toINI {} {
-    filechooser = {
-      cmd = "${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh";
-      env = ''
-        TERMCMD=${lib.getExe pkgs.xterm} --title="filechooser" -e
-        PATH="$PATH:/run/current-system/sw/bin"
-      '';
-      create_help_file = 1;
-      default_dir = "$HOME";
-      open_mode = "suggested";
-      save_mode = "last";
+  services.xdg-desktop-portal-termfilepickers = let
+    termfilepickers = inputs.xdp-termfilepickers.packages.${pkgs.system}.default.override {
+      replaceYazi = false;
+    };
+  in {
+    enable = true;
+    package = termfilepickers;
+    config = {
+      terminal_command = [(lib.getExe pkgs.ghostty) "-e"];
     };
   };
 }

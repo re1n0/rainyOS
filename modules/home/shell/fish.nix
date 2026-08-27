@@ -19,7 +19,6 @@ in {
       set -g fish_greeting "" # Disable greeting
 
       set -Ux fifc_editor v
-      set -U fifc_fd_opts --hidden
 
       set -Ux FZF_DEFAULT_OPTS "--bind=tab:down,shift-tab:up,ctrl-space:toggle"
     '';

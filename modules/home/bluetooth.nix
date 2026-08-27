@@ -1,6 +1,6 @@
 {
-  lib,
   os,
+  lib,
   ...
 }:
 lib.optionalAttrs os.bluetooth.enable {
