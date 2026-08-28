@@ -1,4 +1,4 @@
-{inputs}: let
+_: let
   makePkg = pkgs: name: pkgs.callPackage "${name}/package.nix" {};
 in
   final: prev: {
@@ -16,6 +16,4 @@ in
 
     winetricks = final.winetricks-git;
     nomm = makePkg final ./nomm;
-
-    sheetui = inputs.sheetsui.packages.${prev.stdenv.hostPlatform.system}.default;
   }

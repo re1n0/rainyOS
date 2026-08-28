@@ -6,7 +6,7 @@
 }:
 lib.optionalAttrs os.gui.enable {
   home.packages = with pkgs; [gimp-with-plugins];
-  xdg.configFile."GIMP/3.0/gimprc".text =
+  xdg.configFile."GIMP/3.2/gimprc".text =
     # scheme
     ''
       (theme "System")

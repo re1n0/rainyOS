@@ -56,11 +56,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    sheetsui = {
-      url = "github:zaphar/sheetsui";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     xdp-termfilepickers = {
       url = "github:Guekka/xdg-desktop-portal-termfilepickers";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -100,7 +95,7 @@
 
     forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux"];
   in {
-    overlays.default = import ./pkgs {inherit inputs;};
+    overlays.default = import ./pkgs {};
 
     packages.x86_64-linux.default = self.nixosConfigurations.thome.config.system.build.isoImage;
 

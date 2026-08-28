@@ -39,8 +39,6 @@
 
     procs
 
-    sheetui
-
     yt-dlp
     ytmdl
 
