@@ -157,7 +157,7 @@ with lib; {
       default = mkOption {
         type = str;
         default = "en_US.UTF-8";
-        example = "de_DE.UTF-8/UTF-8";
+        example = "de_DE.UTF-8";
         description = "Default locale";
       };
 
