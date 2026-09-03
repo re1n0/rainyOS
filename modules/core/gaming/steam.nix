@@ -15,18 +15,10 @@ in
         proton-cachyos-x86_64-v3
       ];
 
-      package = pkgs.millennium-steam.override {
-        extraPkgs = _:
-          with pkgs; [
-            close-steam-session
-            wineWow64Packages.stable
-            pipeasio
-          ];
-        extraLibraries = _:
-          with pkgs; [
-            pipeasio
-          ];
-      };
+      package = pkgs.millennium-steam;
+      extraPackages = with pkgs; [
+        close-steam-session
+      ];
 
       extest.enable = true;
       protontricks.enable = true;

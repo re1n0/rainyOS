@@ -6,10 +6,6 @@ in
     screenshot = makePkg final ./screenshot;
     themes = makePkg final ./themes;
 
-    yaziPlugins = prev.lib.recursiveUpdate prev.yaziPlugins {
-      gvfs = makePkg final ./gvfs.yazi;
-    };
-
     oc-rsync = makePkg final ./oc-rsync;
 
     freecad-fix = makePkg final ./freecad-fix;
