@@ -8,10 +8,6 @@ lib.mkIf config.rainyos.gpg.enable {
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-gnome3;
+    pinentryPackage = pkgs.pinentry-egui;
   };
-
-  environment.systemPackages = with pkgs; [
-    gcr
-  ];
 }
