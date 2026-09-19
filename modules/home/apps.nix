@@ -9,7 +9,7 @@ lib.optionalAttrs os.gui.enable {
     lingot
     crosspipe
     android-tools
-    freecad-fix
+    # freecad-fix
     zbar
   ];
 }

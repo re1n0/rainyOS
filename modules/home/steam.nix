@@ -59,13 +59,15 @@ lib.optionalAttrs os.gaming.steam.enable {
     # gratitude
     non-steam-playtimes
     browser-history
+    protondb
+    size-on-disk
+    steam-native-notifications
   ];
 
   programs.steam.extensions = [
     {id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";} # ublock origin
     {id = "kdbmhfkmnlmbkgbabkdealhhbfhlmmon";} # steamdb
     {id = "fgkeoeoibigdcdkfdckkpodhfhppgdlo";} # ai generated content filter
-    {id = "ngonfifpkpeefnhelnfdkficaiihklid";} # protondb for steam
     {id = "dimefhnkbbhebmnnhnnaiemghgjkjgpa";} # steam key deal finder
     {id = "hebdfnoheiibmkfobehgdbmilckpjjhl";} # steam achievement guide
   ];
