@@ -22,5 +22,6 @@
     ./youtube-tui.nix
     ./wm
     ./zathura.nix
+    ./pass.nix
   ];
 }

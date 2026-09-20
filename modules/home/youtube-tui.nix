@@ -11,7 +11,7 @@ lib.optionalAttrs os.gui.enable {
     yt-dlp
   ];
 
-  xdg.configFile."youtube-tui/main.yaml".text = builtins.toJSON {
+  xdg.configFile."youtube-tui/main.yml".text = builtins.toJSON {
     mouse_support = true;
 
     invidious_instance = "https://yewtu.be";
