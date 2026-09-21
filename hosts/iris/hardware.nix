@@ -3,6 +3,7 @@
   config,
   ...
 }: {
+  hardware.facter.reportPath = ./facter.json;
   hardware.nvidia = {
     open = true;
 

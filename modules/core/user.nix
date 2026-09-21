@@ -35,7 +35,7 @@
 
     home = {
       homeDirectory = "/home/${username}";
-      stateVersion = "26.05";
+      stateVersion = "26.11";
       inherit username;
     };
 
@@ -76,7 +76,7 @@ in {
 
               home = {
                 homeDirectory = "/home/${username}";
-                stateVersion = "26.05";
+                stateVersion = "26.11";
                 inherit username;
               };
 

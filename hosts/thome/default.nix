@@ -5,7 +5,7 @@
 }: {
   imports = [
     ../../modules/core
-    (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix")
+    (modulesPath + "/installer/cd-dvd/installation-cd-graphical-gnome.nix")
   ];
 
   isoImage.squashfsCompression = "lz4";

@@ -37,5 +37,5 @@ in {
 
   environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal"];
 
-  system.stateVersion = "26.05"; # DO NOT CHANGE!
+  system.stateVersion = "26.11"; # DO NOT CHANGE!
 }

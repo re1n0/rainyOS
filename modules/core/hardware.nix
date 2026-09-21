@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  host,
   config,
   ...
 }: let
@@ -10,7 +9,6 @@ in {
   hardware = {
     enableRedistributableFirmware = true;
     keyboard.qmk.enable = true;
-    facter.reportPath = ../../hosts/${host}/facter.json;
   };
 
   hardware.bluetooth = lib.mkIf cfg.bluetooth.enable {

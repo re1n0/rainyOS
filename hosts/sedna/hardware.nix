@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  hardware.facter.reportPath = ./facter.json;
   hardware.amdgpu = {
     overdrive = {
       enable = true;
