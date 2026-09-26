@@ -8,9 +8,7 @@
   themes = import ./themes.nix config;
 in {
   home.packages = with pkgs; [
-    deadnix
     nixd
-    statix
 
     tombi
 
@@ -23,6 +21,10 @@ in {
 
     lldb
     rust-analyzer
+    cargo
+    rustfmt
+
+    slint-lsp
 
     bash-language-server
     shfmt

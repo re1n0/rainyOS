@@ -30,7 +30,6 @@ in {
     nativeMessagingHosts = with pkgs; [
       ff2mpv-rust
       gopass-jsonapi
-      tridactyl-native
     ];
 
     profiles.${username} = {
@@ -50,7 +49,6 @@ in {
           sponsorblock
           stylus
           to-deepl
-          tridactyl
           (ublock-origin.override {private_browsing = true;})
           unpaywall
           (user-agent-string-switcher.override {private_browsing = true;})

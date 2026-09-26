@@ -60,6 +60,7 @@ lib.optionalAttrs os.gaming.steam.enable {
     non-steam-playtimes
     browser-history
     protondb
+    protondb-status
     size-on-disk
     steam-native-notifications
   ];
