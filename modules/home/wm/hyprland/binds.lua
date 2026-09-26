@@ -6,7 +6,7 @@ local function launch_mime(key, mime)
 end
 
 launch_mime("I", "x-scheme-handler/terminal")
-launch_mime("B", "x-scheme-handler/http*")
+launch_mime("B", "x-scheme-handler/http")
 
 hl.bind(super .. " + Q", hl.dsp.window.close())
 hl.bind(super .. " + F", hl.dsp.window.fullscreen({ mode = 1 }))
