@@ -6,6 +6,7 @@
 }:
 lib.mkIf config.rainyos.virtualisation.podman.enable {
   virtualisation.containers.enable = true;
+  virtualisation.containers.containersConf.settings.engine.cgroup_manager = "cgroupfs";
 
   virtualisation = {
     podman = {

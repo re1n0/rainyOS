@@ -9,7 +9,7 @@
   extraGroups = [
     "adbusers"
     "audio"
-    "docker"
+    "podman"
     "gamemode"
     "input"
     "libvirtd"
