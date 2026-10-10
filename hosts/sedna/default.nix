@@ -68,7 +68,7 @@
     };
 
     git = {
-      username = "Rein";
+      username = "rein";
       email = "rein@rein.icu";
       signingKey = "66A8170622279BD9586ACEDD5B29A8813F4765C4";
     };
