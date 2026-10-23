@@ -12,8 +12,7 @@ in
     ];
 
     boot = {
-      kernelPackages = lib.mkDefault pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
-      # kernelPackages = lib.mkDefault pkgs.cachyosKernels.linuxPackages-cachyos-latest-x86_64-v3;
+      kernelPackages = lib.mkDefault pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
 
       plymouth.enable = cfg.gui.enable;
       consoleLogLevel = 3;

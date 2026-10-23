@@ -31,10 +31,10 @@
   stylix.icons = {
     enable = true;
 
-    package = pkgs.kdePackages.breeze-icons;
+    package = pkgs.papirus-icon-theme;
 
-    dark = "breeze-dark";
-    light = "breeze";
+    dark = "Papirus-Dark";
+    light = "Papirus-Light";
   };
 
   stylix.cursor = {
