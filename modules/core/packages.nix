@@ -24,7 +24,6 @@
       "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
       "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="
       "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
       "nixos-millennium.cachix.org-1:AaMK3uqfgzCUpjs7+gdHTwwaqkT/vvLMCnUKSY37QAQ="
       "nixos-rocksmith.cachix.org-1:gg6dJg9svbP30JVrtFwkCpGVBkHbEwYswGS2VoXJ2qo="
       "tokidoki:MD4VWt3kK8Fmz3jkiGoNRJIW31/QAm7l1Dcgz2Xa4hk="
@@ -35,7 +34,6 @@
       "https://chaotic-nyx.cachix.org"
       "https://nix-gaming.cachix.org"
       "https://hyprland.cachix.org"
-      "https://attic.xuyh0120.win/lantian"
       "https://nixos-millennium.cachix.org"
       "https://nixos-rocksmith.cachix.org"
       "https://nix-cache.tokidoki.dev/tokidoki"
@@ -48,7 +46,7 @@
 
   nixpkgs.overlays = [
     self.overlays.default
-    inputs.nix-cachyos-kernel.overlays.pinned
+    inputs.nix-cachyos-kernel.overlays.default
     inputs.mesa-git.overlays.default
     inputs.nix-gaming-edge.overlays.default
     inputs.nixos-millennium.overlays.default
