@@ -26,10 +26,6 @@ in
 
       configType = "lua";
 
-      plugins = with pkgs.hyprlandPlugins; [
-        hypr-dynamic-cursors
-      ];
-
       extraLuaFiles = {
         "00-nix-vars" = nixVars;
         binds = ./binds.lua;
