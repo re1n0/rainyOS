@@ -62,6 +62,7 @@
       "ouch"
       "steam"
       "steam-unwrapped"
+      "steam-with-millennium"
       "youtube-upnext"
       "xwin-fetch-msvc"
       "win-sdk"

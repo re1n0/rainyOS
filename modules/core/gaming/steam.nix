@@ -15,7 +15,7 @@ in
         proton-cachyos-x86_64-v3
       ];
 
-      package = pkgs.millennium-steam;
+      package = pkgs.steamWithMillennium;
       extraPackages = with pkgs; [
         close-steam-session
       ];
