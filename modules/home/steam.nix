@@ -55,12 +55,15 @@ lib.optionalAttrs os.gaming.steam.enable {
   };
 
   programs.steam.plugins = with pkgs.millenniumPlugins; [
-    extendium
-    # gratitude
-    non-steam-playtimes
+    achievement-groups
     browser-history
+    completion-companion
+    extendium
+    gratitude
+    non-steam-playtimes
     protondb
     protondb-status
+    recent-chats
     size-on-disk
     steam-native-notifications
   ];
